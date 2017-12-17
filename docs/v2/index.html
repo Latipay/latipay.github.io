@@ -1,0 +1,2647 @@
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from docs.latipay.net/v2/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Dec 2017 20:26:29 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;example&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="example">example</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#system-overview" class="toc-h2 toc-link" data-title="Introduction">System Overview</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#latipay-payment-api" class="toc-h1 toc-link" data-title="Latipay Payment API">Latipay Payment API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#introduction-2" class="toc-h2 toc-link" data-title="Latipay Payment API">Introduction</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e-commerce-latipay-hosted" class="toc-h1 toc-link" data-title="E-commerce - Latipay Hosted">E-commerce - Latipay Hosted</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#summary" class="toc-h2 toc-link" data-title="E-commerce - Latipay Hosted">Summary</a>
+                  </li>
+                  <li>
+                    <a href="#how-it-works" class="toc-h2 toc-link" data-title="E-commerce - Latipay Hosted">How it works?</a>
+                  </li>
+                  <li>
+                    <a href="#payment-scenarios" class="toc-h2 toc-link" data-title="E-commerce - Latipay Hosted">Payment Scenarios</a>
+                  </li>
+                  <li>
+                    <a href="#api-list" class="toc-h2 toc-link" data-title="E-commerce - Latipay Hosted">API List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e-commerce-merchant-hosted" class="toc-h1 toc-link" data-title="E-commerce - Merchant Hosted">E-commerce - Merchant Hosted</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#summary-2" class="toc-h2 toc-link" data-title="E-commerce - Merchant Hosted">Summary</a>
+                  </li>
+                  <li>
+                    <a href="#how-it-works-2" class="toc-h2 toc-link" data-title="E-commerce - Merchant Hosted">How it works?</a>
+                  </li>
+                  <li>
+                    <a href="#payment-scenarios-2" class="toc-h2 toc-link" data-title="E-commerce - Merchant Hosted">Payment Scenarios</a>
+                  </li>
+                  <li>
+                    <a href="#api-list-2" class="toc-h2 toc-link" data-title="E-commerce - Merchant Hosted">API List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#in-store-payment-solution-wechat-alipay" class="toc-h1 toc-link" data-title="In-store Payment Solution(WeChat / Alipay)">In-store Payment Solution(WeChat / Alipay)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#summary-3" class="toc-h2 toc-link" data-title="In-store Payment Solution(WeChat / Alipay)">Summary</a>
+                  </li>
+                  <li>
+                    <a href="#how-it-works-3" class="toc-h2 toc-link" data-title="In-store Payment Solution(WeChat / Alipay)">How it works?</a>
+                  </li>
+                  <li>
+                    <a href="#payment-scenarios-3" class="toc-h2 toc-link" data-title="In-store Payment Solution(WeChat / Alipay)">Payment Scenarios</a>
+                  </li>
+                  <li>
+                    <a href="#api-list-3" class="toc-h2 toc-link" data-title="In-store Payment Solution(WeChat / Alipay)">API List</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#signature-algorithms" class="toc-h1 toc-link" data-title="Signature Algorithms">Signature Algorithms</a>
+          </li>
+          <li>
+            <a href="#error-code" class="toc-h1 toc-link" data-title="Error Code">Error Code</a>
+          </li>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1><h2 id='system-overview'>System Overview</h2>
+<p>Latipay system is hosted in AliCloud which is China’s largest public cloud service provider and is the fourth largest provider worldwide. AliCloud’s international operations are registered in Singapore, Dubai, Frankfurt, Hong Kong, London, New York, Paris, San Mateo, Seoul, Singapore, Sydney and Tokyo, which ensures Latipay’s service available worldwide. Users can have the best payment experience through Latipay platform.</p>
+
+<p>AliCloud offers high-performance, elastic computing power in the cloud. Services including data storage, relational databases, big-data processing, anti-DDoS protection and content delivery networks (CDN) which provide Latipay a stable and reliable environment.</p>
+
+<p>AliCloud ensures Latipay’s security and privacy of data through their comprehensive security capabilities. Rigorous physical security measures safeguard their datacenters, and advanced logical security technologies prevent unauthorized access to their networks.</p>
+
+<p>AliCloud empowers Latipay to deploy globally on a trusted and high-performance cloud network. AliCloud’s BGP multi-line network and distributed cloud operating system provides highly available infrastructure.</p>
+
+<p>Based on the services provided by AliCloud, Latipay utilize ECS, RDS, Server Load Balancer, Redis and Mongo DB to ensure our system can perform to its best possible performance in terms of latency and security. The largest volume of transactions via Latipay server is 1000/s.</p>
+<h1 id='latipay-payment-api'>Latipay Payment API</h1><h2 id='introduction-2'>Introduction</h2>
+<p>Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API.</p>
+
+<p>Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.</p>
+
+<p>We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.</p>
+<h1 id='e-commerce-latipay-hosted'>E-commerce - Latipay Hosted</h1><h2 id='summary'>Summary</h2>
+<p>The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for online payments. Redirecting users to a Latipay Hosted Payment Page to complete the payment. A real-time confirmation notification of payment from Latipay will be displayed on the merchant’s website. At the same time, a callback will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the Latipay Order Query API.</p>
+<h2 id='how-it-works'>How it works?</h2>
+<p><img src="http://latipay.net/wp-content/uploads/images/01_-_Online_payment_workflow_-_Latipay_hosted-_both-02.png"  alt="Screenshot of Example Documentation created with Slate" style="max-width:100%;"></p>
+
+<ol>
+<li> To process a transaction, customers select Latipay as payment method, then the merchant’s ecommerce server sends a request to Latipay partnership merchant.</li>
+<li> Latipay partnership merchant sends a request to /transaction with the authentication details.</li>
+<li> Latipay responds with a <code>nonce</code> and <code>host_url</code></li>
+<li> Latipay partnership merchant responds with a unique URI (host_url/nonce) for an SSL secure payments page.</li>
+<li> The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay hosted payments page.</li>
+<li> The customer will be prompted to a page which requires him/she to either enter their Chinese bank card details or scan the QR code and complete the transaction. The result is displayed and the user is automatically redirected back to the merchant’s website.</li>
+</ol>
+<h2 id='payment-scenarios'>Payment Scenarios</h2>
+<p><strong>Merchant Ecommerce website check-out page</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/checkout_show.png"  style="max-width:100%;"></p>
+
+<p><strong>Payment method – WeChat Pay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png"   style="max-width:100%;"></p>
+
+<p><strong>Payment method – Alipay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png"  style="max-width:100%;"></p>
+
+<p><strong>Payment method – Online Bank</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Onlinebank-latipayhosted.png"   style="max-width:100%;"></p>
+<h2 id='api-list'>API List</h2><h3 id='transaction-interface'>Transaction Interface</h3>
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"wallet_id"</span><span class="o">:</span> <span class="s">"W00000001"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"return_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/checkout"</span><span class="o">,</span>
+  <span class="s">"callback_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/confirm"</span><span class="o">,</span>
+  <span class="s">"ip"</span><span class="o">:</span> <span class="s">"122.122.122.1"</span><span class="o">,</span>
+  <span class="s">"version"</span><span class="o">:</span> <span class="s">"2.0"</span><span class="o">,</span>
+  <span class="s">"product_name"</span><span class="o">:</span> <span class="s">"Pinot Noir, Otago"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"alipay"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The ID of the wallet you want to use.</td>
+<td>N</td>
+<td><code>W00000001</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>return_url</td>
+<td>String</td>
+<td>The URL of the landing page where Latipay will return the customer after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/checkout</code></td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td>The URL of the callback address the transaction notification is sent after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/confirm</code></td>
+</tr>
+<tr>
+<td>ip</td>
+<td>String</td>
+<td>The IP address of the customer.</td>
+<td>N</td>
+<td><code>122.122.122.1</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>String</td>
+<td>The latest version of the platform.</td>
+<td>N</td>
+<td><code>2.0</code></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td>The name of the product or service being sold.</td>
+<td>N</td>
+<td><code>Pinot Noir, Otago</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay, or onlineBank.</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>host_type</td>
+<td>String</td>
+<td>Latiay hosted or merchant hosted. Default is &quot;0&quot;, Latipay hosted.</td>
+<td>Y</td>
+<td><code>0</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"host_url"</span><span class="o">:</span> <span class="s">"https://pay.latipay.net/"</span><span class="o">,</span>
+  <span class="s">"nonce"</span><span class="o">:</span> <span class="s">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>host_url</td>
+<td>String</td>
+<td>The host URL to send your customer. The nonce should be appended to the end.</td>
+<td>N</td>
+<td><code>https://pay.latipay.net/</code></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>String</td>
+<td>The transaction nonce must be appended to the pay URL when redirecting the customer.</td>
+<td>N</td>
+<td><code>7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</code></td>
+</tr>
+</tbody></table>
+<h3 id='payment-interface'>Payment Interface</h3>
+<p><code>Request</code></p>
+<pre class="highlight java tab-java"><code><span class="nl">https:</span><span class="c1">//pay.latipay.net/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</span>
+</code></pre>
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>host_url/{nonce}</strong></p>
+
+<p><code>Response</code></p>
+
+<p>When merchant redirect to this webpage, Latipay payment webpage will be displayed with a QR code.</p>
+<h3 id='asynchronous-notification'>Asynchronous Notification</h3>
+<p>There is an asynchronous and back-end payment result notification sent by Latipay to merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant. If you receive callback notification, please send &quot;sent&quot; to us. Callback notification can be sent many times until we receive &quot;sent&quot;. For notification, we will send notifications after payer finishes the payment, the time interval is about 30 seconds.</p>
+
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>merchant&#39;s callback_url</strong></p>
+
+<p><code>Notify Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>f66f-4f1b-9ef5-43cb917ff8a6 (string) - A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h3 id='synchronous-notification'>Synchronous Notification</h3>
+<p>There is a sync and front-end payment result redirection sent by Latipay to merchant after the payment is done successfully.</p>
+
+<p><code>Redirect</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>merchant&#39;s return_url</strong></p>
+
+<p><code>Notify Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="nl">https:</span><span class="c1">//www.merchant.com/payment?merchant_reference=dsi39ej430sks03&amp;payment_method=alipay&amp;status=paid&amp;currency=NZD&amp;amount=100.00&amp;signature= 14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+</tbody></table>
+<h3 id='query-interface'>Query Interface</h3>
+<p>All customers can send a request to search their transaction order by merchant order ID (that should be a unique ID for the merchant) as merchant_reference by HTTP GET request.</p>
+
+<p><code>GET</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction/{merchant_reference}</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h1 id='e-commerce-merchant-hosted'>E-commerce - Merchant Hosted</h1><h2 id='summary-2'>Summary</h2>
+<p>Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides partnership merchants with the interface for developing custom built payment solution.</p>
+<h2 id='how-it-works-2'>How it works?</h2>
+<p>Here are two scenarios based on the payment methods.</p>
+
+<p><strong>For Wechat Pay / Alipay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/02_-_Online_payment_workflow_-_merchant_hosted_-_QR.png"  style="max-width:100%;"></p>
+
+<ol>
+<li> To process a transaction, customers select Latipay Wechat pay or Alipay as payment method, then the merchant sends a request to Latipay partnership merchant.</li>
+<li> Latipay partnership merchant sends a request to /transaction with the authentication details</li>
+<li> Latipay responds with a <code>nonce</code> and <code>host_url</code></li>
+<li> Latipay partnership merchant responds with a unique URI for an SSL secure payments page</li>
+<li> The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay partnership merchant hosted payments page.</li>
+<li> Latipay partnership merchant use the host_url and noune to request a QR code.</li>
+<li> Latipay responds a QR code Url, then the QR code will display in Latipay partnership merchant hosted page. The customer will be prompted to scan the QR code and complete the payment.</li>
+<li> Latipay partnership merchant query the payment status from Latipay</li>
+<li> Latipay updates the payment status</li>
+<li>The result is displayed and automatically redirected back to the merchant’s website.</li>
+</ol>
+
+<p><strong>For Online Bank</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/03_-_Online_payment_workflow_-_merchant_hosted_-_Bank.png"  style="max-width:100%;"></p>
+
+<ol>
+<li> To process a transaction, customers select Latipay Online Banking as payment method, then the merchants send a request to Latipay partnership merchant.</li>
+<li> Latipay partnership merchant sends a request to /queryBankList with the authentication details.</li>
+<li> Latipay responds with a banklist JSON.</li>
+<li> Latipay partnership merchant responds with a unique URI for an SSL secure payments to merchant website.</li>
+<li> The merchant webpage will redirect to Latipay partnership merchant’s hosted bank list webpage, then the customer can select the preferred Chinese bank.</li>
+<li> A payment order request will be submitted to Latipay partnership merchant server</li>
+<li> Latipay partnership merchant server will send the order</li>
+<li> Once the payment completed, a response will be sent to Latipay partnership merchant’s hosted bank webpage and Latipay partnership merchant server</li>
+<li> Latipay partnership merchant sends a request to /unified Order with the authentication details</li>
+<li>Latipay responds with the gateway data and gateway url</li>
+<li>Latipay partnership merchant server responds the gateway data and gateway url to the Latipay partnership merchant’s hosted webpage.</li>
+<li>Latipay partnership merchant’s hosted webpage submits the gateway data to gateway url. The Chinese bank webpage, which is selected by the customer, will be displayed. The customer will be prompted to enter their bank card’s details and complete the payment.</li>
+<li>The result is displayed and the customer is automatically redirected back to the merchant’s website (success or fail page).</li>
+</ol>
+<h2 id='payment-scenarios-2'>Payment Scenarios</h2>
+<p><strong>Merchant Ecommerce website check-out page</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/checkout_show.png"  style="max-width:100%;"></p>
+
+<p><strong>Payment method – WeChat Pay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Wechat_MerchantHosted.png"   style="max-width:100%;"></p>
+
+<p><strong>Payment method – Alipay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Alipay_MerchantHosted.png"  style="max-width:100%;"></p>
+
+<p><strong>Payment method – Online Bank</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Olinebank_MerchantHosted.png"   style="max-width:100%;"></p>
+<h2 id='api-list-2'>API List</h2><h3 id='wechat-and-alipay'>WeChat and Alipay</h3><h3 id='transaction-interface-2'>Transaction Interface</h3>
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"wallet_id"</span><span class="o">:</span> <span class="s">"W00000001"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"return_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/checkout"</span><span class="o">,</span>
+  <span class="s">"callback_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/confirm"</span><span class="o">,</span>
+  <span class="s">"ip"</span><span class="o">:</span> <span class="s">"122.122.122.1"</span><span class="o">,</span>
+  <span class="s">"version"</span><span class="o">:</span> <span class="s">"2.0"</span><span class="o">,</span>
+  <span class="s">"product_name"</span><span class="o">:</span> <span class="s">"Pinot Noir, Otago"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"alipay"</span><span class="o">,</span>
+  <span class="s">"host_type"</span> <span class="o">:</span> <span class="s">"1"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The ID of the wallet you want to use.</td>
+<td>N</td>
+<td><code>W00000001</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>return_url</td>
+<td>String</td>
+<td>The URL of the landing page where Latipay will return the customer after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/checkout</code></td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td>The URL of the callback address the transaction notification is sent after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/confirm</code></td>
+</tr>
+<tr>
+<td>ip</td>
+<td>String</td>
+<td>The IP address of the customer.</td>
+<td>N</td>
+<td><code>122.122.122.1</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>String</td>
+<td>The latest version of the platform.</td>
+<td>N</td>
+<td><code>2.0</code></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td>The name of the product or service being sold.</td>
+<td>N</td>
+<td><code>Pinot Noir, Otago</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay, or onlineBank.</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>host_type</td>
+<td>String</td>
+<td>Latiay hosted or merchant hosted.</td>
+<td>N</td>
+<td><code>1</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"host_url"</span><span class="o">:</span> <span class="s">"https://api.latipay.net/merchanthosted/transaction/"</span><span class="o">,</span>
+  <span class="s">"nonce"</span><span class="o">:</span> <span class="s">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>host_url</td>
+<td>String</td>
+<td>The host URL to send your customer. The nonce should be appended to the end.</td>
+<td>N</td>
+<td><code>https://pay.latipay.net/</code></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>String</td>
+<td>The transaction nonce must be appended to the pay URL.</td>
+<td>N</td>
+<td><code>7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</code></td>
+</tr>
+</tbody></table>
+<h3 id='payment-interface-2'>Payment Interface</h3>
+<p><code>Request</code></p>
+<pre class="highlight java tab-java"><code><span class="nl">https:</span><span class="c1">//api.latipay.net/merchanthosted/transaction/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</span>
+</code></pre>
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>host_url/{nonce}</strong></p>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+    <span class="s">"message"</span><span class="o">:</span> <span class="s">"SUCCESS"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:</span> <span class="o">{</span>
+        <span class="s">"order_id"</span> <span class="o">:</span> <span class="s">"20170829-alipay-3990527237343"</span><span class="o">,</span>
+        <span class="s">"nonce"</span> <span class="o">:</span> <span class="s">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span><span class="o">,</span>
+        <span class="s">"payment_method"</span> <span class="o">:</span> <span class="s">"alipay"</span><span class="o">,</span>
+        <span class="s">"amount"</span> <span class="o">:</span> <span class="s">"1.00"</span><span class="o">,</span>
+        <span class="s">"amount_cny"</span> <span class="o">:</span> <span class="s">"5.00"</span><span class="o">,</span>
+        <span class="s">"currency"</span> <span class="o">:</span> <span class="s">"NZD"</span><span class="o">,</span>
+        <span class="s">"product_name"</span> <span class="o">:</span> <span class="s">"test"</span><span class="o">,</span>
+        <span class="s">"organisation_id"</span><span class="o">:</span> <span class="mi">18</span><span class="o">,</span>
+        <span class="s">"org_name"</span> <span class="o">:</span> <span class="s">"Latipay"</span><span class="o">,</span>
+        <span class="s">"user_id"</span> <span class="o">:</span> <span class="s">"U000000051"</span><span class="o">,</span>
+        <span class="s">"user_name"</span> <span class="o">:</span> <span class="s">"Latipay test"</span><span class="o">,</span>
+        <span class="s">"wallet_id"</span> <span class="o">:</span> <span class="s">"W000000037"</span><span class="o">,</span>
+        <span class="s">"wallet_name"</span> <span class="o">:</span> <span class="s">"aud01"</span><span class="o">,</span>
+        <span class="s">"qr_code"</span> <span class="o">:</span> <span class="s">"https://qr.alipay.com/bax03286h4vlfpxldgwq4035"</span><span class="o">,</span>
+        <span class="s">"currency_rate"</span> <span class="o">:</span> <span class="s">"5.29930"</span><span class="o">,</span>
+        <span class="s">"merchant_reference"</span> <span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+        <span class="s">"signature"</span><span class="o">:</span><span class="s">"25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>The response code of payment, 0 or error code.</td>
+<td>N</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The response message of payment interface.</td>
+<td>N</td>
+<td><code>SUCCESS</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON</td>
+<td>The response of payment interface.</td>
+<td>N</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><strong><code>data</code> parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170829-alipay-3990527237343</code></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>String</td>
+<td>A unique transaction nonce generated by Latipay.</td>
+<td>N</td>
+<td><code>7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay, or onlineBank.</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>1.00</code></td>
+</tr>
+<tr>
+<td>amount_cny</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>5.00</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td></td>
+<td>N</td>
+<td><code>NZD</code></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td>The name of the product or service being sold.</td>
+<td>N</td>
+<td><code>test</code></td>
+</tr>
+<tr>
+<td>organisation_id</td>
+<td>Integer</td>
+<td>The merchant id which is used to process the transaction.</td>
+<td>N</td>
+<td><code>18</code></td>
+</tr>
+<tr>
+<td>org_name</td>
+<td>String</td>
+<td>The merchant&#39;s name</td>
+<td>N</td>
+<td><code>Latipay</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account which is used to process the transaction.</td>
+<td>N</td>
+<td><code>U000000051</code></td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>String</td>
+<td>The user account&#39;s name</td>
+<td>N</td>
+<td><code>Latipay test</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The user wallet account which is used to process the transaction.</td>
+<td>N</td>
+<td><code>W000000037</code></td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>String</td>
+<td>The wallet account&#39;s name</td>
+<td>N</td>
+<td><code>aud01</code></td>
+</tr>
+<tr>
+<td>qr_code</td>
+<td>String</td>
+<td>The QR code is generate by Latipay or third gateway.</td>
+<td>N</td>
+<td><code>https://qr.alipay.com/bax03286h4vlfpxldgwq4035</code></td>
+</tr>
+<tr>
+<td>currency_rate</td>
+<td>String</td>
+<td>The rate which is used to the transaction.</td>
+<td>N</td>
+<td><code>5.29930</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a</code></td>
+</tr>
+</tbody></table>
+<h3 id='asynchronous-notification-2'>Asynchronous Notification</h3>
+<p>There is an asynchronous and back-end payment result notification sent by Latipay to merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.</p>
+
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>merchant&#39;s callback_url</strong></p>
+
+<p><code>Notify Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>f66f-4f1b-9ef5-43cb917ff8a6 (string) - A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h3 id='query-interface-2'>Query Interface</h3>
+<p>All customers can send request to search their transaction order by merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.</p>
+
+<p><code>GET</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction/{merchant_reference}</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h3 id='online-banking'>Online Banking</h3><h3 id='query-bank-list-interface'>Query Bank List Interface</h3>
+<p>All customers can send a request to search one of the banks available.</p>
+
+<p><code>GET</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/banklist</strong></p>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+    <span class="s">"message"</span><span class="o">:</span> <span class="s">"SUCCESS"</span><span class="o">,</span>
+    <span class="s">"banklist"</span><span class="o">:</span> <span class="o">[{</span>
+            <span class="s">"id"</span> <span class="o">:</span> <span class="mi">1</span><span class="o">,</span>
+            <span class="s">"name"</span> <span class="o">:</span> <span class="s">"中国银行信用卡"</span>
+        <span class="o">},{</span>
+            <span class="s">"id"</span> <span class="o">:</span> <span class="mi">85</span><span class="o">,</span>
+            <span class="s">"name"</span> <span class="o">:</span> <span class="s">"中国银行"</span>
+        <span class="o">},{</span>
+            <span class="s">"id"</span> <span class="o">:</span> <span class="mi">4</span><span class="o">,</span>
+            <span class="s">"name"</span> <span class="o">:</span> <span class="s">"中国建设银行"</span>
+        <span class="o">},{</span>
+            <span class="s">"id"</span> <span class="o">:</span> <span class="mi">9</span><span class="o">,</span>
+            <span class="s">"name"</span> <span class="o">:</span> <span class="s">"中国工商银行"</span>
+        <span class="o">},{</span>
+            <span class="s">"id"</span> <span class="o">:</span> <span class="mi">14</span><span class="o">,</span>
+            <span class="s">"name"</span> <span class="o">:</span> <span class="s">"平安银行"</span>
+        <span class="o">}]</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>The response code of payment, 0 or error code.</td>
+<td>N</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The response message of bank list interface.</td>
+<td>N</td>
+<td><code>SUCCESS</code></td>
+</tr>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Bank id.</td>
+<td>N</td>
+<td><code>85</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Bank name.</td>
+<td>N</td>
+<td><code>中国银行</code></td>
+</tr>
+</tbody></table>
+<h3 id='transaction-interface-3'>Transaction Interface</h3>
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"wallet_id"</span><span class="o">:</span> <span class="s">"W00000001"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"return_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/checkout"</span><span class="o">,</span>
+  <span class="s">"callback_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/confirm"</span><span class="o">,</span>
+  <span class="s">"ip"</span><span class="o">:</span> <span class="s">"122.122.122.1"</span><span class="o">,</span>
+  <span class="s">"version"</span><span class="o">:</span> <span class="s">"2.0"</span><span class="o">,</span>
+  <span class="s">"product_name"</span><span class="o">:</span> <span class="s">"Pinot Noir, Otago"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"online_banking"</span><span class="o">,</span>
+  <span class="s">"host_type"</span> <span class="o">:</span> <span class="s">"1"</span><span class="o">,</span>
+  <span class="s">"bank_id"</span> <span class="o">:</span> <span class="mi">85</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The ID of the wallet you want to use.</td>
+<td>N</td>
+<td><code>W00000001</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>return_url</td>
+<td>String</td>
+<td>The URL of the landing page where Latipay will return the customer after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/checkout</code></td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td>The URL of the callback address the transaction notification is sent after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/confirm</code></td>
+</tr>
+<tr>
+<td>ip</td>
+<td>String</td>
+<td>The IP address of the customer.</td>
+<td>N</td>
+<td><code>122.122.122.1</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>String</td>
+<td>The latest version of the platform.</td>
+<td>N</td>
+<td><code>2.0</code></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td>The name of the product or service being sold.</td>
+<td>N</td>
+<td><code>Pinot Noir, Otago</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay, or onlineBank.</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>host_type</td>
+<td>String</td>
+<td>Latiay hosted or merchant hosted.</td>
+<td>N</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>bank_id</td>
+<td>Integer</td>
+<td>Bank id which is used to process this transaction.</td>
+<td>N</td>
+<td><code>85</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"code"</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+    <span class="s">"message"</span><span class="o">:</span> <span class="s">"SUCCESS"</span><span class="o">,</span>
+    <span class="s">"gatewaydata"</span><span class="o">:</span> <span class="o">{</span>
+      <span class="s">"v_mid"</span><span class="o">:</span> <span class="s">"8321033"</span><span class="o">,</span>
+      <span class="s">"v_oid"</span><span class="o">:</span> <span class="s">"20170913-8321033-3905576564619"</span><span class="o">,</span>
+      <span class="s">"v_rcvname"</span><span class="o">:</span> <span class="s">"8321033"</span><span class="o">,</span>
+      <span class="s">"v_rcvaddr"</span><span class="o">:</span> <span class="s">"8321033"</span><span class="o">,</span>
+      <span class="s">"v_rcvtel"</span><span class="o">:</span> <span class="s">"00000000"</span><span class="o">,</span>
+      <span class="s">"v_rcvpost"</span><span class="o">:</span> <span class="s">"8321033"</span><span class="o">,</span>
+      <span class="s">"v_amount"</span><span class="o">:</span> <span class="s">"0.05"</span><span class="o">,</span>
+      <span class="s">"v_ymd"</span><span class="o">:</span> <span class="s">"20170912"</span><span class="o">,</span>
+      <span class="s">"v_orderstatus"</span><span class="o">:</span> <span class="mi">1</span><span class="o">,</span>
+      <span class="s">"v_ordername"</span><span class="o">:</span> <span class="s">"8321033"</span><span class="o">,</span>
+      <span class="s">"v_moneytype"</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+      <span class="s">"v_url"</span><span class="o">:</span> <span class="s">"http://api-staging.latipay.net/notify/sync/payease"</span><span class="o">,</span>
+      <span class="s">"v_md5info"</span><span class="o">:</span> <span class="s">"4f34079e61711fd6c2a9cc01f96f99f8"</span><span class="o">,</span>
+      <span class="s">"v_producttype"</span><span class="o">:</span> <span class="s">""</span><span class="o">,</span>
+      <span class="s">"v_idtype"</span><span class="o">:</span> <span class="s">"01"</span><span class="o">,</span>
+      <span class="s">"v_idnumber"</span><span class="o">:</span> <span class="s">"000000000000000"</span><span class="o">,</span>
+      <span class="s">"v_idname"</span><span class="o">:</span> <span class="s">"none"</span><span class="o">,</span>
+      <span class="s">"v_idcountry"</span><span class="o">:</span> <span class="mi">156</span><span class="o">,</span>
+      <span class="s">"v_idaddress"</span><span class="o">:</span> <span class="s">"none"</span><span class="o">,</span>
+      <span class="s">"v_userref"</span><span class="o">:</span> <span class="s">"U00001534"</span><span class="o">,</span>
+      <span class="s">"v_merdata1"</span><span class="o">:</span> <span class="s">""</span><span class="o">,</span>
+      <span class="s">"v_pmode"</span><span class="o">:</span> <span class="kc">null</span><span class="o">,</span>
+      <span class="s">"v_merdata5"</span><span class="o">:</span> <span class="s">"8f436"</span><span class="o">,</span>
+      <span class="s">"v_merdata8"</span><span class="o">:</span> <span class="s">"8f4369c1"</span><span class="o">,</span>
+      <span class="s">"v_itemquantity"</span><span class="o">:</span> <span class="s">"1"</span><span class="o">,</span>
+      <span class="s">"v_itemunitprice"</span><span class="o">:</span> <span class="s">"0.05"</span>
+    <span class="o">},</span>
+    <span class="s">"paydata"</span><span class="o">:</span> <span class="o">{</span>
+        <span class="s">"order_id"</span> <span class="o">:</span> <span class="s">"20170829-alipay-3990527237343"</span><span class="o">,</span>
+            <span class="s">"nonce"</span> <span class="o">:</span> <span class="s">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span><span class="o">,</span>
+            <span class="s">"payment_method"</span> <span class="o">:</span> <span class="s">"online_banking"</span><span class="o">,</span>
+            <span class="s">"amount"</span> <span class="o">:</span> <span class="s">"1.00"</span><span class="o">,</span>
+            <span class="s">"amount_cny"</span> <span class="o">:</span> <span class="s">"5.00"</span><span class="o">,</span>
+            <span class="s">"currency"</span> <span class="o">:</span> <span class="s">"NZD"</span><span class="o">,</span>
+            <span class="s">"product_name"</span> <span class="o">:</span> <span class="s">"test"</span><span class="o">,</span>
+            <span class="s">"organisation_id"</span><span class="o">:</span> <span class="mi">18</span><span class="o">,</span>
+            <span class="s">"org_name"</span> <span class="o">:</span> <span class="s">"Latipay"</span><span class="o">,</span>
+            <span class="s">"user_id"</span> <span class="o">:</span> <span class="s">"U000000051"</span><span class="o">,</span>
+            <span class="s">"user_name"</span> <span class="o">:</span> <span class="s">"Latipay test"</span><span class="o">,</span>
+            <span class="s">"wallet_id"</span> <span class="o">:</span> <span class="s">"W000000037"</span><span class="o">,</span>
+            <span class="s">"wallet_name"</span> <span class="o">:</span> <span class="s">"aud01"</span><span class="o">,</span>
+            <span class="s">"qr_code"</span> <span class="o">:</span> <span class="s">"https://qr.alipay.com/bax03286h4vlfpxldgwq4035"</span><span class="o">,</span>
+            <span class="s">"currency_rate"</span> <span class="o">:</span> <span class="s">"5.29930"</span><span class="o">,</span>
+            <span class="s">"merchant_reference"</span> <span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+            <span class="s">"signature"</span><span class="o">:</span><span class="s">"25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a"</span>
+    <span class="o">},</span>
+    <span class="s">"gateway_url"</span> <span class="o">:</span> <span class="s">"https://pay.yizhifubj.com/customer/gb/pay_bank_utf8.jsp"</span><span class="err">"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>The reponse code of payment, 0 or error code.</td>
+<td>N</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The reponse message of transaction interface.</td>
+<td>N</td>
+<td><code>SUCCESS</code></td>
+</tr>
+<tr>
+<td>gatewaydata</td>
+<td>JSON</td>
+<td>Merchant should submit gateway data to gateway url to process the transaction.</td>
+<td>N</td>
+<td></td>
+</tr>
+<tr>
+<td>paydata</td>
+<td>JSON</td>
+<td>This field is used to display the transaction detail.</td>
+<td>N</td>
+<td></td>
+</tr>
+<tr>
+<td>gateway_url</td>
+<td>String</td>
+<td>Merchant should submit gateway data to this url to process the transaction.</td>
+<td>N</td>
+<td>&quot;https://pay.yizhifubj.com/customer/gb/pay_bank_utf8.jsp&quot;</td>
+</tr>
+</tbody></table>
+
+<p><strong><code>paydata</code> parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170829-alipay-3990527237343</code></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>String</td>
+<td>A unique transaction nonce generated by Latipay.</td>
+<td>N</td>
+<td><code>7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay, or onlineBank.</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>1.00</code></td>
+</tr>
+<tr>
+<td>amount_cny</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>5.00</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td></td>
+<td>N</td>
+<td><code>NZD</code></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td>The name of the product or service being sold.</td>
+<td>N</td>
+<td><code>test</code></td>
+</tr>
+<tr>
+<td>organisation_id</td>
+<td>Integer</td>
+<td>The merchant id which is used to process the transaction.</td>
+<td>N</td>
+<td><code>18</code></td>
+</tr>
+<tr>
+<td>org_name</td>
+<td>String</td>
+<td>The merchant&#39;s name</td>
+<td>N</td>
+<td><code>Latipay</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account which is used to process the transaction.</td>
+<td>N</td>
+<td><code>U000000051</code></td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>String</td>
+<td>The user account&#39;s name</td>
+<td>N</td>
+<td><code>Latipay test</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The user wallet account which is used to process the transaction.</td>
+<td>N</td>
+<td><code>W000000037</code></td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>String</td>
+<td>The wallet account&#39;s name</td>
+<td>N</td>
+<td><code>aud01</code></td>
+</tr>
+<tr>
+<td>qr_code</td>
+<td>String</td>
+<td>The QR code is generate by Latipay or third gateway.</td>
+<td>N</td>
+<td><code>https://qr.alipay.com/bax03286h4vlfpxldgwq4035</code></td>
+</tr>
+<tr>
+<td>currency_rate</td>
+<td>String</td>
+<td>The rate which is used to the transaction.</td>
+<td>N</td>
+<td><code>5.29930</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a</code></td>
+</tr>
+</tbody></table>
+<h3 id='asynchronous-notification-3'>Asynchronous Notification</h3>
+<p>There is an async and back-end payment result notification sent by Latipay to merchant after the payment is done successfully, there is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.</p>
+
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>merchant&#39;s callback_url</strong></p>
+
+<p><code>Notify Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>f66f-4f1b-9ef5-43cb917ff8a6 (string) - A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h3 id='query-interface-3'>Query Interface</h3>
+<p>All customers can send request to search their transaction order by merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.</p>
+
+<p><code>GET</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction/{merchant_reference}</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h1 id='in-store-payment-solution-wechat-alipay'>In-store Payment Solution(WeChat / Alipay)</h1><h2 id='summary-3'>Summary</h2>
+<p>Based on our powerful online payment solutions, Latipay also provides our merchants the In-store payment which is making use of the dynamically produced QR code to represent a transaction in hardware devices. In this Transaction QR Code payment solution, the merchant server will send a request to the Latipay server with the transaction parameters, and Latipay will respond with a QR Code url to represent the transaction in a hardware device.</p>
+<h2 id='how-it-works-3'>How it works?</h2>
+<p><img src="http://latipay.net/wp-content/uploads/images/04-in-store-PaymentWorkflow.png" style="max-width:100%;"></p>
+
+<ol>
+<li> To process a transaction, customers select Latipay Wechat pay or Alipay as their preferred payment method, then the in-store hardware sends a request to Latipay merchant server.</li>
+<li> Latipay merchant server sends a request to /transaction with the authentication details</li>
+<li> Latipay responds with a QR code url.</li>
+<li> Latipay merchant server responds with a QR code url to the in-store server.</li>
+<li> The in-store server displays the QR code on the POS machine.</li>
+<li> Latipay merchant server queries the payment status from Latipay server</li>
+<li> Latipay server updates the payment status</li>
+<li> The result is displayed and automatically redirected back to the in-store server.</li>
+<li> The in-store server redirects the payment status to the POS machine.</li>
+</ol>
+<h2 id='payment-scenarios-3'>Payment Scenarios</h2>
+<p><strong>Payment method – WeChat Pay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Wechat_Offline.png"   style="max-width:100%;"></p>
+
+<p><strong>Payment method – Alipay</strong></p>
+
+<p><img src="http://latipay.net/wp-content/uploads/images/Alipay_Offline.png"  style="max-width:100%;"></p>
+<h2 id='api-list-3'>API List</h2><h3 id='wechat-and-alipay-2'>WeChat and Alipay</h3><h3 id='transaction-interface-4'>Transaction Interface</h3>
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"wallet_id"</span><span class="o">:</span> <span class="s">"W00000001"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"callback_url"</span><span class="o">:</span> <span class="s">"https://merchantsite.com/confirm"</span><span class="o">,</span>
+  <span class="s">"ip"</span><span class="o">:</span> <span class="s">"122.122.122.1"</span><span class="o">,</span>
+  <span class="s">"version"</span><span class="o">:</span> <span class="s">"2.0"</span><span class="o">,</span>
+  <span class="s">"product_name"</span><span class="o">:</span> <span class="s">"Pinot Noir, Otago"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"alipay"</span><span class="o">,</span>
+  <span class="s">"host_type"</span> <span class="o">:</span> <span class="s">"2"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The ID of the wallet you want to use.</td>
+<td>N</td>
+<td><code>W00000001</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>callback_url</td>
+<td>String</td>
+<td>The URL of the callback address the transaction notification is sent after payment.</td>
+<td>N</td>
+<td><code>https://merchantsite.com/confirm</code></td>
+</tr>
+<tr>
+<td>version</td>
+<td>String</td>
+<td>The latest version of the platform.</td>
+<td>N</td>
+<td><code>2.0</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>host_type</td>
+<td>String</td>
+<td>Latiay hosted (0), merchant hosted (1), merchant hosted offline (2), Latipay host offline (3).</td>
+<td>N</td>
+<td><code>2</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+    <span class="s">"code"</span><span class="o">:</span> <span class="mi">0</span><span class="o">,</span>
+    <span class="s">"message"</span><span class="o">:</span> <span class="s">"SUCCESS"</span><span class="o">,</span>
+    <span class="s">"data"</span><span class="o">:</span> <span class="o">{</span>
+        <span class="s">"order_id"</span> <span class="o">:</span> <span class="s">"20170829-alipay-3990527237343"</span><span class="o">,</span>
+        <span class="s">"nonce"</span> <span class="o">:</span> <span class="s">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span><span class="o">,</span>
+        <span class="s">"payment_method"</span> <span class="o">:</span> <span class="s">"alipay"</span><span class="o">,</span>
+        <span class="s">"amount"</span> <span class="o">:</span> <span class="s">"1.00"</span><span class="o">,</span>
+        <span class="s">"amount_cny"</span> <span class="o">:</span> <span class="s">"5.00"</span><span class="o">,</span>
+        <span class="s">"currency"</span> <span class="o">:</span> <span class="s">"NZD"</span><span class="o">,</span>
+        <span class="s">"product_name"</span> <span class="o">:</span> <span class="s">"test"</span><span class="o">,</span>
+        <span class="s">"organisation_id"</span><span class="o">:</span> <span class="mi">18</span><span class="o">,</span>
+        <span class="s">"org_name"</span> <span class="o">:</span> <span class="s">"Latipay"</span><span class="o">,</span>
+        <span class="s">"user_id"</span> <span class="o">:</span> <span class="s">"U000000051"</span><span class="o">,</span>
+        <span class="s">"user_name"</span> <span class="o">:</span> <span class="s">"Latipay test"</span><span class="o">,</span>
+        <span class="s">"wallet_id"</span> <span class="o">:</span> <span class="s">"W000000037"</span><span class="o">,</span>
+        <span class="s">"wallet_name"</span> <span class="o">:</span> <span class="s">"aud01"</span><span class="o">,</span>
+        <span class="s">"qr_code"</span> <span class="o">:</span> <span class="s">"https://qr.alipay.com/bax03286h4vlfpxldgwq4035"</span><span class="o">,</span>
+        <span class="s">"currency_rate"</span> <span class="o">:</span> <span class="s">"5.29930"</span><span class="o">,</span>
+        <span class="s">"merchant_reference"</span> <span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+        <span class="s">"signature"</span><span class="o">:</span><span class="s">"25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Integer</td>
+<td>The reponse code of payment, 0 or error code.</td>
+<td>N</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The reponse message of payment interface.</td>
+<td>N</td>
+<td><code>SUCCESS</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON</td>
+<td>The reponse of payment interface.</td>
+<td>N</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<p><strong><code>data</code> parameters</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170829-alipay-3990527237343</code></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>String</td>
+<td>A unique transaction nonce generated by Latipay.</td>
+<td>N</td>
+<td><code>7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>Payment method options are wechat, alipay, or onlineBank.</td>
+<td>N</td>
+<td><code>alipay</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>1.00</code></td>
+</tr>
+<tr>
+<td>amount_cny</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>5.00</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td></td>
+<td>N</td>
+<td><code>NZD</code></td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>String</td>
+<td>The name of the product or service being sold.</td>
+<td>N</td>
+<td><code>test</code></td>
+</tr>
+<tr>
+<td>organisation_id</td>
+<td>Integer</td>
+<td>The merchant id which is used to process the transaction.</td>
+<td>N</td>
+<td><code>18</code></td>
+</tr>
+<tr>
+<td>org_name</td>
+<td>String</td>
+<td>The merchant&#39;s name</td>
+<td>N</td>
+<td><code>Latipay</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account which is used to process the transaction.</td>
+<td>N</td>
+<td><code>U000000051</code></td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>String</td>
+<td>The user account&#39;s name</td>
+<td>N</td>
+<td><code>Latipay test</code></td>
+</tr>
+<tr>
+<td>wallet_id</td>
+<td>String</td>
+<td>The user wallet account which is used to process the transaction.</td>
+<td>N</td>
+<td><code>W000000037</code></td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>String</td>
+<td>The wallet account&#39;s name</td>
+<td>N</td>
+<td><code>aud01</code></td>
+</tr>
+<tr>
+<td>qr_code</td>
+<td>String</td>
+<td>The QR code is generate by Latipay or third gateway.</td>
+<td>N</td>
+<td><code>https://qr.alipay.com/bax03286h4vlfpxldgwq4035</code></td>
+</tr>
+<tr>
+<td>currency_rate</td>
+<td>String</td>
+<td>The rate which is used to the transaction.</td>
+<td>N</td>
+<td><code>5.29930</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a</code></td>
+</tr>
+</tbody></table>
+<h3 id='asynchronous-notification-4'>Asynchronous Notification</h3>
+<p>There is an asynchronous and back-end payment result notification sent by Latipay to the merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.</p>
+
+<p><code>POST</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>merchant&#39;s callback_url</strong></p>
+
+<p><code>Notify Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>f66f-4f1b-9ef5-43cb917ff8a6 (string) - A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h3 id='query-interface-4'>Query Interface</h3>
+<p>All customers can send request to search their transaction order by merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.</p>
+
+<p><code>GET</code> &nbsp;&nbsp;&nbsp;&nbsp;  <strong>https://api.latipay.net/v2/transaction/{merchant_reference}</strong></p>
+
+<p><code>Request Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"user_id"</span><span class="o">:</span> <span class="s">"U000334333"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+<td>N</td>
+<td><code>U000334333</code></td>
+</tr>
+</tbody></table>
+
+<p><code>Response Parameters</code></p>
+<pre class="highlight java tab-java"><code><span class="o">{</span>
+  <span class="s">"signature"</span><span class="o">:</span> <span class="s">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span><span class="o">,</span>
+  <span class="s">"transaction_id"</span><span class="o">:</span> <span class="s">"20170707-wechat-3473511594933"</span><span class="o">,</span>
+  <span class="s">"merchant_reference"</span><span class="o">:</span> <span class="s">"dsi39ej430sks03"</span><span class="o">,</span>
+  <span class="s">"currency"</span><span class="o">:</span> <span class="s">"AUD"</span><span class="o">,</span>
+  <span class="s">"amount"</span><span class="o">:</span> <span class="s">"120.00"</span><span class="o">,</span>
+  <span class="s">"payment_method"</span><span class="o">:</span> <span class="s">"wechat"</span><span class="o">,</span>
+  <span class="s">"status"</span><span class="o">:</span> <span class="s">"paid"</span><span class="o">,</span>
+  <span class="s">"pay_time"</span><span class="o">:</span> <span class="s">"2017-07-07 10:53:50"</span>
+<span class="o">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type（Length）</th>
+<th>Description</th>
+<th>Nullable</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The SHA-256 HMAC API signature.</td>
+<td>N</td>
+<td><code>14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</code></td>
+</tr>
+<tr>
+<td>transaction_id</td>
+<td>String</td>
+<td>A unique transaction identifier generated by Latipay.</td>
+<td>N</td>
+<td><code>20170707-wechat-3473511594933</code></td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A field for identifying your transaction.</td>
+<td>N</td>
+<td><code>dsi39ej430sks03</code></td>
+</tr>
+<tr>
+<td>currency</td>
+<td>String</td>
+<td>The currency code of the transaction.</td>
+<td>N</td>
+<td><code>AUD</code></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>String</td>
+<td>A decimal amount.</td>
+<td>N</td>
+<td><code>120.00</code></td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>String</td>
+<td>The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank.</td>
+<td>N</td>
+<td><code>wechat</code></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>The status of the transaction. Possible values are: pending, paid, or failed.</td>
+<td>N</td>
+<td><code>paid</code></td>
+</tr>
+<tr>
+<td>pay_time</td>
+<td>String</td>
+<td>Show the payment time of the transaction order.</td>
+<td>N</td>
+<td><code>2017-07-07 10:53:50</code></td>
+</tr>
+</tbody></table>
+<h1 id='signature-algorithms'>Signature Algorithms</h1>
+<p>All requests must include the signature in the message.
+The <code>signature</code> is a <strong>SHA-256</strong>  hash-based message authentication code (HMAC) signed with your <code>api-key</code>.</p>
+
+<p>Generate Pre-sign string</p>
+
+<p>Parameters to sign</p>
+
+<p>In the list of request parameters, all of them need to be signed except <code>signature</code>. In the list of response parameters, all of them need to be signed except <code>signature</code>.</p>
+
+<p>Generate Pre-sign string</p>
+
+<p>For following request data set：</p>
+
+<p>{<br>
+            &quot;user_id&quot; : &quot;U000000051&quot;,<br>
+            &quot;wallet_id&quot; : &quot;W000000037&quot;,
+            &quot;amount&quot; : &quot;0.01&quot;,<br>
+            &quot;ip&quot; : &quot;127.0.0.1&quot;,<br>
+            &quot;payment_method&quot; : &quot;alipay&quot;,<br>
+            &quot;product_name&quot; : &quot;test&quot;,<br>
+            &quot;currency&quot; : &quot;NZD&quot;,<br>
+            &quot;merchant_reference&quot; : &quot;dsi39ej430sks03&quot;,<br>
+            &quot;callback_url&quot; : &quot;https://api.latipay.net/confirmation&quot;,<br>
+            &quot;version&quot; : &quot;2.0&quot;,<br>
+            &quot;channel&quot; : &quot;latipay&quot;<br>
+    }</p>
+
+<p>Rearrange parameters in the data set alphabetically
+And connect rearranged parameters with &amp;：</p>
+
+<p>amount=0.01&amp;callback_url=https://api.latipay.net/confirmation&amp;channel=latipay&amp;currency=NZD&amp;ip=127.0.0.1&amp;merchant_reference=dsi39ej430sks03&amp;payment_method=alipay&amp;product_name=test&amp;signature=25e6e72cc68fb31595713afb101015aecb13ca5faf3391851f24279cb7fb008a&amp;user_id=U000000051&amp;version=2.0&amp;wallet_id=W000000037</p>
+
+<p>For following response data set：</p>
+
+<p>{<br>
+            &quot;order_id&quot; : &quot;20170829-alipay-3990527237343&quot;, <br>
+            &quot;nonce&quot; : &quot;7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&quot;,<br>
+            &quot;type&quot; : &quot;Online&quot;,<br>
+            &quot;payment_method&quot; : &quot;alipay&quot;,<br>
+            &quot;amount&quot; : &quot;1.00&quot;,<br>
+            &quot;amount_cny&quot; : &quot;5.00&quot;,<br>
+            &quot;currency&quot; : &quot;NZD&quot;,<br>
+            &quot;product_name&quot; : &quot;test&quot;,<br>
+            &quot;organisation_id&quot;: 18,<br>
+            &quot;org_name&quot; : &quot;Latipay&quot;,<br>
+            &quot;user_id&quot; : &quot;U000000051&quot;,<br>
+            &quot;wallet_id&quot; : &quot;W000000037&quot;,<br>
+            &quot;wallet_name&quot; : &quot;aud01&quot;,<br>
+            &quot;qr_code&quot; : &quot;https://qr.alipay.com/bax03286h4vlfpxldgwq4035&quot;,<br>
+            &quot;currency_rate&quot; : &quot;5.29930&quot;,<br>
+            &quot;merchant_reference&quot; : &quot;dsi39ej430sks03&quot;,<br>
+            &quot;signature&quot; : &quot;25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a&quot;<br>
+    }</p>
+
+<p>Rearrange parameters in the data set alphabetically
+And connect rearranged parameters with &amp;：</p>
+
+<p>amount=1.00&amp;amount_cny=5.00&amp;currency=NZD&amp;currency_rate=5.29930&amp;merchant_reference=dsi39ej430sks03&amp;nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&amp;order_id=20170829-alipay-3990527237343&amp;organisation_id=18&amp;org_name=Latipay&amp;payment_method=alipay&amp;product_name=test&amp;qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&amp;type=Online&amp;user_id=U000000051&amp;wallet_id=W000000037&amp;wallet_name=aud01</p>
+
+<p>This is the pre-sign string.</p>
+
+<p><em> Parameters without a value, can be excluded from sign.Charset in sign must be UTF-8</em></p>
+
+<p><em>Never store your api-key on client-side applications. The key should only ever be used server-side.</em></p>
+<h1 id='error-code'>Error Code</h1>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>order not exist</td>
+</tr>
+<tr>
+<td>204</td>
+<td>Some fields from input are null</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Cannot find out corresponding key for the user code or user is disabled or user is not activity</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Signature from Merchant request is wrong</td>
+</tr>
+<tr>
+<td>207</td>
+<td>Param is wrong</td>
+</tr>
+<tr>
+<td>300</td>
+<td>Gateway not exist</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Wrong account info or currency info</td>
+</tr>
+<tr>
+<td>302</td>
+<td>Paycompany not exist</td>
+</tr>
+<tr>
+<td>303</td>
+<td>Wrong pay type from merchant</td>
+</tr>
+<tr>
+<td>304</td>
+<td>Wallet does not support this payment method</td>
+</tr>
+<tr>
+<td>305</td>
+<td>No margin plan for the merchant</td>
+</tr>
+<tr>
+<td>450</td>
+<td>Wallet not assign to user</td>
+</tr>
+<tr>
+<td>1</td>
+<td>FAIL</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="example">example</a>
+          </div>
+      </div>
+    </div>
+  </body>
+
+<!-- Mirrored from docs.latipay.net/v2/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Dec 2017 20:26:33 GMT -->
+</html>
