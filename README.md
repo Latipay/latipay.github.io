@@ -1,0 +1,2 @@
+# latipay.github.io
+docs
