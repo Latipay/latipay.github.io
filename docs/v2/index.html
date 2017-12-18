@@ -2510,17 +2510,30 @@
 </tbody></table>
 <h1 id='signature-algorithms'>Signature Algorithms</h1>
 <p>All requests must include the signature in the message.
-The <code>signature</code> is a <strong>SHA-256</strong>  hash-based message authentication code (HMAC) signed with your <code>api-key</code>.</p>
-
-<p>Generate Pre-sign string</p>
+The <code>signature</code> is a <strong>SHA-256</strong>  hash-based message authentication code (HMAC) signed with your <code>api_key</code>.</p>
 
 <p>Parameters to sign</p>
 
-<p>In the list of request parameters, all of them need to be signed except <code>signature</code>. In the list of response parameters, all of them need to be signed except <code>signature</code>.</p>
-
-<p>Generate Pre-sign string</p>
-
 <p>For following request data set：</p>
+
+<pre style="color:#d1d1d1;background:#000000;"><span style="color:#9999a9; ">//js code</span>
+<span style="color:#e66170; font-weight:bold; ">const</span> keys <span style="color:#d2cd86; ">=</span> <span style="color:#d2cd86; ">[</span><span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">user_id</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">wallet_id</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">amount</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">payment_method</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">return_url</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">,</span> <span style="color:#02d045; ">'</span><span style="color:#00c4c4; ">callback_url</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">]</span>
+
+<span style="color:#e66170; font-weight:bold; ">const</span> message <span style="color:#d2cd86; ">=</span> keys<span style="color:#d2cd86; ">.</span>map<span style="color:#d2cd86; ">(</span>key <span style="color:#d2cd86; ">=</span><span style="color:#d2cd86; ">&gt;</span> payload<span style="color:#d2cd86; ">[</span>key<span style="color:#d2cd86; ">]</span><span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">.</span><span style="color:#e66170; font-weight:bold; ">join</span><span style="color:#d2cd86; ">(</span><span style="color:#02d045; ">'</span><span style="color:#02d045; ">'</span><span style="color:#d2cd86; ">)</span>
+
+<span style="color:#e66170; font-weight:bold; ">const</span> signature <span style="color:#d2cd86; ">=</span> CryptoJS<span style="color:#d2cd86; ">.</span>HmacSHA256<span style="color:#d2cd86; ">(</span>message<span style="color:#d2cd86; ">,</span> api_key<span style="color:#d2cd86; ">)</span><span style="color:#d2cd86; ">.</span><span style="color:#e66170; font-weight:bold; ">toString</span><span style="color:#d2cd86; ">(</span><span style="color:#d2cd86; ">)</span>
+</pre>
+
+<pre style='color:#d1d1d1;background:#000000;'><span style='color:#9999a9; '>//java code</span>
+<span style='color:#bb7977; font-weight:bold; '>StringBuffer</span> tmpStringBuffer <span style='color:#d2cd86; '>=</span> <span style='color:#e66170; font-weight:bold; '>new</span> <span style='color:#bb7977; font-weight:bold; '>StringBuffer</span><span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+  
+tmpStringBuffer<span style='color:#d2cd86; '>.</span>append<span style='color:#d2cd86; '>(</span>user_id<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>.</span>append<span style='color:#d2cd86; '>(</span>wallet_id<span style='color:#d2cd86; '>)</span>
+  <span style='color:#d2cd86; '>.</span>append<span style='color:#d2cd86; '>(</span>amount<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>.</span>append<span style='color:#d2cd86; '>(</span>payment_method<span style='color:#d2cd86; '>)</span>
+  <span style='color:#d2cd86; '>.</span>append<span style='color:#d2cd86; '>(</span>return_url<span style='color:#d2cd86; '>)</span><span style='color:#d2cd86; '>.</span>append<span style='color:#d2cd86; '>(</span>callback_url<span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+
+<span style='color:#bb7977; font-weight:bold; '>String</span> message <span style='color:#d2cd86; '>=</span> tmpStringBuffer<span style='color:#d2cd86; '>.</span>toString<span style='color:#d2cd86; '>(</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+<span style='color:#bb7977; font-weight:bold; '>String</span> signature <span style='color:#d2cd86; '>=</span> Sha256<span style='color:#d2cd86; '>.</span>hmacDigest<span style='color:#d2cd86; '>(</span>message<span style='color:#d2cd86; '>,</span> api_key<span style='color:#d2cd86; '>,</span> <span style='color:#00c4c4; '>"HmacSHA256"</span><span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+</pre>
 
 <p>{<br>
             &quot;user_id&quot; : &quot;U000000051&quot;,<br>
@@ -2536,43 +2549,13 @@ The <code>signature</code> is a <strong>SHA-256</strong>  hash-based message aut
             &quot;channel&quot; : &quot;latipay&quot;<br>
     }</p>
 
-<p>Rearrange parameters in the data set alphabetically
-And connect rearranged parameters with &amp;：</p>
+<p>Join the values of belowing parameters：</p>
 
-<p>amount=0.01&amp;callback_url=https://api.latipay.net/confirmation&amp;channel=latipay&amp;currency=NZD&amp;ip=127.0.0.1&amp;merchant_reference=dsi39ej430sks03&amp;payment_method=alipay&amp;product_name=test&amp;signature=25e6e72cc68fb31595713afb101015aecb13ca5faf3391851f24279cb7fb008a&amp;user_id=U000000051&amp;version=2.0&amp;wallet_id=W000000037</p>
+<p>${user_id}${wallet_id}${amount}${payment_method}${return_url}${callback_url}</p>
 
-<p>For following response data set：</p>
+<p>the secret is ${api_key}</p>
 
-<p>{<br>
-            &quot;order_id&quot; : &quot;20170829-alipay-3990527237343&quot;, <br>
-            &quot;nonce&quot; : &quot;7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&quot;,<br>
-            &quot;type&quot; : &quot;Online&quot;,<br>
-            &quot;payment_method&quot; : &quot;alipay&quot;,<br>
-            &quot;amount&quot; : &quot;1.00&quot;,<br>
-            &quot;amount_cny&quot; : &quot;5.00&quot;,<br>
-            &quot;currency&quot; : &quot;NZD&quot;,<br>
-            &quot;product_name&quot; : &quot;test&quot;,<br>
-            &quot;organisation_id&quot;: 18,<br>
-            &quot;org_name&quot; : &quot;Latipay&quot;,<br>
-            &quot;user_id&quot; : &quot;U000000051&quot;,<br>
-            &quot;wallet_id&quot; : &quot;W000000037&quot;,<br>
-            &quot;wallet_name&quot; : &quot;aud01&quot;,<br>
-            &quot;qr_code&quot; : &quot;https://qr.alipay.com/bax03286h4vlfpxldgwq4035&quot;,<br>
-            &quot;currency_rate&quot; : &quot;5.29930&quot;,<br>
-            &quot;merchant_reference&quot; : &quot;dsi39ej430sks03&quot;,<br>
-            &quot;signature&quot; : &quot;25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a&quot;<br>
-    }</p>
-
-<p>Rearrange parameters in the data set alphabetically
-And connect rearranged parameters with &amp;：</p>
-
-<p>amount=1.00&amp;amount_cny=5.00&amp;currency=NZD&amp;currency_rate=5.29930&amp;merchant_reference=dsi39ej430sks03&amp;nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&amp;order_id=20170829-alipay-3990527237343&amp;organisation_id=18&amp;org_name=Latipay&amp;payment_method=alipay&amp;product_name=test&amp;qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&amp;type=Online&amp;user_id=U000000051&amp;wallet_id=W000000037&amp;wallet_name=aud01</p>
-
-<p>This is the pre-sign string.</p>
-
-<p><em> Parameters without a value, can be excluded from sign.Charset in sign must be UTF-8</em></p>
-
-<p><em>Never store your api-key on client-side applications. The key should only ever be used server-side.</em></p>
+<p><em>Never store your api_key on client-side applications. The key should only ever be used server-side.</em></p>
 <h1 id='error-code'>Error Code</h1>
 <table><thead>
 <tr>
