@@ -578,6 +578,9 @@ body.docs #nav {
     transform: translate(0, 0);
   }
 }
+.gutter {
+  display: none;
+}
 hr {
   display: block;
   height: 1px;
