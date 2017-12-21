@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <div class="sidebar-inner">
+    <div class="list">
+      <h2>
+        <%- (type.charAt(0).toUpperCase() + type.slice(1))%>
+      </h2>
+      <%- partial('partials/toc', { type: type }) %>
+    </div>
+  </div>
+</div>

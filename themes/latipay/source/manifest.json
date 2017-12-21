@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "description": "Latipay",
+  "display": "standalone",
+  "icons": [
+  ],
+  "lang": "en-US",
+  "name": "Latipay",
+  "short_name": "Latipay",
+  "start_url": "./menu",
+  "theme_color": "#4fc08d"
+}
