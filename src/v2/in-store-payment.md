@@ -58,16 +58,16 @@ POST https://api.latipay.net/v2/transaction
 
 | Name  | Type  | Description | Nullable | 
 |------------- |---------------| -------------| -------------|
-| signature | String | The SHA-256 HMAC API signature. | N | 
-| wallet_id | String | The ID of the wallet you want to use. | N |
-| amount | String | A decimal amount. | N |
-| user_id | String | The user account you want to use to process the transaction. | N |
-| merchant_reference | String | A field for identifying your transaction. | N |
-| currency | String | The currency code of the transaction. | N |
-| callback_url | String | The URL of the callback address the transaction notification is sent after payment. | N | 
-| version | String | The latest version of the platform. | N |
-| payment_method | String | Payment method options are wechat, alipay | N |
-| host_type | String | Latiay hosted (0), merchant hosted (1), merchant hosted offline (2), Latipay host offline (3). | N
+| signature | String | The SHA-256 HMAC API signature. | No | 
+| wallet_id | String | The ID of the wallet you want to use. | No |
+| amount | String | A decimal amount. | No |
+| user_id | String | The user account you want to use to process the transaction. | No |
+| merchant_reference | String | A field for identifying your transaction. | No |
+| currency | String | The currency code of the transaction. | No |
+| callback_url | String | The URL of the callback address the transaction notification is sent after payment. | No | 
+| version | String | The latest version of the platform. | No |
+| payment_method | String | Payment method options are wechat, alipay | No |
+| host_type | String | Latiay hosted (0), merchant hosted (1), merchant hosted offline (2), Latipay host offline (3). | No |
 
 #### Example Parameters
 
