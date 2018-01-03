@@ -140,6 +140,15 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 |signature	| String	| The SHA-256 HMAC API signature.
 
 
+#### Signature in Response
+For security reasons, we highly recommend you verify the signature in the response.
+
+```
+message: nonce + host_url
+secret: api_key
+```
+
+
 
 ### Payment Interface
 
@@ -213,7 +222,7 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-#### Expected the text "sent" in Response's body
+#### Expected text "sent" in Response's body
 
 ```
 sent
@@ -264,6 +273,13 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 |user_id | String | The user account you want to use to process the transaction. |
 |signature | String	|The SHA-256 HMAC API signature.
 
+#### SHA-256 HMAC Signature
+
+```
+message: merchant_reference + user_id
+secret: api_key
+```
+
 #### Response
 
 | Name  | Type  | Description | 
@@ -291,5 +307,16 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
   "pay_time": "2017-07-07 10:53:50"
 }
 ```
+
+#### Signature in Response
+For security reasons, we highly recommend you verify the signature in the response.
+
+
+```
+message: merchant_reference + payment_method + status + currency + amount
+secret: api_key
+```
+
+
 
 

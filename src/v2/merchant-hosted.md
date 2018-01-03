@@ -176,6 +176,13 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 |nonce | String | The transaction nonce must be appended to the pay URL. | 
 
 
+#### Signature in Response
+For security reasons, we highly recommend you verify the signature in the response.
+
+```
+message: nonce + host_url
+secret: api_key
+```
 
 ### Payment Interface
 
@@ -197,7 +204,7 @@ https://api.latipay.net/merchanthosted/transaction/7d5a88119354301ad3fc250404493
 |message | String | The response message of payment interface.
 |data | Object | The response of payment interface.
 
-the *data* object
+the `data` object
 
 | Name  | Type  | Description | 
 |------------- |---------------| -------------| 
@@ -245,6 +252,14 @@ the *data* object
         "signature":"25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a"
     }
 }
+```
+
+#### SHA-256 HMAC Signature
+Rearrange parameters in the `data` set alphabetically (except `signature` and other parameters with value of null or empty string) And connect rearranged parameters with &：
+
+```
+message: amount=1.00&amount_cny=5.00&currency=NZD&currency_rate=5.29930&merchant_reference=dsi39ej430sks03&nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&order_id=20170829-alipay-3990527237343&organisation_id=18&org_name=Latipay&payment_method=alipay&product_name=test&qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&type=Online&user_id=U000000051&wallet_id=W000000037&wallet_name=aud01
+secret: api_key
 ```
 
 ### Payment Result Asynchronous Notification
@@ -323,6 +338,13 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 }
 ```
 
+#### SHA-256 HMAC Signature
+
+```
+message: merchant_reference + user_id
+secret: api_key
+```
+
 #### Response
 
 | Name  | Type  | Description | 
@@ -349,4 +371,212 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
   "status": "paid",
   "pay_time": "2017-07-07 10:53:50"
 }
+```
+
+#### Signature in Response
+For security reasons, we highly recommend you verify the signature in the response.
+
+```
+message: merchant_reference + payment_method + status + currency + amount
+secret: api_key
+```
+---
+
+### Query Bank List Interface - Online Banking
+All customers can send a request to search one of the banks available.
+
+```
+GET https://api.latipay.net/v2/banklist
+```
+
+#### Response
+
+| Name  | Type  | Description | 
+|------------- |---------------| -------------|
+| code | Integer | The response code of payment, 0 or error code.
+| message | String | The response message of bank list interface.
+| id | Integer | Bank id.
+| name | String | Bank name.
+
+#### Example Response
+
+``` json
+{
+    "code": 0,
+    "message": "SUCCESS",
+    "banklist": [{
+            "id" : 1,
+            "name" : "中国银行信用卡"
+        },{
+            "id" : 85,
+            "name" : "中国银行"
+        },{
+            "id" : 4,
+            "name" : "中国建设银行"
+        },{
+            "id" : 9,
+            "name" : "中国工商银行"
+        },{
+            "id" : 14,
+            "name" : "平安银行"
+        }]
+}
+```
+
+### Transaction Interface - Online Banking
+  
+```
+POST https://api.latipay.net/v2/transaction
+```
+  
+#### Parameters:    
+
+
+| Name  | Type  | Description | Nullable | 
+|------------- |---------------| -------------| -------------|
+| signature| String| The SHA-256 HMAC API signature.| No|
+| wallet_id| String| The ID of the wallet you want to use.| No|
+| amount| String| A decimal amount.| No|
+| user_id| String| The user account you want to use to process the transaction.| No|
+| merchant_reference| String| A field for identifying your transaction.| No|
+| currency| String| The currency code of the transaction.| No|
+| return_url| String| The URL of the landing page where Latipay will return the customer after payment.| No|
+| callback_url| String| The URL of the callback address the transaction notification is sent after payment.| No|
+| ip| String| The IP address of the customer.| No|
+| version| String| The latest version of the platform.| No|
+| product_name| String| The name of the product or service being sold.| No|
+| payment_method| String| Payment method options are wechat, alipay, or onlineBank.| No|
+| host_type| String| must be "1", which means Merchant hosted.| No|
+| bank_id| Integer| Bank id which is used to process this transaction.| No|
+
+#### Example Parameters
+
+```json
+{
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+  "wallet_id": "W00000001",
+  "amount": "120.00",
+  "user_id": "U000334333",
+  "merchant_reference": "dsi39ej430sks03",
+  "currency": "AUD",
+  "return_url": "https://merchantsite.com/checkout",
+  "callback_url": "https://merchantsite.com/confirm",
+  "ip": "122.122.122.1",
+  "version": "2.0",
+  "product_name": "Pinot Noir, Otago",
+  "payment_method": "online_banking",
+  "host_type" : "1",
+  "bank_id" : 85
+}
+```
+
+#### SHA-256 HMAC Signature
+```
+message: user_id + wallet_id + amount + payment_method + return_url + callback_url
+secret: api_key
+```
+
+#### Example Signature
+
+```
+message: U000000001W000000010.01alipayhttp://merchant.com/returnhttp://merchant.com/callback
+secret: 111222333
+
+signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
+```
+
+#### Response
+
+```json
+{
+  "code": 0,
+    "message": "SUCCESS",
+    "gatewaydata": {
+      "v_mid": "8321033",
+      "v_oid": "20170913-8321033-3905576564619",
+      "v_rcvname": "8321033",
+      "v_rcvaddr": "8321033",
+      "v_rcvtel": "00000000",
+      "v_rcvpost": "8321033",
+      "v_amount": "0.05",
+      "v_ymd": "20170912",
+      "v_orderstatus": 1,
+      "v_ordername": "8321033",
+      "v_moneytype": 0,
+      "v_url": "http://api-staging.latipay.net/notify/sync/payease",
+      "v_md5info": "4f34079e61711fd6c2a9cc01f96f99f8",
+      "v_producttype": "",
+      "v_idtype": "01",
+      "v_idnumber": "000000000000000",
+      "v_idname": "none",
+      "v_idcountry": 156,
+      "v_idaddress": "none",
+      "v_userref": "U00001534",
+      "v_merdata1": "",
+      "v_pmode": null,
+      "v_merdata5": "8f436",
+      "v_merdata8": "8f4369c1",
+      "v_itemquantity": "1",
+      "v_itemunitprice": "0.05"
+    },
+    "paydata": {
+        "order_id" : "20170829-alipay-3990527237343",
+            "nonce" : "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3",
+            "payment_method" : "online_banking",
+            "amount" : "1.00",
+            "amount_cny" : "5.00",
+            "currency" : "NZD",
+            "product_name" : "test",
+            "organisation_id": 18,
+            "org_name" : "Latipay",
+            "user_id" : "U000000051",
+            "user_name" : "Latipay test",
+            "wallet_id" : "W000000037",
+            "wallet_name" : "aud01",
+            "qr_code" : "https://qr.alipay.com/bax03286h4vlfpxldgwq4035",
+            "currency_rate" : "5.29930",
+            "merchant_reference" : "dsi39ej430sks03",
+            "signature":"25e6e72cc6sdfecger95713afb101015aasdf3ca5faf3sdeer851f9cb7fb008a"
+    },
+    "gateway_url" : "https://pay.yizhifubj.com/customer/gb/pay_bank_utf8.jsp""
+}
+```
+
+| Name  | Type  | Description | 
+|------------- |---------------| -------------| 
+| code |  Integer|  The reponse code of payment, 0 or error code.|
+| message|  String|   The reponse message of transaction interface.|
+| gatewaydata|  Object |  Merchant should submit gateway data to gateway url to process the transaction. |
+| paydata | Object|   This field is used to display the transaction detail. |
+| gateway_url|  String|   Merchant should submit gateway data to this url to process the transaction.|
+
+
+`paydata` parameters
+
+| Name  | Type  | Description | 
+|------------- |---------------| -------------| 
+| order_id|   String|   A unique transaction identifier generated by Latipay. | 
+| nonce|  String|   A unique transaction nonce generated by Latipay. | 
+| payment_method|   String|   Payment method options are wechat, alipay, or onlineBank.| 
+| amount|   String|   A decimal amount.| 
+| amount_cny|   String|   A decimal amount.| 
+| currency |  String| 
+| product_name |  String|   The name of the product or service being sold.  | 
+| organisation_id|  Integer|  The merchant id which is used to process the transaction.| 
+| org_name|   String|   The merchant's name| 
+| user_id|  String|   The user account which is used to process the transaction. |
+| user_name|  String|   The user account's name |
+| wallet_id | String|   The user wallet account which is used to process the transaction.|
+| wallet_name|  String|   The wallet account's name |
+| qr_code|  String|   The QR code is generate by Latipay or third gateway. |
+| currency_rate|  String |  The rate which is used to the transaction. |
+| merchant_reference|   String  | A field for identifying your transaction.|
+| signature | String |  The SHA-256 HMAC API signature. |
+
+#### SHA-256 HMAC Signature
+Rearrange parameters in the `paydata` set alphabetically (except `signature` and other parameters with value of null or empty string) And connect rearranged parameters with &：
+
+```
+message: amount=1.00&amount_cny=5.00&currency=NZD&currency_rate=5.29930&merchant_reference=dsi39ej430sks03&nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&order_id=20170829-alipay-3990527237343&organisation_id=18&org_name=Latipay&payment_method=alipay&product_name=test&qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&type=Online&user_id=U000000051&wallet_id=W000000037&wallet_name=aud01
+secret: api_key
 ```
