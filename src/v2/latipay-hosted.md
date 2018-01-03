@@ -87,7 +87,6 @@ POST https://api.latipay.net/v2/transaction
 
 |  Platform | Payment Method  | Extra Parameter  | Payment Interface's Response 
 |------------- |---------------| -------------| ------| ------
-| Wechat browser |wechat  | is_staticpay=1 | Wechat app pay directly |
 | Any |wechat  | present\_qr=1 | a Latipay webpage which presents QR code which waiting for Wechat app to scan |
 
 #### Example Parameters
@@ -171,7 +170,7 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 | PC browser |alipay |     |   Alipay QR payment page|
 | Mobile browser |alipay |     |   launch Alipay app to pay|
 | Alipay browser |alipay |     |   Alipay pay directly.|
-| Wechat browser |wechat  | is_staticpay=1 | Wechat app pay directly |
+| Wechat browser |wechat  | | Wechat app pay directly |
 | Any |wechat  | present\_qr=1 | a Latipay webpage which presents QR code which waiting for Wechat app to scan |
 | Any |onlineBank | 	| a Latipay webpage, a form needs customer to fill in |
 
