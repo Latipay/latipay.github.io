@@ -354,7 +354,7 @@ secret: api_key
 | merchant_reference | String | A field for identifying your transaction. |
 | currency | String | The currency code of the transaction. |
 | amount | String | A decimal amount. |
-| payment_method | String | The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or online-bank. |
+| payment_method | String | The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or onlineBank. |
 | status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 | pay_time | String | Show the payment time of the transaction order. | 
 
