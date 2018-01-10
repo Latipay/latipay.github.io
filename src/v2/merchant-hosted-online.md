@@ -3,8 +3,7 @@ title: Merchant Hosted - Online
 type: v2
 order: 4
 ---
-
-## Summary
+[Download PDF](/pdf/merchant-hosted-online.pdf)
 
 Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides partnership merchants with the interface for developing custom built payment solution.
 

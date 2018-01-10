@@ -3,20 +3,27 @@ title: Latipay Hosted - In-Store
 type: v2
 order: 3
 ---
+[Download PDF](/pdf/latipay-hosted-in-store.pdf)
+
 Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API.
 Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.
 We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
+
 ## Summary
 The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for online payments. Redirecting users to a Latipay Hosted Payment Page to complete the payment. A real-time confirmation notification of payment from Latipay will be displayed on the merchant’s website. At the same time, a callback will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the Latipay Order Query API.
+
 ## How it works?
 ![](http://latipay.net/wp-content/uploads/images/01_-_Online_payment_workflow_-_Latipay_hosted-_both-02.png)
+
 1. To process a transaction, customers select Latipay as payment method, then the merchant’s ecommerce server sends a request to Latipay partnership merchant.
 2. Latipay partnership merchant sends a request to /transaction with the authentication details.
 3. Latipay responds with a nonce and host_url
 4. Latipay partnership merchant responds with a unique URI (host_url/nonce) for an SSL secure payments page.
 5. The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay hosted payments page.
 6. The customer will be prompted to a page which requires him/she to either enter their Chinese bank card details or scan the QR code and complete the transaction. The result is displayed and the user is automatically redirected back to the merchant’s website.
+
 ## Payment Scenarios
+
 #### Alipay
 ![](http://latipay.net/wp-content/uploads/images/Alipay_MerchantHosted.png)
 ---
@@ -128,20 +135,22 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 |  Environment | Payment Method  | Extra Parameters for [#Transaction-Interface](#Transaction-Interface)  | Response | Customer makes payment|
 |------------- |---------------| -------------| ------| ------| ------|
-| Alipay inner browser | alipay  | is\_staticpay="1" | Alipay app pay directly | ![](/images/alipay.png?a) |
-| Mobile browser| alipay  | is\_staticpay="1" | Mobile browser try to launch Alipay app | ![](/images/alipay-mobile-browser.png?a) |
-| PC browser/Mobile browser| alipay  | present\_qr="1" is\_spotpay="1" | a Latipay webpage which presents QR code which waiting for Alipay app to scan | ![](/images/alipay-latipay.png?a) |
+| Alipay inner browser | alipay  | is\_staticpay="1" | Alipay app pay directly | ![](../images/alipay.png?a) |
+| Mobile browser| alipay  | is\_staticpay="1" | Mobile browser try to launch Alipay app | ![](../images/alipay-mobile-browser.png?a) |
+| PC browser/Mobile browser| alipay  | present\_qr="1" is\_spotpay="1" | a Latipay webpage which presents QR code which waiting for Alipay app to scan | ![](../images/alipay-latipay.png?a) |
 | Any | alipay  | is_spotpay="1" | a json contains `qr_code` text| Merchant backend or frontend needs to generate QR Code and display it to customer|
-| Non Wechat App |wechat  | present\_qr="1" | a Latipay webpage which presents QR code which waiting for Wechat app to scan |![](/images/wechat-latipay.png?b)|
+| Non Wechat App |wechat  | present\_qr="1" | a Latipay webpage which presents QR code which waiting for Wechat app to scan |![](../images/wechat-latipay.png?b)|
 |Non-Wechat App| wechat|  | a json contains `code_url` text |Merchant backend or frontend needs to generate QR Code and display it to customer|
 
 
 Alipay QR Code text
+
 ``` json
 {"qr_code": "https://qr.alipay.com/bax081077lt4kxtaupg00082"}
 ```
 
 Wechat QR Code text
+
 ``` json
 {"code_url":"weixin://wxpay/bizpayurl?pr=12121312"}
 ```

@@ -3,20 +3,28 @@ title: Latipay Hosted - Online
 type: v2
 order: 2
 ---
+[Download PDF](/pdf/latipay-hosted-online.pdf)
+
 Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API.
 Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.
 We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
+
 ## Summary
 The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for online payments. Redirecting users to a Latipay Hosted Payment Page to complete the payment. A real-time confirmation notification of payment from Latipay will be displayed on the merchant’s website. At the same time, a callback will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the Latipay Order Query API.
+
 ## How it works?
+
 ![](http://latipay.net/wp-content/uploads/images/01_-_Online_payment_workflow_-_Latipay_hosted-_both-02.png)
+
 1. To process a transaction, customers select Latipay as payment method, then the merchant’s ecommerce server sends a request to Latipay partnership merchant.
 2. Latipay partnership merchant sends a request to /transaction with the authentication details.
 3. Latipay responds with a nonce and host_url
 4. Latipay partnership merchant responds with a unique URI (host_url/nonce) for an SSL secure payments page.
 5. The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay hosted payments page.
 6. The customer will be prompted to a page which requires him/she to either enter their Chinese bank card details or scan the QR code and complete the transaction. The result is displayed and the user is automatically redirected back to the merchant’s website.
+
 ## Payment Scenarios
+
 #### Alipay
 ![](http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png)
 ---
@@ -131,11 +139,11 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 |  Platform | Payment Method  | Response | Customer makes payment
 |------------- |---------------| -------------| ------| ------
-| PC browser |alipay | Alipay QR payment page | ![](/images/alipay-pc.png?a)|
-| Mobile browser |alipay | try to launch Alipay app to pay|![](/images/alipay-mobile-browser.png?a)|
-| Alipay inner browser |alipay | Alipay app makes payment directly |![](/images/alipay.png?a)|
-| Wechat browser |wechat | Wechat app makes payment directly |![](/images/wechat.png?a)|
-| Any |onlineBank | a Latipay webpage, a form needs customer to fill in |![](/images/bank.png?a)|
+| PC browser |alipay | Alipay QR payment page | ![](../images/alipay-pc.png?a)|
+| Mobile browser |alipay | try to launch Alipay app to pay|![](../images/alipay-mobile-browser.png?a)|
+| Alipay inner browser |alipay | Alipay app makes payment directly |![](../images/alipay.png?a)|
+| Wechat browser |wechat | Wechat app makes payment directly |![](../images/wechat.png?a)|
+| Any |onlineBank | a Latipay webpage, a form needs customer to fill in |![](../images/bank.png?a)|
 
 
 ### Payment Result Asynchronous Notification
