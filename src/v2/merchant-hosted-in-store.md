@@ -1,7 +1,7 @@
 ---
-title: Merchant Hosted - Online
+title: Merchant Hosted - In-Store
 type: v2
-order: 4
+order: 5
 ---
 
 ## Summary
@@ -85,18 +85,6 @@ page. The customer will be prompted to scan the QR code and complete the payment
 
 --- 
 
-#### Online Bank
-
-![](http://latipay.net/wp-content/uploads/images/Olinebank_MerchantHosted.png)
-
---- 
-
-#### Website check-out page
-
-![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
-
---- 
-
 ## API List
 
 ### Transaction Interface - WeChat and Alipay
@@ -145,7 +133,6 @@ POST https://api.latipay.net/v2/transaction
 ```
 
 #### SHA-256 HMAC Signature
-
 ```
 message: user_id + wallet_id + amount + payment_method + return_url + callback_url
 secret: api_key
@@ -273,6 +260,7 @@ POST merchant's callback_url
 ```
 
 #### Parameters:		
+
 
 | Name  | Type  | Description | 
 |------------- |---------------| -------------|

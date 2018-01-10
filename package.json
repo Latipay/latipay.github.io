@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo server",
-    "deploy": "hexo clean && hexo generate && hexo deploy && cp -r public/* ./"
+    "build": "hexo clean && hexo generate && hexo deploy && cp -r public/* ./"
   },
   "dependencies": {
     "hexo": "^3.2.0",

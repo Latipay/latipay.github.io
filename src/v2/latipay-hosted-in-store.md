@@ -1,7 +1,7 @@
 ---
-title: Latipay Hosted - Online
+title: Latipay Hosted - In-Store
 type: v2
-order: 2
+order: 3
 ---
 Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API.
 Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.
@@ -18,23 +18,15 @@ The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution 
 6. The customer will be prompted to a page which requires him/she to either enter their Chinese bank card details or scan the QR code and complete the transaction. The result is displayed and the user is automatically redirected back to the merchant’s website.
 ## Payment Scenarios
 #### Alipay
-![](http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png)
+![](http://latipay.net/wp-content/uploads/images/Alipay_MerchantHosted.png)
 ---
 #### WeChat Pay
 ![](http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png)
 ---
-#### Online Bank
-![](http://latipay.net/wp-content/uploads/images/Onlinebank-latipayhosted.png)
----
-#### Website check-out page
-![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
----
 
 ## API List
-
 ### Transaction Interface
-
-Create a latipay transaction(or order) is the first step for using alipay or wechatpay.
+Create a latipay transaction(or order) is the first step for using alipay or wechatpay. Comparing with [`Online`](/v2/latipay-hosted.html#Transaction-Interface-Online) service, In-Store service has some extra parameters.
 
 ```
 POST https://api.latipay.net/v2/transaction
@@ -46,7 +38,7 @@ POST https://api.latipay.net/v2/transaction
 |------------- |---------------| -------------| -------------|
 | user_id | String | The user account you want to use to process the transaction. | No |
 |wallet_id | String | The ID of the wallet you want to use. | No
-|payment_method | String | Payment method options are wechat, alipay, or onlineBank. | No
+|payment_method | String | Payment method options are wechat, alipay. | No
 |amount | String | A decimal amount. | No
 |return_url | String | The URL of the landing page where Latipay will return the customer after payment. | No
 |callback_url | String | The URL of the callback address the transaction notification is sent after payment. | No
@@ -55,6 +47,7 @@ POST https://api.latipay.net/v2/transaction
 |ip | String | The IP address of the customer. | No
 |version | String | The latest version of the platform. | No
 |product_name | String | The name of the product or service being sold. | No
+
 
 #### Example Parameters
 
@@ -106,7 +99,6 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 |signature  | String  | The SHA-256 HMAC API signature.
 
 #### Signature in Response
-
 For security reasons, we highly recommend you verify the signature in the response.
 
 ```
@@ -114,9 +106,14 @@ message: nonce + host_url
 secret: api_key
 ```
 
-### Payment Interface
+#### Extra Parameters for alipay and wechat
+Please check out the response of [#Payment-Interface](#Payment-Interface)
 
+<p class="tip">When load the url `{host_url}/{nonce}` in next step [#Payment Interface](#Payment-Interface), you will get different result depend on the environment and extra parameter.<p>
+
+### Payment Interface
 Load bellowing url in browser or send GET request
+
 ```
 {host_url}/{nonce}
 ```
@@ -127,25 +124,35 @@ Load bellowing url in browser or send GET request
 https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
 ```
 
-#### Response
+#### Response, based on Environment and Extra Parameters
 
-|  Platform | Payment Method  | Response | Customer makes payment
-|------------- |---------------| -------------| ------| ------
-| PC browser |alipay | Alipay QR payment page | ![](/images/alipay-pc.png?a)|
-| Mobile browser |alipay | try to launch Alipay app to pay|![](/images/alipay-mobile-browser.png?a)|
-| Alipay inner browser |alipay | Alipay app makes payment directly |![](/images/alipay.png?a)|
-| Wechat browser |wechat | Wechat app makes payment directly |![](/images/wechat.png?a)|
-| Any |onlineBank | a Latipay webpage, a form needs customer to fill in |![](/images/bank.png?a)|
+|  Environment | Payment Method  | Extra Parameters for [#Transaction-Interface](#Transaction-Interface)  | Response | Customer makes payment|
+|------------- |---------------| -------------| ------| ------| ------|
+| Alipay inner browser | alipay  | is\_staticpay="1" | Alipay app pay directly | ![](/images/alipay.png?a) |
+| Mobile browser| alipay  | is\_staticpay="1" | Mobile browser try to launch Alipay app | ![](/images/alipay-mobile-browser.png?a) |
+| PC browser/Mobile browser| alipay  | present\_qr="1" is\_spotpay="1" | a Latipay webpage which presents QR code which waiting for Alipay app to scan | ![](/images/alipay-latipay.png?a) |
+| Any | alipay  | is_spotpay="1" | a json contains `qr_code` text| Merchant backend or frontend needs to generate QR Code and display it to customer|
+| Non Wechat App |wechat  | present\_qr="1" | a Latipay webpage which presents QR code which waiting for Wechat app to scan |![](/images/wechat-latipay.png?b)|
+|Non-Wechat App| wechat|  | a json contains `code_url` text |Merchant backend or frontend needs to generate QR Code and display it to customer|
+
+
+Alipay QR Code text
+``` json
+{"qr_code": "https://qr.alipay.com/bax081077lt4kxtaupg00082"}
+```
+
+Wechat QR Code text
+``` json
+{"code_url":"weixin://wxpay/bizpayurl?pr=12121312"}
+```
 
 
 ### Payment Result Asynchronous Notification
-
-There is an asynchronous and back-end payment result notification sent by Latipay to merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant. If you receive callback notification, please send "sent" to us. Callback notification can be sent many times until we receive "sent". For notification, we will send notifications after payer finishes the payment, the time interval is about 30 seconds.
+There is an asynchronous and back-end payment result notification sent by Latipay to merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant. If you receive callback notification, please send "sent" to us. Callback notification can be sent many times until we receive "sent".
 
 ```
 POST merchant's callback_url
 ```
-
 #### Parameters
 
 | Name  | Type  | Description |
@@ -175,7 +182,6 @@ POST merchant's callback_url
 ```
 
 #### SHA-256 HMAC Signature
-
 Merchant backend need to validate the signature for protecting against malicious requests.
 
 ```
@@ -188,9 +194,7 @@ secret: api_key
 ```
 sent
 ```
-
 ### Synchronous Redirection
-
 There is a sync and front-end payment result redirection sent by Latipay to merchant after the payment is done successfully.
 
 ```
@@ -200,11 +204,11 @@ Redirect merchant's return_url
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
 |merchant_reference | String | A field for identifying your transaction. |
-|payment_method | String | The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or onlineBank. |
+|payment_method | String | The payment method used. Possible values are wechat, alipay, onlineBank. |
 |status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 |currency | String | The currency code of the transaction. |
 |amount | String | A decimal amount. |
-|signature | String |The SHA-256 HMAC API signature.
+|signature | String |The SHA-256 HMAC API signature.|
 
 #### Example
 
@@ -213,7 +217,6 @@ https://www.merchant.com/latipay?merchant_reference=dsi39ej430sks03&payment_meth
 ```
 
 #### SHA-256 HMAC Signature
-
 Merchant frontend need to validate the signature for protecting against malicious requests.
 
 ```
@@ -222,7 +225,6 @@ secret: api_key
 ```
 
 ### Query Interface
-
 All customers can send request to search their transaction order by merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
 
 ```
@@ -230,21 +232,17 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 ```
 
 #### Parameters
-
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
 |user_id | String | The user account you want to use to process the transaction. |
 |signature | String |The SHA-256 HMAC API signature.
-
 #### SHA-256 HMAC Signature
 
 ```
 message: merchant_reference + user_id
 secret: api_key
 ```
-
 #### Response
-
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
 |signature  | String  | The SHA-256 HMAC API signature.  |
@@ -255,9 +253,7 @@ secret: api_key
 |payment_method  | String  | The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or onlineBank.  |
 |status  | String  | The status of the transaction. Possible values are: pending, paid, or failed.  |
 |pay_time  | String  | Show the payment time of the transaction order. |
-
 #### Example
-
 ``` json
 {
 "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
@@ -270,9 +266,7 @@ secret: api_key
 "pay_time": "2017-07-07 10:53:50"
 }
 ```
-
 #### Signature in Response
-
 For security reasons, we highly recommend you verify the signature in the response.
 
 ```
