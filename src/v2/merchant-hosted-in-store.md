@@ -171,7 +171,7 @@ the `data` object
 
 #### Example
 
-``` json
+```json
 {
     "code": 0,
     "message": "SUCCESS",
@@ -274,7 +274,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### Example Parameters
 
-``` json
+```json
 {
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
   "user_id": "U000334333"
@@ -303,7 +303,7 @@ secret: api_key
 
 #### Example Response
 
-``` json
+```json
 {
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
   "transaction_id": "20170707-wechat-3473511594933",

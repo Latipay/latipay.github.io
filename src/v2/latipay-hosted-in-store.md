@@ -60,17 +60,17 @@ POST https://api.latipay.net/v2/transaction
 
 ```json
 {
-"user_id": "U000334333",
-"wallet_id": "W00000001",
-"amount": "120.00",
-"payment_method": "alipay",
-"return_url": "https://merchantsite.com/checkout",
-"callback_url": "https://merchantsite.com/confirm",
-"signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-"merchant_reference": "dsi39ej430sks03",
-"ip": "122.122.122.1",
-"version": "2.0",
-"product_name": "Pinot Noir, Otago"
+  "user_id": "U000334333",
+  "wallet_id": "W00000001",
+  "amount": "120.00",
+  "payment_method": "alipay",
+  "return_url": "https://merchantsite.com/checkout",
+  "callback_url": "https://merchantsite.com/confirm",
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+  "merchant_reference": "dsi39ej430sks03",
+  "ip": "122.122.122.1",
+  "version": "2.0",
+  "product_name": "Pinot Noir, Otago"
 }
 ```
 
@@ -93,9 +93,9 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 
 ```json
 {
-"host_url": "https://pay.latipay.net/pay",
-"nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3",
-"signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+  "host_url": "https://pay.latipay.net/pay",
+  "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3",
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
 }
 ```
 
@@ -145,14 +145,18 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 Alipay QR Code text
 
-``` json
-{"qr_code": "https://qr.alipay.com/bax081077lt4kxtaupg00082"}
+```json
+{
+  "qr_code": "https://qr.alipay.com/bax081077lt4kxtaupg00082"
+}
 ```
 
 Wechat QR Code text
 
-``` json
-{"code_url":"weixin://wxpay/bizpayurl?pr=12121312"}
+```json
+{
+  "code_url":"weixin://wxpay/bizpayurl?pr=12121312"
+}
 ```
 
 
@@ -177,16 +181,16 @@ POST merchant's callback_url
 
 #### Example Parameters
 
-``` json
+```json
 {
-"transaction_id": "43cb917ff8a6",
-"merchant_reference": "dsi39ej430sks03",
-"amount": "120.00",
-"currency": "NZD",
-"payment_method": "alipay",
-"pay_time": "2017-07-07 10:53:50",
-"status" : "paid",
-"signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+  "transaction_id": "43cb917ff8a6",
+  "merchant_reference": "dsi39ej430sks03",
+  "amount": "120.00",
+  "currency": "NZD",
+  "payment_method": "alipay",
+  "pay_time": "2017-07-07 10:53:50",
+  "status" : "paid",
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
 }
 ```
 
@@ -263,16 +267,16 @@ secret: api_key
 |status  | String  | The status of the transaction. Possible values are: pending, paid, or failed.  |
 |pay_time  | String  | Show the payment time of the transaction order. |
 #### Example
-``` json
+```json
 {
-"signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-"transaction_id": "20170707-wechat-3473511594933",
-"merchant_reference": "dsi39ej430sks03",
-"currency": "AUD",
-"amount": "120.00",
-"payment_method": "wechat",
-"status": "paid",
-"pay_time": "2017-07-07 10:53:50"
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+  "transaction_id": "20170707-wechat-3473511594933",
+  "merchant_reference": "dsi39ej430sks03",
+  "currency": "AUD",
+  "amount": "120.00",
+  "payment_method": "wechat",
+  "status": "paid",
+  "pay_time": "2017-07-07 10:53:50"
 }
 ```
 #### Signature in Response
