@@ -5,31 +5,41 @@ order: 3
 ---
 [Download PDF](/pdf/latipay-hosted-in-store.pdf)
 
-Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API.
-Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.
-We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
+Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods. We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
+
+<p class="tip">This document is only suitable for the following `in-store` situation.</p>
+
+* Customer scans `Alipay payment QR code` through `Alipay app`.
+* Customer scans `Wechat payment QR code` through `Wechat app`.
 
 ## Summary
-The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for in-store payments. Redirecting users to a Latipay Hosted Payment Page to complete the payment. A real-time confirmation notification of payment from Latipay will be displayed on the merchant’s website. At the same time, a callback will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the Latipay Order Query API.
+The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for `in-store` payments [(Transaction-Interface)](#Transaction-Interface). Redirecting users to a Latipay Hosted Payment Page to complete the payment [(Payment-Interface)](#Payment-Interface). A real-time confirmation [redirection](#Synchronous-Redirection) of payment from Latipay will be displayed on the merchant’s website. At the same time, a [notification](#Payment-Result-Asynchronous-Notification) will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the [Latipay Order Query API](#Query-Interface).
 
 ## How it works?
 ![](http://latipay.net/wp-content/uploads/images/01_-_Online_payment_workflow_-_Latipay_hosted-_both-02.png)
 
-1. To process a transaction, customers select Latipay as payment method, then the merchant’s ecommerce server sends a request to Latipay partnership merchant.
-2. Latipay partnership merchant sends a request to /transaction with the authentication details.
-3. Latipay responds with a nonce and host_url
-4. Latipay partnership merchant responds with a unique URI (host_url/nonce) for an SSL secure payments page.
-5. The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay hosted payments page.
-6. The customer will be prompted to a page which requires him/she to either enter their Chinese bank card details or scan the QR code and complete the transaction. The result is displayed and the user is automatically redirected back to the merchant’s website.
+1. To process a transaction, customers select `Alipay`, `Wechat` as **in-store** payment method in merchant's website, e.g. in E-commerce website.
+
+2. the **merchant**’s ecommerce server sends a transaction request [#Transaction-Interface](#Transaction-Interface) to **Latipay** with the authentication and order details.
+
+3. **Latipay** responds with a `host_url` and `nonce`.
+
+4. The **merchant**'s server redirect the website to the host_url with nonce as parameter.[#Payment-Interface](#Payment-Interface)
+
+5. The customer will be prompted to a page which requires him/she to `scan the QR code` with Alipay or Wechat app and complete the transaction.
+
+6. The result of payment is displayed and the user is automatically redirected back to the **merchant**’s website.
 
 ## Payment Scenarios
 
 #### Alipay
 ![](http://latipay.net/wp-content/uploads/images/Alipay_MerchantHosted.png)
+
 ---
+
 #### WeChat Pay
 ![](http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png)
----
+
 
 ## API List
 ### Transaction Interface
