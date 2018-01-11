@@ -171,7 +171,7 @@ POST merchant's callback_url
 |merchant_reference | String | A field for identifying your transaction. |
 |currency | String | The currency code of the transaction. |
 |amount | String | A decimal amount. |
-|payment_method | String | The payment method used. Possible values are wechat, alipay, onlineBank. |
+|payment_method | String | The payment method used. Possible values are wechat, alipay. |
 |status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 |pay_time | String | Show the payment time of the transaction order. |
 
@@ -213,7 +213,7 @@ Redirect merchant's return_url
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
 |merchant_reference | String | A field for identifying your transaction. |
-|payment_method | String | The payment method used. Possible values are wechat, alipay, onlineBank. |
+|payment_method | String | The payment method used. Possible values are wechat, alipay. |
 |status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 |currency | String | The currency code of the transaction. |
 |amount | String | A decimal amount. |
@@ -259,7 +259,7 @@ secret: api_key
 |merchant_reference  | String  | A field for identifying your transaction.  |
 |currency  | String  | The currency code of the transaction.  |
 |amount  | String  | A decimal amount.  |
-|payment_method  | String  | The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or onlineBank.  |
+|payment_method  | String  | The payment method used. Possible values are wechat, alipay.  |
 |status  | String  | The status of the transaction. Possible values are: pending, paid, or failed.  |
 |pay_time  | String  | Show the payment time of the transaction order. |
 #### Example

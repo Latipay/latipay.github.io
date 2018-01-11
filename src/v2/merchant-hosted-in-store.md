@@ -5,70 +5,21 @@ order: 5
 ---
 [Download PDF](/pdf/merchant-hosted-in-store.pdf)
 
-Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides partnership merchants with the interface for developing custom built payment solution.
-
+Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides partnership merchants with the interface for developing custom built payment solution for your own sub-merchants.
 
 ## How it works?
-Here are two scenarios based on the payment methods.
+To process a `in-store` transaction, Latipay partnership merchants load [#Transaction Interface](#Transaction-Interface-WeChat-and-Alipay) and [#Payment Interface](#Payment-Interface) api to a QR Code text. Customers scan the QR Code to make the payment.
 
-#### For Wechat Pay / Alipay
+* the **Merchant** means Latipay partnership merchant.
 
-![](http://latipay.net/wp-content/uploads/images/02_-_Online_payment_workflow_-_merchant_hosted_-_QR.png)
+1. sub-merchant input order information in **Merchant** website and request to pay.
 
-1. To process a transaction, customers select Latipay Wechat pay or Alipay as payment method, then the merchant sends a request to Latipay partnership merchant.
+2. **Merchant** server load [#Transaction Interface](#Transaction-Interface-WeChat-and-Alipay) and [#Payment Interface](#Payment-Interface) api for getting a QR Code text. 
 
-2. Latipay partnership merchant sends a request to /transaction with the authentication details
+2. **Merchant** website generates QR Code from the text and display it in the website.
 
-3. Latipay responds with a nonce and host_url
+3. Customers scan the QR Code with Alipay app or Wechat app and finish the payment.
 
-4. Latipay partnership merchant responds with a unique URI for an SSL secure payments page
-
-5. The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay 
-partnership merchant hosted payments page.
-
-6. Latipay partnership merchant use the host_url and noune to request a QR code.
-
-7. Latipay responds a QR code Url, then the QR code will display in Latipay partnership merchant hosted 
-page. The customer will be prompted to scan the QR code and complete the payment.
-
-8. Latipay partnership merchant query the payment status from Latipay
-
-9. Latipay updates the payment status
-
-10. The result is displayed and automatically redirected back to the merchant’s website.
-
-
-
-
-#### For Online Bank
-
-![](http://latipay.net/wp-content/uploads/images/03_-_Online_payment_workflow_-_merchant_hosted_-_Bank.png)
-
-1. To process a transaction, customers select Latipay Online Banking as payment method, then the merchants send a request to Latipay partnership merchant.
-
-2. Latipay partnership merchant sends a request to /queryBankList with the authentication details.
-
-3. Latipay responds with a banklist JSON.
-
-4. Latipay partnership merchant responds with a unique URI for an SSL secure payments to merchant website.
-
-5. The merchant webpage will redirect to Latipay partnership merchant’s hosted bank list webpage, then the customer can select the preferred Chinese bank.
-
-6. A payment order request will be submitted to Latipay partnership merchant server
-
-7. Latipay partnership merchant server will send the order
-
-8. Once the payment completed, a response will be sent to Latipay partnership merchant’s hosted bank webpage and Latipay partnership merchant server
-
-9. Latipay partnership merchant sends a request to /unified Order with the authentication details
-
-10. Latipay responds with the gateway data and gateway url
-
-11. Latipay partnership merchant server responds the gateway data and gateway url to the Latipay partnership merchant’s hosted webpage.
-
-12. Latipay partnership merchant’s hosted webpage submits the gateway data to gateway url. The Chinese bank webpage, which is selected by the customer, will be displayed. The customer will be prompted to enter their bank card’s details and complete the payment.
-
-13. The result is displayed and the customer is automatically redirected back to the merchant’s website (success or fail page).
 
 ## Payment Scenarios
 
@@ -108,8 +59,13 @@ POST https://api.latipay.net/v2/transaction
 | ip| String| The IP address of the customer.| No|
 | version| String| The latest version of the platform.| No|
 | product_name| String| The name of the product or service being sold.| No|
-| payment_method| String| Payment method options are wechat, alipay, or onlineBank.| No|
+| payment_method| String| Payment method options are wechat, alipay.| No|
 | host_type| String| must be "1", which means Merchant hosted.| No|
+
+### Extra Parameter for alipay
+| Name  | Type  | Description | Nullable | 
+|------------- |---------------| -------------| -------------|
+| is_spotpay| String| must be "1" | No|
 
 #### Example Parameters
 
@@ -151,7 +107,7 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 ```json
 {
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-  "host_url": "https://api.latipay.net/merchanthosted/transaction/",
+  "host_url": "https://api.latipay.net/merchanthosted/gatewaydata",
   "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"
 }
 ```
@@ -180,7 +136,7 @@ POST {host_url}/{nonce}
 #### Example
 
 ```
-https://api.latipay.net/merchanthosted/transaction/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
+https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
 ```
 
 #### Response
@@ -197,7 +153,7 @@ the `data` object
 |------------- |---------------| -------------| 
 | order_id | String | A unique transaction identifier generated by Latipay. |
 | nonce | String | A unique transaction nonce generated by Latipay. |
-| payment_method | String | Payment method options are wechat, alipay, or onlineBank. |
+| payment_method | String | Payment method options are wechat, alipay. |
 | amount | String | A decimal amount. |
 | amount_cny | String | A decimal amount. |
 | currency | String | The currency code of the transaction. |
@@ -268,7 +224,7 @@ POST merchant's callback_url
 | merchant_reference | String | A field for identifying your transaction. | 
 | currency | String | The currency code of the transaction. |
 | amount | String | A decimal amount. |
-| payment_method | String | The payment method used. Possible values are wechat, alipay, onlineBank. |
+| payment_method | String | The payment method used. Possible values are wechat, alipay. |
 | status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 | pay_time | String | Show the payment time of the transaction order. |
 
@@ -341,7 +297,7 @@ secret: api_key
 | merchant_reference | String | A field for identifying your transaction. |
 | currency | String | The currency code of the transaction. |
 | amount | String | A decimal amount. |
-| payment_method | String | The payment method used. Possible values are wechat, alipay, jdpay, baidu-pay or onlineBank. |
+| payment_method | String | The payment method used. Possible values are wechat, alipay. |
 | status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 | pay_time | String | Show the payment time of the transaction order. | 
 

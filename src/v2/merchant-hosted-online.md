@@ -5,7 +5,7 @@ order: 4
 ---
 [Download PDF](/pdf/merchant-hosted-online.pdf)
 
-Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides partnership merchants with the interface for developing custom built payment solution.
+Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides partnership merchants with the interface for developing custom built payment solution for your own sub-merchant.
 
 
 ## How it works?
@@ -15,29 +15,29 @@ Here are two scenarios based on the payment methods.
 
 ![](http://latipay.net/wp-content/uploads/images/02_-_Online_payment_workflow_-_merchant_hosted_-_QR.png)
 
-1. To process a transaction, customers select Latipay Wechat pay or Alipay as payment method, then the merchant sends a request to Latipay partnership merchant.
+* the **Merchant** means Latipay partnership merchant.
+* **E-commerce website** can be any sub-merchant's website.
 
-2. Latipay partnership merchant sends a request to /transaction with the authentication details
+1. To process a transaction, customers select Latipay Wechat pay or Alipay as payment method, then the **E-commerce website** sends a request to **Merchant**.
 
-3. Latipay responds with a nonce and host_url
+2. **Merchant** sends a request to **Latipay** [#Transaction-Interface](#Transaction-Interface-WeChat-and-Alipay) with the authentication details.
 
-4. Latipay partnership merchant responds with a unique URI for an SSL secure payments page
+3. **Latipay** responds to **Merchant** with a `host_url` and `nonce`
 
-5. The merchant shopping cart uses the returned URI to redirect the customer to the secure Latipay 
-partnership merchant hosted payments page.
+4. **Merchant** responds to **E-commerce website** with a unique URI for an SSL secure payments page
 
-6. Latipay partnership merchant use the host_url and noune to request a QR code.
+5. The shopping cart uses the returned URI to redirect the customer to the secure **Merchant** hosted payments page
 
-7. Latipay responds a QR code Url, then the QR code will display in Latipay partnership merchant hosted 
+6. **Merchant** use the `host_url` and `noune` to request a QR code. [#Payment-Interface](#Payment-Interface)
+
+7. **Latipay** responds a QR code Url, then the QR code will display in **Merchant** hosted 
 page. The customer will be prompted to scan the QR code and complete the payment.
 
-8. Latipay partnership merchant query the payment status from Latipay
+8. **Merchant** query the payment status from **Latipay** [#Query-Interface](#Query-Interface)
 
-9. Latipay updates the payment status
+9. **Latipay** updates the payment status
 
-10. The result is displayed and automatically redirected back to the merchant’s website.
-
-
+10. The result is displayed and automatically redirected back to the **E-commerce website**.
 
 
 #### For Online Bank
@@ -164,7 +164,7 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 ```json
 {
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-  "host_url": "https://api.latipay.net/merchanthosted/transaction/",
+  "host_url": "https://api.latipay.net/merchanthosted/gatewaydata",
   "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"
 }
 ```
@@ -193,7 +193,7 @@ POST {host_url}/{nonce}
 #### Example
 
 ```
-https://api.latipay.net/merchanthosted/transaction/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
+https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
 ```
 
 #### Response
