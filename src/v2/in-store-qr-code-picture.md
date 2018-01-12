@@ -58,12 +58,6 @@ page. The customer will be prompted to scan the QR code and complete the payment
 
 --- 
 
-#### Online Bank
-
-![](http://latipay.net/wp-content/uploads/images/Olinebank_MerchantHosted.png)
-
---- 
-
 #### Website check-out page
 
 ![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
