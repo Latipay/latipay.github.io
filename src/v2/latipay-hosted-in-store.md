@@ -29,7 +29,7 @@ The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution 
 
 5. The customer will be prompted to a page which requires him/she to `scan the QR code` with Alipay or Wechat app and complete the transaction.
 
-6. The result of payment is displayed and the user is automatically redirected back to the **merchant**’s website.
+6. The result of payment is displayed in **merchant**’s website or **merchant's** terminal/device in-store.
 
 ## Payment Scenarios
 
@@ -43,8 +43,14 @@ The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution 
 
 
 ## API List
+
+### Preparation
+
+Before using bellowing api, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
+
 ### Transaction Interface
-Create a latipay transaction(or order) is the first step for using alipay or wechatpay. Comparing with [`Online`](/v2/latipay-hosted.html#Transaction-Interface-Online) service, In-Store service has some extra parameters.
+
+Create a latipay transaction(or order) is the first step for using alipay or wechat pay.
 
 ```
 POST https://api.latipay.net/v2/transaction

@@ -15,7 +15,6 @@ Welcome! It looks like you’re ready to connect with Latipay. This reference do
 * Customer load Merchant's E-commerce website inside of `Wechat app's browser` and pay through `Wechat app`.
 * Customer load latipay hosted page to pay through Chinese online bank.
 
-
 ## Summary
 
 The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for `online` payments [(Transaction-Interface)](#Transaction-Interface). Redirecting users to a Latipay Hosted Payment Page to complete the payment [(Payment-Interface)](#Payment-Interface). A real-time confirmation [redirection](#Synchronous-Redirection) of payment from Latipay will be displayed on the merchant’s website. At the same time, a [notification](#Payment-Result-Asynchronous-Notification) will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the [Latipay Order Query API](#Query-Interface).
@@ -52,6 +51,10 @@ The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution 
 ---
 
 ## API List
+
+### Preparation
+
+Before using bellowing api, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
 
 ### Transaction Interface
 

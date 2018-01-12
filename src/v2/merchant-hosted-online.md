@@ -98,6 +98,10 @@ page. The customer will be prompted to scan the QR code and complete the payment
 
 ## API List
 
+### Preparation
+
+Before using bellowing api, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
+
 ### Transaction Interface - WeChat and Alipay
 	
 ```
