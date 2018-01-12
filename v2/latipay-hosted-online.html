@@ -43,12 +43,12 @@
 
   <ul id="nav">
     <li>
-	  <a href="/v2_cn/index.html" class="nav-link">中文</a>
-	</li>
-
-	<li>
-	  <a href="/v2/index.html" class="nav-link">English</a>
-	</li>
+  	  <a href="/v2_cn/index.html" class="nav-link">中文</a>
+  	</li>
+    
+	  <li>
+	    <a href="/v2/index.html" class="nav-link">English</a>
+	  </li>
   </ul>
 </div>
     
@@ -77,10 +77,6 @@
   
     <li>
       <a href="/v2/merchant-hosted-online.html" class="sidebar-link">Merchant Hosted - Online</a>
-    </li>
-  
-    <li>
-      <a href="/v2/merchant-hosted-in-store.html" class="sidebar-link">Merchant Hosted - In-Store</a>
     </li>
   
     <li>
@@ -130,7 +126,8 @@
 <li><p>The result of payment is displayed and the user is automatically redirected back to the <strong>merchant</strong>’s website.</p>
 </li>
 </ol>
-<h2 id="Payment-Scenarios"><a href="#Payment-Scenarios" class="headerlink" title="Payment Scenarios"></a>Payment Scenarios</h2><h4 id="Alipay"><a href="#Alipay" class="headerlink" title="Alipay"></a>Alipay</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png" alt=""></h2><h4 id="WeChat-Pay"><a href="#WeChat-Pay" class="headerlink" title="WeChat Pay"></a>WeChat Pay</h4><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png" alt=""></h2><h4 id="Online-Bank"><a href="#Online-Bank" class="headerlink" title="Online Bank"></a>Online Bank</h4><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Onlinebank-latipayhosted.png" alt=""></h2><h4 id="Website-check-out-page"><a href="#Website-check-out-page" class="headerlink" title="Website check-out page"></a>Website check-out page</h4><h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/checkout_show.png" alt=""></h2><h2 id="API-List"><a href="#API-List" class="headerlink" title="API List"></a>API List</h2><h3 id="Transaction-Interface"><a href="#Transaction-Interface" class="headerlink" title="Transaction Interface"></a>Transaction Interface</h3><p>Create a latipay transaction(or order) is the first step for using alipay, wechat pay or online bank.</p>
+<h2 id="Payment-Scenarios"><a href="#Payment-Scenarios" class="headerlink" title="Payment Scenarios"></a>Payment Scenarios</h2><h4 id="Alipay"><a href="#Alipay" class="headerlink" title="Alipay"></a>Alipay</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png" alt=""></h2><h4 id="WeChat-Pay"><a href="#WeChat-Pay" class="headerlink" title="WeChat Pay"></a>WeChat Pay</h4><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png" alt=""></h2><h4 id="Online-Bank"><a href="#Online-Bank" class="headerlink" title="Online Bank"></a>Online Bank</h4><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Onlinebank-latipayhosted.png" alt=""></h2><h4 id="Website-check-out-page"><a href="#Website-check-out-page" class="headerlink" title="Website check-out page"></a>Website check-out page</h4><h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/checkout_show.png" alt=""></h2><h2 id="API-List"><a href="#API-List" class="headerlink" title="API List"></a>API List</h2><h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>Before using bellowing api, please make sure you have <code>user_id</code>, <code>wallet_id</code> and <code>api_key</code> on hand. If you don’t have them, we would like to help you. <a href="http://www.latipay.net/contact/" target="_blank" rel="noopener">Contact Us</a>. </p>
+<h3 id="Transaction-Interface"><a href="#Transaction-Interface" class="headerlink" title="Transaction Interface"></a>Transaction Interface</h3><p>Create a latipay transaction(or order) is the first step for using alipay, wechat pay or online bank.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/transaction</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
