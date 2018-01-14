@@ -1,9 +1,5 @@
----
-title: E-commerce API
-type: v2
-order: 2
----
-[Download PDF](/pdf/e-commerce-01-15.pdf)
+#E-commerce API
+[To check HTML version online](http://doc.latipay.net/v2/e-commerce.html)
 
 Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods. We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
 

@@ -104,13 +104,12 @@
 <p class="tip">This document is suitable for the following <code>online</code> situation to make the payment.</p>
 
 <ul>
-<li>Customer load <code>Alipay excashier page</code> on <code>PC browser</code>, customer can either scan QR code or login alipay.</li>
-<li>Customer load Merchant’s E-commerce website on <code>mobile browser</code> and pay through <code>Alipay app</code>.</li>
-<li>Customer load Merchant’s E-commerce website inside of <code>Alipay app&#39;s browser</code> and pay through <code>Alipay app</code>.</li>
-<li>Customer load Merchant’s E-commerce website inside of <code>Wechat app&#39;s browser</code> and pay through <code>Wechat app</code>.</li>
-<li>Customer load latipay hosted page to pay through Chinese online bank.</li>
+<li>The customer loads <code>Alipay excashier page</code> on <code>PC browser</code>, customer can either scan QR code or login alipay.</li>
+<li>The customer loads Merchant’s E-commerce website on <code>mobile browser</code> and pays through <code>Alipay app</code>.</li>
+<li>The customer loads Merchant’s E-commerce website inside of <code>Alipay app&#39;s browser</code> and pays through <code>Alipay app</code>.</li>
+<li>The customer loads Merchant’s E-commerce website inside of <code>Wechat app&#39;s browser</code> and pays through <code>Wechat app</code>.</li>
+<li>The customer loads latipay hosted page to pays through Chinese online bank.</li>
 </ul>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing Wechat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted Ecommerce API provides merchants with a secure and versatile solution for <code>online</code> payments <a href="#Transaction-Interface">(Transaction-Interface)</a>. Redirecting users to a Latipay Hosted Payment Page to complete the payment <a href="#Payment-Interface">(Payment-Interface)</a>. A real-time confirmation <a href="#Synchronous-Redirection">redirection</a> of payment from Latipay will be displayed on the merchant’s website. At the same time, a <a href="#Payment-Result-Asynchronous-Notification">notification</a> will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than 30s. Merchants also can track payment status through the <a href="#Query-Interface">Latipay Order Query API</a>.</p>
 <h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works?"></a>How it works?</h2><p><img src="http://latipay.net/wp-content/uploads/images/01_-_Online_payment_workflow_-_Latipay_hosted-_both-02.png" alt=""></p>
 <ol>
 <li><p>To process a transaction, customers select <code>Alipay</code>, <code>Wechat</code> or <code>OnlineBank</code> as payment method in merchant’s website, e.g. in E-commerce website.</p>
@@ -127,7 +126,7 @@
 </li>
 </ol>
 <h2 id="Payment-Scenarios"><a href="#Payment-Scenarios" class="headerlink" title="Payment Scenarios"></a>Payment Scenarios</h2><h4 id="Alipay"><a href="#Alipay" class="headerlink" title="Alipay"></a>Alipay</h4><h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png" alt=""></h2><h4 id="WeChat-Pay"><a href="#WeChat-Pay" class="headerlink" title="WeChat Pay"></a>WeChat Pay</h4><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png" alt=""></h2><h4 id="Online-Bank"><a href="#Online-Bank" class="headerlink" title="Online Bank"></a>Online Bank</h4><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/Onlinebank-latipayhosted.png" alt=""></h2><h4 id="Website-check-out-page"><a href="#Website-check-out-page" class="headerlink" title="Website check-out page"></a>Website check-out page</h4><h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="http://latipay.net/wp-content/uploads/images/checkout_show.png" alt=""></h2><h2 id="API-List"><a href="#API-List" class="headerlink" title="API List"></a>API List</h2><h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>Before using the following api, please make sure you have <code>user_id</code>, <code>wallet_id</code> and <code>api_key</code> on hand. If you don’t have them, we would like to help you. <a href="http://www.latipay.net/contact/" target="_blank" rel="noopener">Contact Us</a>. </p>
-<h3 id="Transaction-Interface"><a href="#Transaction-Interface" class="headerlink" title="Transaction Interface"></a>Transaction Interface</h3><p>Create a latipay transaction(or order) is the first step for using alipay, wechat pay or online bank.</p>
+<h3 id="Transaction-Interface"><a href="#Transaction-Interface" class="headerlink" title="Transaction Interface"></a>Transaction Interface</h3><p>Create a latipay transaction is the first step for using alipay, wechat pay or online bank.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/transaction</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
@@ -176,15 +175,15 @@
 <td>No</td>
 </tr>
 <tr>
-<td>signature</td>
-<td>String</td>
-<td>The <code>SHA-256 HMAC</code> API signature.</td>
-<td>No</td>
-</tr>
-<tr>
 <td>merchant_reference</td>
 <td>String</td>
 <td>A field for identifying your transaction.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The <code>SHA-256 HMAC</code> API signature.</td>
 <td>No</td>
 </tr>
 <tr>
