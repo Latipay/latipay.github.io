@@ -10,10 +10,10 @@ Welcome! It looks like you’re ready to connect with Latipay. This reference do
 <p class="tip">This document is suitable for the following `online` situation to make the payment.</p>
 
 * The customer loads `Alipay excashier page` on `PC browser`, customer can either scan QR code or login alipay.
-* The customer loads Merchant's E-commerce website on `mobile browser` and pays through `Alipay app`.
-* The customer loads Merchant's E-commerce website inside of `Alipay app's browser` and pays through `Alipay app`.
-* The customer loads Merchant's E-commerce website inside of `Wechat app's browser` and pays through `Wechat app`.
-* The customer loads latipay hosted page to pays through Chinese online bank.
+* or the customer loads Merchant's E-commerce website on `mobile browser` and pays through `Alipay app`.
+* or the customer loads Merchant's E-commerce website inside of `Alipay app's browser` and pays through `Alipay app`.
+* or the customer loads Merchant's E-commerce website inside of `Wechat app's browser` and pays through `Wechat app`.
+* or the customer loads latipay hosted page to pays through Chinese online bank.
 
 ## How it works?
 

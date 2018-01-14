@@ -8,9 +8,9 @@ order: 4
 <p class="tip">This API will return `QR code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
 
 * The customer loads E-commerce website with a `mobile browser` and pays through `Alipay app`.
-* The customer loads E-commerce website with `Alipay app's browser` and pays through `Alipay app`.
-* The customer scans `Alipay payment QR code` through `Alipay app`.
-* The customer scans `Wechat payment QR code` through `Wechat app`.
+* or the customer loads E-commerce website with `Alipay app's browser` and pays through `Alipay app`.
+* or the customer scans `Alipay payment QR code` through `Alipay app`.
+* or the customer scans `Wechat payment QR code` through `Wechat app`.
 
 ## How it works?
 

@@ -8,9 +8,9 @@ order: 3
 <p class="tip">If you want to get QR code `picture` (e.g. for EFTPOS) rather than QR code `text` from Latipay API, please refer to [In-Store API - QR code Picture](https://doc.latipay.net/v2/in-store-qr-code-picture.html). And this document is only suitable for the following `in-store` situation.</p>
 
 * The customer loads E-commerce website on `mobile browser` and pays through `Alipay app`.
-* The customer loads E-commerce website inside of `Alipay app's browser` and pays through `Alipay app`.
-* The customer scans `Alipay payment QR code` through `Alipay app`.
-* The customer scans `Wechat payment QR code` through `Wechat app`.
+* or the customer loads E-commerce website inside of `Alipay app's browser` and pays through `Alipay app`.
+* or the customer scans `Alipay payment QR code` through `Alipay app`.
+* or the customer scans `Wechat payment QR code` through `Wechat app`.
 
 ## How it works?
 
