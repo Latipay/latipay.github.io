@@ -3,7 +3,7 @@ title: In-Store API - QR Code Picture
 type: v2
 order: 4
 ---
-[Download PDF](/pdf/in-store-qr-code-picture.pdf)
+[Download PDF](/pdf/in-store-qr-code-picture-01-15.pdf)
 
 <p class="tip">This API will return `QR Code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
 
