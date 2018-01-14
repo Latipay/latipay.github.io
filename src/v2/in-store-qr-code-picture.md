@@ -5,18 +5,18 @@ order: 4
 ---
 [Download PDF](/pdf/in-store-qr-code-picture.pdf)
 
-<p class="tip">This api will return `QR Code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
+<p class="tip">This API will return `QR Code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
 
-* Customer loads Merchant's E-commerce website with `mobile browser` and pay through `Alipay app`.
-* Customer loads Merchant's E-commerce website with `Alipay app's browser` and pay through `Alipay app`.
-* Customer scans `Alipay payment QR code` through `Alipay app`.
-* Customer scans `Wechat payment QR code` through `Wechat app`.
+* The customer loads Merchant's E-commerce website with a `mobile browser` and pays through `Alipay app`.
+* The customer loads Merchant's E-commerce website with `Alipay app's browser` and pays through `Alipay app`.
+* The customer scans `Alipay payment QR code` through `Alipay app`.
+* The customer scans `Wechat payment QR code` through `Wechat app`.
 
 ## How it works?
 
 ![](http://latipay.net/wp-content/uploads/images/02_-_Online_payment_workflow_-_merchant_hosted_-_QR.png)
 
-1. To process a transaction, customers select Latipay Wechat pay or Alipay as payment method.
+1. To process a transaction, customers select Latipay Wechat pay or Alipay as a payment method.
 
 2. **Merchant** request to **Latipay** [#Transaction Interface](#Transaction-Interface) with the authentication and order information.
 
@@ -26,7 +26,7 @@ order: 4
 
 5. The shopping cart uses the returned URI to redirect the customer to the secure **Merchant** hosted payments page.
 
-6. **Merchant** uses the `host_url` and `noune` to request a QR code. [#Payment Interface](#Payment-Interface).
+6. **Merchant** uses the `host_url` and `nonce` to request a QR code. [#Payment Interface](#Payment-Interface).
 
 7. **Latipay** responds a QR code Url, then the QR code will display in **Merchant** hosted 
 page. The customer will be prompted to `scan the QR code` and complete the payment.
@@ -62,7 +62,7 @@ page. The customer will be prompted to `scan the QR code` and complete the payme
 
 ### Preparation
 
-Before using the bellowing api, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
+Before using the bellowing API, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
 
 ### Transaction Interface
 
@@ -221,7 +221,7 @@ the `data` object
 ```
 
 #### SHA-256 HMAC Signature
-Rearrange parameters in the `data` alphabetically (except `signature` and other parameters with value of null or empty string) and join rearranged parameters with &：
+Rearrange parameters in the `data` alphabetically (except `signature` and other parameters with value of null or empty string) and join rearranged parameters with `&`
 
 ```
 message: amount=1.00&amount_cny=5.00&currency=NZD&currency_rate=5.29930&merchant_reference=dsi39ej430sks03&nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&order_id=20170829-alipay-3990527237343&organisation_id=18&org_name=Latipay&payment_method=alipay&product_name=test&qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&type=Online&user_id=U000000051&wallet_id=W000000037&wallet_name=aud01
@@ -230,7 +230,7 @@ secret: api_key
 
 ### Payment Result Asynchronous Notification
 
-There is a payment result notification sent by Latipay to merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
+This is a payment result notification sent by Latipay to merchants after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
 
 
 ```
@@ -281,7 +281,7 @@ sent
 ```
 
 ### Query Interface
-All customers can send request to search their transaction order by merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
+All customers can send requests to query payment status with merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
 
 ```
 GET https://api.latipay.net/v2/transaction/{merchant_reference}
@@ -292,7 +292,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 | Name  | Type  | Description | 
 |------------- |---------------| -------------|
 | user_id | String | The user account you want to use to process the transaction. |
-| signature | String | The SHA-256 HMAC API signature. |
+| signature | String | The `SHA-256 HMAC` API signature. |
 
 #### SHA-256 HMAC Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
 
