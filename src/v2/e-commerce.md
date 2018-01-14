@@ -1,9 +1,9 @@
 ---
-title: e-Commerce API
+title: E-commerce API
 type: v2
 order: 2
 ---
-[Download PDF](/pdf/e-commerce.pdf)
+[Download PDF](/pdf/e-commerce-01-15.pdf)
 
 Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods. We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
 
@@ -54,7 +54,7 @@ The Latipay 2.0 interface is an independent Hosted Payments Page (HPP) solution 
 
 ### Preparation
 
-Before using bellowing api, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
+Before using the following api, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
 
 ### Transaction Interface
 

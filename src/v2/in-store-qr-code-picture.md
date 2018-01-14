@@ -5,10 +5,10 @@ order: 4
 ---
 [Download PDF](/pdf/in-store-qr-code-picture-01-15.pdf)
 
-<p class="tip">This API will return `QR Code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
+<p class="tip">This API will return `QR code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
 
-* The customer loads Merchant's E-commerce website with a `mobile browser` and pays through `Alipay app`.
-* The customer loads Merchant's E-commerce website with `Alipay app's browser` and pays through `Alipay app`.
+* The customer loads E-commerce website with a `mobile browser` and pays through `Alipay app`.
+* The customer loads E-commerce website with `Alipay app's browser` and pays through `Alipay app`.
 * The customer scans `Alipay payment QR code` through `Alipay app`.
 * The customer scans `Wechat payment QR code` through `Wechat app`.
 
@@ -31,7 +31,7 @@ order: 4
 7. **Latipay** responds a QR code Url, then the QR code will display in **Merchant** hosted 
 page. The customer will be prompted to `scan the QR code` and complete the payment.
 
-8. **Merchant** query the payment status from **Latipay** [#Query Interface](#Query-Interface).
+8. **Merchant** query the payment status from **Latipay** [#Payment Result Interface](#Payment-Result-Interface).
 
 9. **Latipay** updates the payment status.
 
@@ -62,9 +62,11 @@ page. The customer will be prompted to `scan the QR code` and complete the payme
 
 ### Preparation
 
-Before using the bellowing API, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
+Before using the following API, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
 
 ### Transaction Interface
+
+Create a latipay transaction is the first step for using alipay or wechat pay.
 
 ```
 POST https://api.latipay.net/v2/transaction
@@ -80,12 +82,12 @@ POST https://api.latipay.net/v2/transaction
 | amount| String| A decimal amount.| No|
 | merchant_reference| String| A field for identifying your transaction.| No|
 | payment_method| String| Payment method options are `alipay` and `wechat`.| No|
-| return_url| String| The URL of the landing page where Latipay will return the customer after payment.| No|
+| return_url| String| The URL of the landing page where Latipay will return the customer after payment, but it doesn't work in `in-store` situation.| No|
 | callback_url| String| The URL of the callback address the transaction notification is sent after payment.| No|
 | ip| String| The IP address of the customer.| No|
 | version| String| The latest version of the platform. must be `"2.0"`| No|
 | product_name| String| The name of the product or service being sold.| No|
-| host_type| String| must be `"1"`, for [#Payment Interface](#Payment-Interface) to return `QR Code picture` in base64 | No|
+| host_type| String| must be `"1"`, for [#Payment Interface](#Payment-Interface) to return `QR code picture` in base64 | No|
 | signature| String| The SHA-256 HMAC API signature.| No|
 
 #### Example Parameters
@@ -135,7 +137,7 @@ signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
 
 | Name  | Type  | Description | 
 |------------- |---------------| -------------| 
-|host_url | String | The url for request a QR Code picture. The nonce should be appended to the end. | 
+|host_url | String | The url for request a QR code picture. The nonce should be appended to the end. | 
 |nonce | String | The transaction nonce must be appended to the host_url URL. | 
 |signature | String | The SHA-256 HMAC API signature. | 
 
@@ -166,7 +168,7 @@ https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493
 |------------- |---------------| -------------| 
 |code | Integer | The response code of payment, `0` or [Error Code](https://doc.latipay.net/v2/error-code.html), 0 means no error happened.
 |message | String | The response message of payment interface.
-|data | Object | Contains `QR Code picture` and order information.
+|data | Object | Contains `QR code picture` and order information.
 
 the `data` object
 
@@ -280,7 +282,7 @@ secret: api_key
 sent
 ```
 
-### Query Interface
+### Payment Result Interface
 All customers can send requests to query payment status with merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
 
 ```
