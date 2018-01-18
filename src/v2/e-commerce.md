@@ -3,7 +3,7 @@ title: E-commerce API
 type: v2
 order: 2
 ---
-[Download PDF](/pdf/e-commerce-01-15.pdf)
+[Download PDF](/pdf/e-commerce-01-19.pdf)
 
 Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods. We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
 
@@ -164,6 +164,7 @@ There is an asynchronous and back-end payment result notification sent from Lati
 
 ```
 POST merchant's callback_url
+Content-Type: application/json
 ```
 
 #### Parameters

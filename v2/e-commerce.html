@@ -99,7 +99,7 @@
   
     <h1>E-commerce API</h1>
   
-  <p><a href="/pdf/e-commerce-01-15.pdf">Download PDF</a></p>
+  <p><a href="/pdf/e-commerce-01-19.pdf">Download PDF</a></p>
 <p>Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods. We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.</p>
 <p class="tip">This document is suitable for the following <code>online</code> situation to make the payment.</p>
 
@@ -284,7 +284,7 @@
 </tbody>
 </table>
 <h3 id="Payment-Result-Asynchronous-Notification"><a href="#Payment-Result-Asynchronous-Notification" class="headerlink" title="Payment Result Asynchronous Notification"></a>Payment Result Asynchronous Notification</h3><p>There is an asynchronous and back-end payment result notification sent from Latipay to merchant’s web server after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant. This is notification can be sent many times until we receive <code>&quot;sent&quot;</code> text. The time interval of this notification is about 30 seconds.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST merchant&apos;s callback_url</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST merchant&apos;s callback_url</span><br><span class="line">Content-Type: application/json</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters-1"><a href="#Parameters-1" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
 <tr>

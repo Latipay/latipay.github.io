@@ -99,7 +99,7 @@
   
     <h1>In-Store API</h1>
   
-  <p><a href="/pdf/in-store-01-17.pdf">Download PDF</a></p>
+  <p><a href="/pdf/in-store-01-19.pdf">Download PDF</a></p>
 <p class="tip">If you want to get QR code <code>picture</code> (e.g. for EFTPOS) rather than QR code <code>text</code> from Latipay API, please refer to <a href="https://doc.latipay.net/v2/in-store-qr-code-picture.html" target="_blank" rel="noopener">In-Store API - QR code Picture</a>. And this document is only suitable for the following <code>in-store</code> situation.</p>
 
 <ul>
@@ -305,7 +305,7 @@
 <p>Wechat QR code text</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code_url"</span>:<span class="string">"weixin://wxpay/bizpayurl?pr=12121312"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Payment-Result-Asynchronous-Notification"><a href="#Payment-Result-Asynchronous-Notification" class="headerlink" title="Payment Result Asynchronous Notification"></a>Payment Result Asynchronous Notification</h3><p>This is payment result notification sent from Latipay to merchant after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant. If you receive callback notification, please send <code>&quot;sent&quot;</code> to us. Callback notification can be sent many times until we receive “sent”.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST merchant&apos;s callback_url</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST merchant&apos;s callback_url</span><br><span class="line">Content-Type: application/json</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters-1"><a href="#Parameters-1" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
 <tr>

@@ -3,7 +3,7 @@ title: In-Store API - QR Code Picture
 type: v2
 order: 4
 ---
-[Download PDF](/pdf/in-store-qr-code-picture-01-17.pdf)
+[Download PDF](/pdf/in-store-qr-code-picture-01-19.pdf)
 
 <p class="tip">This API will return `QR code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
 
@@ -237,6 +237,7 @@ This is a payment result notification sent by Latipay to merchants after the pay
 
 ```
 POST merchant's callback_url
+Content-Type: application/json
 ```
 
 #### Parameters:		
