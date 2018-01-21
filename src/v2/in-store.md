@@ -74,7 +74,7 @@ POST https://api.latipay.net/v2/transaction
 |merchant_reference | String | A field for identifying your transaction. | No
 |ip | String | The IP address of the customer. | No
 |version | String | The latest version of the platform. must be `'2.0'`| No
-|product_name | String | The name of the product or service being sold. | No
+|product_name | String | The name of the product or service being sold. | YES
 
 
 #### Example Parameters
