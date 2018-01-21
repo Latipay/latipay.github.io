@@ -82,7 +82,7 @@ POST https://api.latipay.net/v2/transaction
 | amount| String| A decimal amount.| No|
 | merchant_reference| String| A field for identifying your transaction.| No|
 | payment_method| String| Payment method options are `alipay` and `wechat`.| No|
-| return_url| String| The URL of the landing page where Latipay will return the customer after payment, but it doesn't work in `in-store` situation.| No|
+| return_url| String| The URL of the landing page where Latipay will return the customer after payment, but it doesn't work in `in-store` situation. The value is `""` | No|
 | callback_url| String| The URL of the callback address the transaction notification is sent after payment.| No|
 | ip| String| The IP address of the customer.| No|
 | version| String| The latest version of the platform. must be `"2.0"`| No|
@@ -99,7 +99,7 @@ POST https://api.latipay.net/v2/transaction
   "amount": "120.00",
   "user_id": "U000334333",
   "merchant_reference": "dsi39ej430sks03",
-  "return_url": "https://merchantsite.com/checkout",
+  "return_url": "",
   "callback_url": "https://merchantsite.com/confirm",
   "ip": "122.122.122.1",
   "version": "2.0",
@@ -119,10 +119,10 @@ secret: api_key
 #### Example Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
 
 ```
-message: U000000001W000000010.01alipayhttp://merchant.com/returnhttp://merchant.com/callback
+message: U000000001W000000010.01alipayhttp://merchant.com/callback
 secret: 111222333
 
-signature: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
+signature: cf3cf508b7b245be8921e324d5cb588598c36a07ffc62f998b90ab0e355f2d78
 ```
 
 #### Response
