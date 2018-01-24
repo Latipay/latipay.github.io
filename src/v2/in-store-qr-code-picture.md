@@ -1,78 +1,42 @@
 ---
-title: In-Store API - QR Code Picture
+title: Merchant Hosted API (Offline)
 type: v2
-order: 4
+order: 3
 ---
-[Download PDF](/pdf/in-store-qr-code-picture-01-19.pdf)
+[Download PDF](/pdf/Merchant Hosted API Offline.pdf)
 
-<p class="tip">This API will return `QR code picture` and order information in [#Payment Interface](#Payment-Interface), perfect for EFTPOS. This document is only suitable for the following `in-store` situation.</p>
-
-* The customer scans `Alipay payment QR code` through `Alipay app`.
-* or the customer scans `Wechat payment QR code` through `Wechat app`.
-* or the customer scans QR code to load a webpage inside of `Alipay app's browser` and pays through `Alipay app`.
-* or the customer scans QR code (with iPhone Camera app) to load a webpage on `mobile browser` and pays through `Alipay app`.
+This API will return `QR code` in a diagramatic format along with the Transaction and Payment Interfaces. 
 
 ## How it works?
 
-![](http://latipay.net/wp-content/uploads/images/02_-_Online_payment_workflow_-_merchant_hosted_-_QR.png)
+![](../images/merchant_hosted_etfpos.png) 
 
-1. To process a transaction, customers select Latipay Wechat pay or Alipay as a payment method.
+1. To process a transaction, customers select `Wechatpay` or `Alipay` as a payment method.
 
-2. **Merchant** request to **Latipay** [#Transaction Interface](#Transaction-Interface) with the authentication and order information.
+2. Merchant will initiate the request to Latipay with the transaction details (Amount, Product etc).
 
-3. **Latipay** responds to **Merchant** with a `host_url` and `nonce`.
+3. Latipay will respond to the Merchant with the '`Host_URL` & `Nonce` (equivalent of an ID)'.
 
-4. **Merchant** responds with a unique URI for an SSL secure payments page.
+4. Merchant will process the URL / Nonce to generate the QR Code.
 
-5. The shopping cart uses the returned URI to redirect the customer to the secure **Merchant** hosted payments page.
+5. Then, QR Code is displayed on the Terminal for cutsomer to scan.
 
-6. **Merchant** uses the `host_url` and `nonce` to request a QR code. [#Payment Interface](#Payment-Interface).
+6. Customer scans the QR Code with Alipay/Wechat APP to complete the payment.
 
-7. **Latipay** responds a QR code Url, then the QR code will display in **Merchant** hosted 
-page. The customer will be prompted to `scan the QR code` and complete the payment.
+7. Upon the successful payment completion, Latipay will notify the Merchant with 'Callback URL'. 
 
-8. **Merchant** query the payment status from **Latipay** [#Payment Result Interface](#Payment-Result-Interface).
-
-9. **Latipay** updates the payment status.
-
-10. The payment result is displayed and the browser is redirected back to the website.
+8. Terminal will pop up with the results on the monitor whether the transaction is approved or declined.
 
 
-## Payment Scenarios
+## API Parameters
 
-#### Alipay
 
-![](http://latipay.net/wp-content/uploads/images/Alipay_MerchantHosted.png)
-
---- 
-
-#### WeChat Pay
-
-![](http://latipay.net/wp-content/uploads/images/Wechat_MerchantHosted.png)
-
---- 
-
-#### Website check-out page
-
-![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
-
---- 
-
-## API List
-
-### Preparation
-
-Before using the following API, please make sure you have `user_id`, `wallet_id` and `api_key` on hand. If you don't have them, we would like to help you. [Contact Us](http://www.latipay.net/contact/). 
-
-### Transaction Interface
-
-Create a latipay transaction is the first step for using alipay or wechat pay.
-
+### STEP 1 - Latipay Transaction Interface  
 ```
 POST https://api.latipay.net/v2/transaction
 ```
-	
-#### Parameters:		
+  
+#### Parameters:    
 
 
 | Name  | Type  | Description | Nullable | 
@@ -87,10 +51,11 @@ POST https://api.latipay.net/v2/transaction
 | ip| String| The IP address of the customer.| No|
 | version| String| The latest version of the platform. must be `"2.0"`| No|
 | product_name| String| The name of the product or service being sold.| YES|
-| host_type| String| must be `"1"`, for [#Payment Interface](#Payment-Interface) to return `QR code picture` in base64 | No|
+| host_type| String| must be `"1"`, for [#Payment Interface](#STEP-2-Payment-Interface) to return `QR code picture` in base64 | No|
 | signature| String| The SHA-256 HMAC API signature.| No|
 
-#### Example Parameters
+
+#### Example
 
 ```json
 {
@@ -116,7 +81,7 @@ message: user_id + wallet_id + amount + payment_method + return_url + callback_u
 secret: api_key
 ```
 
-#### Example Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+#### Example Signature 
 
 ```
 message: U000000001W000000010.01alipayhttp://merchant.com/callback
@@ -127,13 +92,6 @@ signature: cf3cf508b7b245be8921e324d5cb588598c36a07ffc62f998b90ab0e355f2d78
 
 #### Response
 
-```json
-{
-  "host_url": "https://api.latipay.net/merchanthosted/gatewaydata",
-  "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"
-  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-}
-```
 
 | Name  | Type  | Description | 
 |------------- |---------------| -------------| 
@@ -141,6 +99,15 @@ signature: cf3cf508b7b245be8921e324d5cb588598c36a07ffc62f998b90ab0e355f2d78
 |nonce | String | The transaction nonce must be appended to the host_url URL. | 
 |signature | String | The SHA-256 HMAC API signature. | 
 
+#### Example
+
+```json
+{
+  "host_url": "https://api.latipay.net/merchanthosted/gatewaydata",
+  "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+}
+```
 
 #### Signature in Response
 For security reasons, we highly recommend you verify the signature in the response.
@@ -150,7 +117,9 @@ message: nonce + host_url
 secret: api_key
 ```
 
-### Payment Interface
+---
+
+### STEP 2 - Payment Interface
 
 ```
 POST {host_url}/{nonce}
@@ -223,14 +192,15 @@ the `data` object
 ```
 
 #### SHA-256 HMAC Signature
-Rearrange parameters in the `data` alphabetically (except `signature` and other parameters with value of null or empty string) and join rearranged parameters with `&`
 
 ```
 message: amount=1.00&amount_cny=5.00&currency=NZD&currency_rate=5.29930&merchant_reference=dsi39ej430sks03&nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&order_id=20170829-alipay-3990527237343&organisation_id=18&org_name=Latipay&payment_method=alipay&product_name=test&qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&type=Online&user_id=U000000051&wallet_id=W000000037&wallet_name=aud01
 secret: api_key
 ```
 
-### Payment Result Asynchronous Notification
+---
+
+### STEP 3 - Payment Result Asynchronous Notification
 
 This is a payment result notification sent by Latipay to merchants after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
 
@@ -240,7 +210,7 @@ POST merchant's callback_url
 Content-Type: application/json
 ```
 
-#### Parameters:		
+#### Parameters:    
 
 | Name  | Type  | Description | 
 |------------- |---------------| -------------|
@@ -283,7 +253,7 @@ secret: api_key
 sent
 ```
 
-### Payment Result Interface
+### STEP 4 - Payment Result Interface
 All customers can send requests to query payment status with merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
 
 ```
@@ -297,7 +267,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 | user_id | String | The user account you want to use to process the transaction. |
 | signature | String | The `SHA-256 HMAC` API signature. |
 
-#### SHA-256 HMAC Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+#### SHA-256 HMAC Signature
 
 ```
 message: merchant_reference + user_id
@@ -346,10 +316,11 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-#### Example Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+#### Example Signature
 
 ```
 message: dsi39ej430sks03alipaypaidNZD120.00
 secret: 111222333
 signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
+
 ```
