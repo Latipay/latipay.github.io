@@ -74,15 +74,15 @@ POST https://api.latipay.net/v2/transaction
 
 | Name  | Type  | Description | Nullable |
 |------------- |---------------| -------------| -------------|
-|user_id | String | The Latipay user account which is using for processing the transactions. | No |
-|wallet_id | String | The wallet ID that using for online transactions.  | No
-|payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. | No
-|amount | String | A decimal amount. | No
+|user_id | String | The Latipay user account which is using for processing the transactions. | NO |
+|wallet_id | String | The wallet ID that using for online transactions.  | NO
+|payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. | NO
+|amount | String | A decimal amount. | NO
 |return_url | String | The URL of the landing page where the customer will be directed to after payment. | NO
-|callback_url | String | The URL that the transaction notification will send through. | No
-|merchant_reference | String | A field for identifying your transaction. | No
-|signature | String | The `SHA-256 HMAC` API signature. | No
-|ip | String | The customer's IP address | No
+|callback_url | String | The URL that the transaction notification will send through. | NO
+|merchant_reference | String | A field for identifying your transaction. | NO
+|signature | String | The `SHA-256 HMAC` API signature. | NO
+|ip | String | The customer's IP address | NO
 |version | String | The latest version of the Latipay platform which is `'2.0'` | Yes
 |product_name | String | The name of the product or service being sold. | Yes
 

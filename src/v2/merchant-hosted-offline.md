@@ -43,18 +43,18 @@ POST https://api.latipay.net/v2/transaction
 
 | Name  | Type  | Description | Nullable | 
 |------------- |---------------| -------------| -------------|
-| user_id| String| The user account you want to use to process the transaction.| No|
-| wallet_id| String| The ID of the wallet you want to use.| No|
-| amount| String| A decimal amount.| No|
-| merchant_reference| String| A field for identifying your transaction.| No|
-| payment_method| String| Payment method options are `alipay` and `wechat`.| No|
-| return_url| String| The URL of the landing page where Latipay will return the customer after payment, but it doesn't work in `in-store` situation. The value is `""` | No|
-| callback_url| String| The URL of the callback address the transaction notification is sent after payment.| No|
-| ip| String| The IP address of the customer.| No|
-| version| String| The latest version of the platform. must be `"2.0"`| No|
+| user_id| String| The user account you want to use to process the transaction.| NO|
+| wallet_id| String| The ID of the wallet you want to use.| NO|
+| amount| String| A decimal amount.| NO|
+| merchant_reference| String| A field for identifying your transaction.| NO|
+| payment_method| String| Payment method options are `alipay` and `wechat`.| NO|
+| return_url| String| The URL of the landing page where Latipay will return the customer after payment, but it doesn't work in `in-store` situation. The value is `""` | NO|
+| callback_url| String| The URL of the callback address the transaction notification is sent after payment.| NO|
+| ip| String| The IP address of the customer.| NO|
+| version| String| The latest version of the platform. must be `"2.0"`| NO|
 | product_name| String| The name of the product or service being sold.| YES|
-| host_type| String| must be `"1"`, for [#Payment Interface](#STEP-2-Payment-Interface) to return `QR code picture` in base64 | No|
-| signature| String| The SHA-256 HMAC API signature.| No|
+| host_type| String| must be `"1"`, for [#Payment Interface](#STEP-2-Payment-Interface) to return `QR code picture` in base64 | NO|
+| signature| String| The SHA-256 HMAC API signature.| NO|
 
 
 #### Example

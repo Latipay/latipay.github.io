@@ -68,24 +68,24 @@ POST https://api.latipay.net/v2/transaction
 
 | Name  | Type  | Description | Nullable |
 |------------- |---------------| -------------| -------------|
-| user_id| String| The user account you want to use to process the transaction.| No|
-| wallet_id| String| The ID of the wallet you want to use.| No|
-| amount| String| A decimal amount.| No|
-| merchant_reference| String| A field for identifying your transaction.| No|
-| payment_method| String| Payment method options are `alipay`, `wechat` or `onlineBank`.| No|
-| return_url| String| The URL of the landing page where Latipay will return the customer after payment, it only works for `alipay` in PC platform.| No|
-| callback_url| String| The URL of the callback address the transaction notification is sent after payment.| No|
-| ip| String| The IP address of the customer.| No|
-| version| String| The latest version of the platform. must be `"2.0"`| No|
+| user_id| String| The user account you want to use to process the transaction.| NO|
+| wallet_id| String| The ID of the wallet you want to use.| NO|
+| amount| String| A decimal amount.| NO|
+| merchant_reference| String| A field for identifying your transaction.| NO|
+| payment_method| String| Payment method options are `alipay`, `wechat` or `onlineBank`.| NO|
+| return_url| String| The URL of the landing page where Latipay will return the customer after payment, it only works for `alipay` in PC platform.| NO|
+| callback_url| String| The URL of the callback address the transaction notification is sent after payment.| NO|
+| ip| String| The IP address of the customer.| NO|
+| version| String| The latest version of the platform. must be `"2.0"`| NO|
 | product_name| String| The name of the product or service being sold.| YES|
-| signature| String| The SHA-256 HMAC API signature.| No|
+| signature| String| The SHA-256 HMAC API signature.| NO|
 
 #### Extract Attributes (Only WeChat):		
 
 
 | Name  | Type  | Description | Nullable |
 |------------- |---------------| -------------| -------------|
-| host_type| String|`"1"` is returning `QR code picture` in base64 and `QR code text`, merchant can either display the picture or generate QR code from the text | No|
+| host_type| String|`"1"` is returning `QR code picture` in base64 and `QR code text`, merchant can either display the picture or generate QR code from the text | NO|
 
 #### Example Attributes
 
