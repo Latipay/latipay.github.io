@@ -1,5 +1,5 @@
 ---
-title: Merchant Hosted API (Offline)
+title: Merchant Hosted Offline
 type: v2
 order: 3
 ---
@@ -28,7 +28,7 @@ This API will return `QR code` in a diagramatic format along with the Transactio
 8. Terminal will pop up with the results on the monitor whether the transaction is approved or declined.
 
 
-## API Parameters
+## API Details
 
 
 ### STEP 1 - Latipay Transaction Interface  

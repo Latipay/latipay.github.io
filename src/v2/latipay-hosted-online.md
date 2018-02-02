@@ -1,14 +1,10 @@
 ---
-title: Latipay Hosted API
+title: Latipay Hosted Online
 type: v2
 order: 2
 ---
 
-## Online / E-Commerce API
-
-[Download PDF](/pdf/e-commerce-01-24.pdf)
-
-### Summary
+## Summary
 
 The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. This Hosted API provides merchants with a secure and versatile solution for online payments and enables payments by redirecting users to a Latipay Hosted Payment Page. A real-time confirmation notification of payment from Latipay will be sent to the merchants in the form of a callback notification. These notifications are handled effectively and sent to an allocated callback_url in less than `30s`. Merchants also can track payment status through the Latipay Order Query API. More available from the Merchant and Transaction portals of Latipay.
 
@@ -22,23 +18,12 @@ The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solutio
 
 * E-commerce Website (Latipay hosted)
 
-### How it works?
+## How it works?
 
-![](/images/Online payment workflow - Latipay hosted.png)
+### Wechat
+![](../images/latipay_hosted_online.jpg)
 
-1. To process a transaction, customers select `Alipay`, `WeChat` or `preferred Chinese Bank` as a payment method in merchant's website checkout page.
-
-2. **Merchant** will initiate the request to [#Transaction-Interface](#Transaction-Interface) to **Latipay** authenticating user and the transaction details (e.g User_id,Amount etc).
-
-3. **Latipay** will respond to the merchant with the `Host_URL` & `Nonce` (equivalent of an ID).
-
-4. Customer will be popped up with the selected payment page (Alipay/Wechat/Online Bank)[#Payment-Interface](#Payment-Interface). In the background, Merchant server enables this functionality by sending a unique URI.
-
-5. The customer will prompt to the payment page which is basing on the payment method they selected.
-
-6. Customer processes the payment and upon completion, they will be automatically redirect back to the **merchant**’s website.
-
-### Payment Scenarios
+## Payment Scenarios
 
 * <strong>The payment scenarios are basing on the customer using Latipay payment services by `PC browser`.</strong>
 
@@ -67,9 +52,9 @@ Alipay
 WeChat Pay
 ![](/images/Wechat_LatipayHosted - phone.png)
 
-### API Details
+## API Details
 
-#### STEP 1 - Latipay Transaction Interface
+### STEP 1 - Latipay Transaction Interface
 
 ```
 POST https://api.latipay.net/v2/transaction
@@ -83,7 +68,7 @@ POST https://api.latipay.net/v2/transaction
 |wallet_id | String | The wallet ID that using for online transactions.  | No
 |payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. | No
 |amount | String | A decimal amount. | No
-|return_url | String | The URL of the landing page where the customer will be directed to after payment. | Yes
+|return_url | String | The URL of the landing page where the customer will be directed to after payment. | NO
 |callback_url | String | The URL that the transaction notification will send through. | No
 |merchant_reference | String | A field for identifying your transaction. | No
 |signature | String | The `SHA-256 HMAC` API signature. | No
@@ -150,7 +135,7 @@ secret_key: api_key
 ```
 
 
-#### STEP 2 - Latipay Payment Interface
+### STEP 2 - Latipay Payment Interface
 
 Loading the URI in PC browser, mobile browser or Alipay/ WeChat's embedded browser.
 ```
@@ -163,7 +148,7 @@ Example
 https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
 ```
 
-* <strong>Asynchronous Notification</strong>
+### STEP 3 - Asynchronous Notification
 
 Asynchronous Notification is a re-try mechanism to ensure the notification has been updated to the merchant's web server. There is no times limitation until it returns an indicating `"sent"` text to Latipay. The time interval of this notification is about 30 seconds.
 
@@ -220,7 +205,7 @@ Successful response
 sent
 ```
 
-* <strong>Synchronous Redirection</strong>
+### STEP 4 - Synchronous Redirection
 
 There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.
 
