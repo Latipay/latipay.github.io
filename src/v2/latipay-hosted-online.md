@@ -20,8 +20,18 @@ The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solutio
 
 ## How it works?
 
+Alipay
+
+![](../images/Merchant Hosted Online Alipay.jpeg)
+
+---
 Wechat
 ![](../images/latipay_hosted_online.jpg)
+
+---
+OnlineBank
+![](../images/Merchant Hosted Online Bank.jpeg)
+---
 
 ## Payment Scenarios
 
