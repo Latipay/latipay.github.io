@@ -9,24 +9,26 @@ This API will return `QR code` in a diagramatic format along with the Transactio
 
 ## How it works?
 
-![](../images/merchant_hosted_etfpos.png) 
+Alipay
+![](/images/merchant_hosted_offline_alipay.jpg)
 
-1. To process a transaction, customers select `Wechatpay` or `Alipay` as a payment method.
+---
+WeChat
+![](/images/merchant_hosted_offline_wechat.jpg)
 
-2. Merchant will initiate the request to Latipay with the transaction details (Amount, Product etc).
 
-3. Latipay will respond to the Merchant with the '`Host_URL` & `Nonce` (equivalent of an ID)'.
 
-4. Merchant will process the URL / Nonce to generate the QR Code.
+## Payment Scenarios
 
-5. Then, QR Code is displayed on the Terminal for cutsomer to scan.
 
-6. Customer scans the QR Code with Alipay/Wechat APP to complete the payment.
+Alipay
+![](/images/merchant_hosted_offline_alipay.png)
 
-7. Upon the successful payment completion, Latipay will notify the Merchant with 'Callback URL'. 
+---
+WeChat
+![](/images/merchant_hosted_offline_alipay.png)
 
-8. Terminal will pop up with the results on the monitor whether the transaction is approved or declined.
-
+---
 
 ## API Details
 

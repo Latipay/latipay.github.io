@@ -101,25 +101,13 @@
   
   <p><a href="/pdf/Merchant Hosted API Offline.pdf">Download PDF</a></p>
 <p>This API will return <code>QR code</code> in a diagramatic format along with the Transaction and Payment Interfaces. </p>
-<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works?"></a>How it works?</h2><p><img src="../images/merchant_hosted_etfpos.png" alt=""> </p>
-<ol>
-<li><p>To process a transaction, customers select <code>Wechatpay</code> or <code>Alipay</code> as a payment method.</p>
-</li>
-<li><p>Merchant will initiate the request to Latipay with the transaction details (Amount, Product etc).</p>
-</li>
-<li><p>Latipay will respond to the Merchant with the ‘<code>Host_URL</code> &amp; <code>Nonce</code> (equivalent of an ID)’.</p>
-</li>
-<li><p>Merchant will process the URL / Nonce to generate the QR Code.</p>
-</li>
-<li><p>Then, QR Code is displayed on the Terminal for cutsomer to scan.</p>
-</li>
-<li><p>Customer scans the QR Code with Alipay/Wechat APP to complete the payment.</p>
-</li>
-<li><p>Upon the successful payment completion, Latipay will notify the Merchant with ‘Callback URL’. </p>
-</li>
-<li><p>Terminal will pop up with the results on the monitor whether the transaction is approved or declined.</p>
-</li>
-</ol>
+<h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works?"></a>How it works?</h2><p>Alipay<br><img src="/images/merchant_hosted_offline_alipay.jpg" alt=""></p>
+<hr>
+<p>WeChat<br><img src="/images/merchant_hosted_offline_wechat.jpg" alt=""></p>
+<h2 id="Payment-Scenarios"><a href="#Payment-Scenarios" class="headerlink" title="Payment Scenarios"></a>Payment Scenarios</h2><p>Alipay<br><img src="/images/merchant_hosted_offline_alipay.png" alt=""></p>
+<hr>
+<p>WeChat<br><img src="/images/merchant_hosted_offline_alipay.png" alt=""></p>
+<hr>
 <h2 id="API-Details"><a href="#API-Details" class="headerlink" title="API Details"></a>API Details</h2><h3 id="STEP-1-Latipay-Transaction-Interface"><a href="#STEP-1-Latipay-Transaction-Interface" class="headerlink" title="STEP 1 - Latipay Transaction Interface"></a>STEP 1 - Latipay Transaction Interface</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/transaction</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters:"></a>Parameters:</h4><table>
 <thead>

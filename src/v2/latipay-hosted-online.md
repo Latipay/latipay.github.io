@@ -20,7 +20,7 @@ The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solutio
 
 ## How it works?
 
-### Wechat
+Wechat
 ![](../images/latipay_hosted_online.jpg)
 
 ## Payment Scenarios
