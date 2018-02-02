@@ -17,13 +17,13 @@ Powerful and robust online payment solutions, which work on a range of platforms
 
 ## How it works?
 
-#### WeChat
-
-![](../images/Merchant Hosted Online Wechat.jpeg)
-
 #### Alipay
 
 ![](../images/Merchant Hosted Online Alipay.jpeg)
+
+#### WeChat
+
+![](../images/Merchant Hosted Online Wechat.jpeg)
 
 #### Online Bank
 

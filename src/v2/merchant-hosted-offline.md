@@ -3,7 +3,7 @@ title: Merchant Hosted Offline/Hardware
 type: v2
 order: 3
 ---
-[Download PDF](/pdf/Merchant Hosted API Offline.pdf)
+[Download PDF](/pdf/merchant_hosted_offline.pdf)
 
 This API will return `QR code` in a diagramatic format along with the Transaction and Payment Interfaces. 
 
