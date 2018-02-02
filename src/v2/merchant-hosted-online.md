@@ -102,7 +102,6 @@ POST https://api.latipay.net/v2/transaction
   "version": "2.0",
   "product_name": "Pinot Noir, Otago",
   "payment_method": "alipay",
-  "host_type" : "1"
 }
 ```
 
