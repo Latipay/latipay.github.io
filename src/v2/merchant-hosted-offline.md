@@ -1,11 +1,17 @@
 ---
-title: Merchant Hosted Offline
+title: Merchant Hosted Offline/Hardware
 type: v2
 order: 3
 ---
 [Download PDF](/pdf/Merchant Hosted API Offline.pdf)
 
 This API will return `QR code` in a diagramatic format along with the Transaction and Payment Interfaces. 
+
+** Available Payment Methods **
+
+* WeChat Pay
+* Alipay
+
 
 ## How it works?
 
