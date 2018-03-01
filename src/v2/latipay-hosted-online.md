@@ -87,7 +87,7 @@ POST https://api.latipay.net/v2/transaction
 |version | String | The latest version of the Latipay platform which is `'2.0'` | Yes
 |product_name | String | The name of the product or service being sold. | Yes
 
-#### Extract Attributes (Only WeChat):		
+#### Extract Attributes (`Only for WeChat`):
 
 | Name  | Type  | Description | Nullable |
 |------------- |---------------| -------------| -------------|
