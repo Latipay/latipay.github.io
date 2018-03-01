@@ -3,8 +3,7 @@ title: Latipay Hosted Online
 type: v2
 order: 2
 ---
-
-[Download PDF](/pdf/merchant_hosted_online.pdf)
+[Play in Console](https://pay.latipay.net/api-console-online)
 
 ## Summary
 
@@ -40,29 +39,29 @@ OnlineBank
 * <strong>The payment scenarios are basing on the customer using Latipay payment services by `PC browser`.</strong>
 
 Merchant website checkout page
-![](/images/PC brower - checkout_show.png)
+![](../images/PC brower - checkout_show.png)
 ---
 Alipay
-![](/images/Alipay_LatipayHosted.png)
+![](../images/Alipay_LatipayHosted.png)
 
 WeChat Pay
-![](/images/Wechat_LatipayHosted - web.png)
+![](../images/Wechat_LatipayHosted - web.png)
 
 Online Bank
-![](/images/Onlinebank_LatipayHosted.png)
+![](../images/Onlinebank_LatipayHosted.png)
 ---
 * <strong>The payment scenario is basing on the customer using Latipay payment services by `Mobile browser`.</strong>
 
 Alipay
-![](/images/Alipay_LatipayHosted - mobile browser.png)
+![](../images/Alipay_LatipayHosted - mobile browser.png)
 ---
 * <strong>The payment scenario is basing on the customer using Latipay payment services by `Embedded browser in App`.</strong>
 
 Alipay
-![](/images/Alipay_LatipayHosted - emebbed browser.png)
+![](../images/Alipay_LatipayHosted - emebbed browser.png)
 
 WeChat Pay
-![](/images/Wechat_LatipayHosted - phone.png)
+![](../images/Wechat_LatipayHosted - phone.png)
 
 ## API Details
 
@@ -87,6 +86,12 @@ POST https://api.latipay.net/v2/transaction
 |ip | String | The customer's IP address | NO
 |version | String | The latest version of the Latipay platform which is `'2.0'` | Yes
 |product_name | String | The name of the product or service being sold. | Yes
+
+#### Extract Attributes (Only WeChat):		
+
+| Name  | Type  | Description | Nullable |
+|------------- |---------------| -------------| -------------|
+| present_qr | String| Must be `"1"`, to show a Latipay hosted page which presenting QR code waiting for scanning. | NO|
 
 Example
 

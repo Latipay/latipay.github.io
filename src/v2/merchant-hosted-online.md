@@ -3,7 +3,6 @@ title: Merchant Hosted Online/E-Commerce
 type: v2
 order: 4
 ---
-[Download PDF](/pdf/merchant-hosted-online.pdf)
 
 ## Summary
 
