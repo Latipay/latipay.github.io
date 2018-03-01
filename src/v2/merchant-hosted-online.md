@@ -4,6 +4,8 @@ type: v2
 order: 4
 ---
 
+[API Playground](https://pay.latipay.net/api-console-merchant-hosted-online)
+
 ## Summary
 
 Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides merchants with the interface for developing custom built WeChat QR Code payment page.
@@ -79,7 +81,7 @@ POST https://api.latipay.net/v2/transaction
 | product_name| String| The name of the product or service being sold.| YES|
 | signature| String| The SHA-256 HMAC API signature.| NO|
 
-#### Extract Attributes (Only WeChat):		
+#### Extract Attributes (`Only for WeChat`):		
 
 
 | Name  | Type  | Description | Nullable |
@@ -159,7 +161,7 @@ https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493
 ```
 <p class="tip">`Alipay` payment is directly going to Alipay payment page. `Online Bank` payment is directly going to Banks payment page. But `Wechat` payment will response as below. </p>
 
-* Response (Only for WeChat)
+* Response (`Only for WeChat`)
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|

@@ -3,7 +3,7 @@ title: Latipay Hosted Online
 type: v2
 order: 2
 ---
-[API Playground](https://pay.latipay.net/api-console-online)
+[API Playground](https://pay.latipay.net/api-console-latipay-hosted-online)
 
 ## Summary
 

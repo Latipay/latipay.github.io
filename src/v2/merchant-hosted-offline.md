@@ -4,6 +4,8 @@ type: v2
 order: 3
 ---
 
+[API Playground](https://pay.latipay.net/api-console-merchant-hosted-offline)
+
 This API will return `QR code` in a diagramatic format along with the Transaction and Payment Interfaces.
 
 ** Available Payment Methods **
