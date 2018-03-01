@@ -5,6 +5,9 @@ order: 2
 ---
 [API Playground](https://pay.latipay.net/api-console-latipay-hosted-online)
 
+<p class="tip">Tips: Get your Wallet ID, User ID and API key via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden valued
+Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
+
 ## Summary
 
 The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. This Hosted API provides merchants with a secure and versatile solution for online payments and enables payments by redirecting users to a Latipay Hosted Payment Page. A real-time confirmation notification of payment from Latipay will be sent to the merchants in the form of a callback notification. These notifications are handled effectively and sent to an allocated callback_url in less than `30s`. Merchants also can track payment status through the Latipay Order Query API. More available from the Merchant and Transaction portals of Latipay.
