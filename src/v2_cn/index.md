@@ -251,7 +251,6 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 | 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
-|transaction_id  | String  | Latipay交易id  |
 |merchant_reference  | String  | 商户订单id  |
 |currency  | String  | 支付币种  |
 |amount  | String  | 支付金额  |
@@ -265,7 +264,6 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 ``` json
 {
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-  "transaction_id": "20170707-wechat-3473511594933",
   "merchant_reference": "dsi39ej430sks03",
   "currency": "AUD",
   "amount": "120.00",
