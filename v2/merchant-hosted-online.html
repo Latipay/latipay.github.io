@@ -72,11 +72,11 @@
     </li>
   
     <li>
-      <a href="/v2/merchant-hosted-offline.html" class="sidebar-link">Merchant Hosted Offline/Hardware</a>
+      <a href="/v2/merchant-hosted-online.html" class="sidebar-link current">Merchant Hosted Online/E-Commerce</a>
     </li>
   
     <li>
-      <a href="/v2/merchant-hosted-online.html" class="sidebar-link current">Merchant Hosted Online/E-Commerce</a>
+      <a href="/v2/merchant-hosted-offline.html" class="sidebar-link">Merchant Hosted Offline/Hardware</a>
     </li>
   
     <li>
@@ -100,14 +100,14 @@
     <h1>Merchant Hosted Online/E-Commerce</h1>
   
   <p><a href="https://pay.latipay.net/api-console-merchant-hosted-online" target="_blank" rel="noopener">API Playground</a></p>
-<p class="tip">Tips: Get your Wallet ID, User ID and API key via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> &gt; Account &gt; Show hidden valued<br>Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
+<p class="tip">Tips: Get your Wallet ID, User ID and API key via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> &gt; Account &gt; Show hidden values<br>Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Powerful and robust online payment solutions, which work on a range of platforms which include website, billing software and Applications. Latipay provides merchants with the interface for developing custom built WeChat QR Code payment page.</p>
 <p><strong> Available Payment Methods </strong></p>
 <ul>
-<li>WeChat Pay (Custom QR Code payment page)</li>
 <li>Alipay (Alipay hosted QR Code payment page)</li>
-<li>19 OnlineBanks</li>
+<li>WeChat Pay (Customised QR Code payment page)</li>
+<li>16 Chinese OnlineBanks (Latipay hosted payment page)</li>
 </ul>
 <h2 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works?"></a>How it works?</h2><h4 id="Alipay"><a href="#Alipay" class="headerlink" title="Alipay"></a>Alipay</h4><p><img src="../images/Merchant Hosted Online Alipay.jpeg" alt=""></p>
 <h4 id="WeChat"><a href="#WeChat" class="headerlink" title="WeChat"></a>WeChat</h4><p><img src="../images/Merchant Hosted Online Wechat.jpeg" alt=""></p>
@@ -249,7 +249,7 @@
 </table>
 <h4 id="Signature-in-Response"><a href="#Signature-in-Response" class="headerlink" title="Signature in Response"></a>Signature in Response</h4><p>For security reasons, we highly recommend you verify the signature in the response.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: nonce + host_url</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-2-Latipay-Payment-Interface"><a href="#STEP-2-Latipay-Payment-Interface" class="headerlink" title="STEP 2 - Latipay Payment Interface"></a>STEP 2 - Latipay Payment Interface</h3><p>Loading the URI in PC browser, mobile browser or Alipay/ WeChat’s embedded browser.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST &#123;host_url&#125;/&#123;nonce&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="STEP-2-Latipay-Payment-Interface"><a href="#STEP-2-Latipay-Payment-Interface" class="headerlink" title="STEP 2 - Latipay Payment Interface"></a>STEP 2 - Latipay Payment Interface</h3><p>Loading the URI in PC browser, mobile browser or Alipay/ WeChat’s embedded browser.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;host_url&#125;/&#123;nonce&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3</span><br></pre></td></tr></table></figure>
 <p class="tip"><code>Alipay</code> payment is directly going to Alipay payment page. <code>Online Bank</code> payment is directly going to Banks payment page. But <code>Wechat</code> payment will response as below. </p>
 
@@ -441,7 +441,9 @@
 <h4 id="SHA-256-HMAC-Signature-2"><a href="#SHA-256-HMAC-Signature-2" class="headerlink" title="SHA-256 HMAC Signature"></a>SHA-256 HMAC Signature</h4><p>Merchant backend needs to validate the signature for protecting against malicious requests.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
 <h4 id="Expected-the-text-“sent”-in-Response’s-body"><a href="#Expected-the-text-“sent”-in-Response’s-body" class="headerlink" title="Expected the text “sent” in Response’s body"></a>Expected the text “sent” in Response’s body</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sent</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-4-Synchronous-Redirection"><a href="#STEP-4-Synchronous-Redirection" class="headerlink" title="STEP 4 - Synchronous Redirection"></a>STEP 4 - Synchronous Redirection</h3><p>There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.</p>
+<h3 id="STEP-4-Synchronous-Redirection"><a href="#STEP-4-Synchronous-Redirection" class="headerlink" title="STEP 4 - Synchronous Redirection"></a>STEP 4 - Synchronous Redirection</h3><p class="tip">This redirection only happens in Wechat pay’s embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>
+
+<p>There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Redirect merchant&apos;s return_url</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -524,11 +526,6 @@
 </thead>
 <tbody>
 <tr>
-<td>transaction_id</td>
-<td>String</td>
-<td>A unique transaction identifier generated by Latipay.</td>
-</tr>
-<tr>
 <td>merchant_reference</td>
 <td>String</td>
 <td>A unique id identifying order in Merchant’s system.</td>
@@ -565,7 +562,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="Example-Response"><a href="#Example-Response" class="headerlink" title="Example Response"></a>Example Response</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"transaction_id"</span>: <span class="string">"20170707-wechat-3473511594933"</span>,</span><br><span class="line">  <span class="attr">"merchant_reference"</span>: <span class="string">"dsi39ej430sks03"</span>,</span><br><span class="line">  <span class="attr">"currency"</span>: <span class="string">"AUD"</span>,</span><br><span class="line">  <span class="attr">"amount"</span>: <span class="string">"120.00"</span>,</span><br><span class="line">  <span class="attr">"payment_method"</span>: <span class="string">"wechat"</span>,</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"paid"</span>,</span><br><span class="line">  <span class="attr">"pay_time"</span>: <span class="string">"2017-07-07 10:53:50"</span>,</span><br><span class="line">  <span class="attr">"signature"</span>: <span class="string">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Example-Response"><a href="#Example-Response" class="headerlink" title="Example Response"></a>Example Response</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"merchant_reference"</span>: <span class="string">"dsi39ej430sks03"</span>,</span><br><span class="line">  <span class="attr">"currency"</span>: <span class="string">"AUD"</span>,</span><br><span class="line">  <span class="attr">"amount"</span>: <span class="string">"120.00"</span>,</span><br><span class="line">  <span class="attr">"payment_method"</span>: <span class="string">"wechat"</span>,</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"paid"</span>,</span><br><span class="line">  <span class="attr">"pay_time"</span>: <span class="string">"2017-07-07 10:53:50"</span>,</span><br><span class="line">  <span class="attr">"signature"</span>: <span class="string">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Signature-in-Response-1"><a href="#Signature-in-Response-1" class="headerlink" title="Signature in Response"></a>Signature in Response</h4><p>For security reasons, we highly recommend you verify the signature in the response.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
 <h4 id="Example-Signature-Try-your-signature-online-1"><a href="#Example-Signature-Try-your-signature-online-1" class="headerlink" title="Example Signature Try your signature online"></a>Example Signature <a href="https://www.freeformatter.com/hmac-generator.html" target="_blank" rel="noopener">Try your signature online</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">message: dsi39ej430sks03alipaypaidNZD120.00</span><br><span class="line">secret: 111222333</span><br><span class="line">signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1</span><br></pre></td></tr></table></figure>
@@ -573,8 +570,10 @@
   
     <div class="guide-links">
       
-        <span>← <a href="/v2/merchant-hosted-offline.html">Merchant Hosted Offline/Hardware</a></span>
+        <span>← <a href="/v2/latipay-hosted-online.html">Latipay Hosted Online</a></span>
       
+      
+        <span style="float: right;"><a href="/v2/merchant-hosted-offline.html">Merchant Hosted Offline/Hardware</a> →</span>
       
     </div>
   

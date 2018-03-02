@@ -5,7 +5,7 @@ order: 2
 ---
 [API Playground](https://pay.latipay.net/api-console-latipay-hosted-online)
 
-<p class="tip">Tips: Get your Wallet ID, User ID and API key via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden valued
+<p class="tip">Tips: Get your Wallet ID, User ID and API key via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values
 Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 ## Summary
@@ -16,7 +16,7 @@ The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solutio
 
 * Alipay (Alipay website payment page)
 * WeChat Pay (Latipay hosted payment page)
-* 19 OnlineBanks (Latipay hosted payment page)
+* 16 Chinese OnlineBanks (Latipay hosted payment page)
 
 ** Relevant Products **
 
@@ -227,6 +227,7 @@ sent
 ```
 
 ### STEP 4 - Synchronous Redirection
+<p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>
 
 There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.
 
@@ -256,4 +257,74 @@ Merchant frontend need to validate the signature for protecting against maliciou
 ```
 message: merchant_reference + payment_method + status + currency + amount
 secret_key: api_key
+```
+
+### STEP 5 - Payment Result Interface
+All customers can send requests to query payment status with merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
+
+```
+GET https://api.latipay.net/v2/transaction/{merchant_reference}
+```
+
+#### Parameters
+
+| Name  | Type  | Description |
+|------------- |---------------| -------------|
+| user_id | String | The user account you want to use to process the transaction. |
+| signature | String | The `SHA-256 HMAC` API signature. |
+
+#### SHA-256 HMAC Signature
+
+```
+message: merchant_reference + user_id
+secret: api_key
+```
+
+#### Example
+
+```
+GET https://api.latipay.net/v2/transaction/1289323A122DB?user_id=U000334333&signature=14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3
+```
+
+#### Response
+
+| Name  | Type  | Description |
+|------------- |---------------| -------------|
+|merchant_reference | String | A unique id identifying order in Merchant's system. |
+| currency | String | The currency code of the transaction. |
+| amount | String | A decimal amount. |
+| payment_method | String | The payment method used. Possible values are alipay and wechat. |
+| status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
+| pay_time | String | Show the payment time of the transaction order. `UTC/GMT+08:00`|
+| signature | String | The `SHA-256 HMAC` API signature. |
+
+#### Example Response
+
+```json
+{
+  "merchant_reference": "dsi39ej430sks03",
+  "currency": "AUD",
+  "amount": "120.00",
+  "payment_method": "wechat",
+  "status": "paid",
+  "pay_time": "2017-07-07 10:53:50",
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
+}
+```
+
+#### Signature in Response
+For security reasons, we highly recommend you verify the signature in the response.
+
+```
+message: merchant_reference + payment_method + status + currency + amount
+secret: api_key
+```
+
+#### Example Signature
+
+```
+message: dsi39ej430sks03alipaypaidNZD120.00
+secret: 111222333
+signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
+
 ```

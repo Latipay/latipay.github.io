@@ -4,6 +4,34 @@ type: v2_cn
 order: 1
 ---
 
+[在线测试API](https://pay.latipay.net/api-console-latipay-hosted-online)
+
+<p class="tip">1. 集成Latipay API需要提前准备好Wallet ID, User ID 和 API key。 <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values；
+2. 对应的Wallet ID需要事先开通alipay，wechat或者onlineBank权限；
+3. 请勿泄漏api_key；
+4. 测试时可以支付最小金额$0.01。</p>
+
+## 支持的支付方式
+
+* 支付宝
+* 微信支付
+* 人民币银行（16家）
+
+## 支付流程图
+
+支付宝
+
+![](../images/Merchant Hosted Online Alipay.jpeg)
+
+---
+微信
+![](../images/latipay_hosted_online.jpg)
+
+---
+人民币银行卡
+![](../images/Merchant Hosted Online Bank.jpeg)
+---
+
 ## 支付场景
 
 #### 支付宝
@@ -28,12 +56,6 @@ order: 1
 
 ![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
 
-## 接口对接
-
-* 对接方需要先获得user_id，wallet_id和api_key
-* 对应的wallet_id需要事先开通alipay，wechat或者onlineBank权限
-* 请勿泄漏api_key
-
 
 ## 接口列表
 
@@ -44,19 +66,18 @@ POST https://api.latipay.net/v2/transaction
 
 #### 参数
 
-
 | 字段  | 类型  | 描述 | 可选 |
 |------------- |---------------| -------------| -------------|
 | user_id | String | 商户账号用户 id | No |
 |wallet_id | String | 商户账号wallet id | No
-|payment_method | String | 支付方式 wechat, alipay, or onlineBank | No
+|payment_method | String | 支付方式 `wechat`, `alipay`, or `onlineBank` | No
 |amount | String | 支付金额 | No
 |return_url | String | 支付完成后浏览器继续加载的地址 | No
 |callback_url | String | 支付完成后异步通知地址 | No
 |signature | String | 参数签名，算法为SHA-256 HMAC | No
 |merchant_reference | String | 商户订单号 | No
 |ip | String | 客户端ip | No
-|version | String | 版本号 2.0 | No
+|version | String | 版本号 `"2.0"` | No
 |product_name | String | 订单产品标题 | No
 
 #### 微信的额外参数
@@ -89,7 +110,7 @@ POST https://api.latipay.net/v2/transaction
 密钥: api_key
 ```
 
-#### 签名例子
+#### 签名例子[在线签名测试](https://www.freeformatter.com/hmac-generator.html)
 
 ```
 签名文本: U000000001W000000010.01alipayhttp://merchant.com/returnhttp://merchant.com/callback
@@ -125,7 +146,7 @@ POST https://api.latipay.net/v2/transaction
 
 ### 2. 支付
 
-浏览器加载以下地址可以继续支付订单
+加载以下地址继续支付订单
 
 ```
 {host_url}/{nonce}
@@ -139,7 +160,7 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 #### 不同参数，不同平台下支付方式会有差别
 
-|  场景 | 支付平台  | 额外参数  | 结果
+|  场景 | 支付方式  | 额外参数  | 结果
 |------------- |---------------| -------------| ------| ------
 | PC浏览器 |alipay |     |   跳转到支付宝二维码收银台网页|
 | 手机浏览器 |alipay |     |   唤醒支付宝app完成支付|
@@ -155,9 +176,10 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 ```
 POST 商户端的 callback_url
+Content-Type: application/json
 ```
 
-#### 参数		
+#### 参数
 
 
 | 字段  | 类型  | 描述 |
@@ -167,7 +189,7 @@ POST 商户端的 callback_url
 |amount | String | 支付金额 |
 |payment_method | String | 支付方式 |
 |status | String | 支付状态，值可能为: pending, paid, 或 failed. |
-|pay_time | String | 支付时间 |
+|pay_time  | String  | 支付时间，北京时间 `UTC/GMT+08:00`|
 |signature | String | 参数签名，算法为SHA-256 HMAC |  
 
 #### 参数例子
@@ -199,7 +221,9 @@ Latipay服务器期望收到此文本
 sent
 ```
 
-### 4. 同步回调
+### 4. 支付成功后浏览器重定向
+<p class="tip">此功能仅支持PC浏览器或者微信支付。支付宝App扫码支付成功后，支付宝App并不会跳转。</p>
+
 客户端支付完成后，会跳转到return_url，并传入以下参数
 
 
@@ -256,7 +280,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 |amount  | String  | 支付金额  |
 |payment_method  | String  | 支付方式，可能值：alipay, wechat, onlineBank  |
 |status  | String  | 支付状态，可能值: pending, paid, 或 failed  |
-|pay_time  | String  | 支付时间，北京时间 |
+|pay_time  | String  | 支付时间，北京时间 `UTC/GMT+08:00`|
 |signature  | String  | 服务器端签名，算法为SHA-256 HMAC  |
 
 #### 参数例子
@@ -273,7 +297,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 }
 ```
 
-#### signature 服务器端签名
+#### signature 服务器端签名[在线测试签名](https://www.freeformatter.com/hmac-generator.html)
 服务器端返回结果前会对支付结果加密，商户端需要进行验证，以保证该请求的合法性。
 
 ```
