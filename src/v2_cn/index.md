@@ -47,19 +47,19 @@ POST https://api.latipay.net/v2/transaction
 
 | 字段  | 类型  | 描述 | 可选 |
 |------------- |---------------| -------------| -------------|
-| user_id | String | 商户账号用户 id | No | 
-|wallet_id | String | 商户账号wallet id | No 
-|payment_method | String | 支付方式 wechat, alipay, or onlineBank | No 
-|amount | String | 支付金额 | No 
-|return_url | String | 支付完成后浏览器继续加载的地址 | No 
-|callback_url | String | 支付完成后异步通知地址 | No 
-|signature | String | 参数签名，算法为SHA-256 HMAC | No 
-|merchant_reference | String | 商户订单号 | No 
-|ip | String | 客户端ip | No 
-|version | String | 版本号 2.0 | No 
-|product_name | String | 订单产品标题 | No 
+| user_id | String | 商户账号用户 id | No |
+|wallet_id | String | 商户账号wallet id | No
+|payment_method | String | 支付方式 wechat, alipay, or onlineBank | No
+|amount | String | 支付金额 | No
+|return_url | String | 支付完成后浏览器继续加载的地址 | No
+|callback_url | String | 支付完成后异步通知地址 | No
+|signature | String | 参数签名，算法为SHA-256 HMAC | No
+|merchant_reference | String | 商户订单号 | No
+|ip | String | 客户端ip | No
+|version | String | 版本号 2.0 | No
+|product_name | String | 订单产品标题 | No
 
-#### 微信的额外可选参数
+#### 微信的额外参数
 
 | 参数  | 结果 |
 | -------------| ------| ------
@@ -108,8 +108,8 @@ POST https://api.latipay.net/v2/transaction
 }
 ```
 
-| 字段  | 类型  | 描述 | 
-|------------- |---------------| -------------| 
+| 字段  | 类型  | 描述 |
+|------------- |---------------| -------------|
 |host_url	| 	String	| 	供浏览器加载的url，使用url和nonce可以完成下一步支付
 |nonce	| 	String	| 	订单的唯一编号
 |signature	| String	| 服务器端签名，算法为SHA-256 HMAC
@@ -131,7 +131,7 @@ POST https://api.latipay.net/v2/transaction
 {host_url}/{nonce}
 ```
 
-#### 例子 
+#### 例子
 
 ```
 https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
@@ -139,7 +139,7 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 #### 不同参数，不同平台下支付方式会有差别
 
-|  场景 | 支付平台  | 额外参数  | 结果 
+|  场景 | 支付平台  | 额外参数  | 结果
 |------------- |---------------| -------------| ------| ------
 | PC浏览器 |alipay |     |   跳转到支付宝二维码收银台网页|
 | 手机浏览器 |alipay |     |   唤醒支付宝app完成支付|
@@ -160,10 +160,9 @@ POST 商户端的 callback_url
 #### 参数		
 
 
-| 字段  | 类型  | 描述 | 
+| 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
-|transaction_id | String | Latipay交易id | 
-|merchant_reference | String | 商户订单id | 
+|merchant_reference | String | 商户订单id |
 |currency | String | 支付币种 |
 |amount | String | 支付金额 |
 |payment_method | String | 支付方式 |
@@ -175,7 +174,6 @@ POST 商户端的 callback_url
 
 ``` json
 {
-  "transaction_id": "43cb917ff8a6",
   "merchant_reference": "dsi39ej430sks03",
   "amount": "120.00",
   "currency": "NZD",
@@ -205,14 +203,14 @@ sent
 客户端支付完成后，会跳转到return_url，并传入以下参数
 
 
-| 字段 | 类型  | 描述 | 
+| 字段 | 类型  | 描述 |
 |------------- |---------------| -------------|
 |merchant_reference | String | 商户订单id |
-|payment_method | String | 支付方式，可能值：alipay, wechat, onlineBank | 
+|payment_method | String | 支付方式，可能值：alipay, wechat, onlineBank |
 |status | String | 支付状态，可能值: pending, paid, 或 failed |
 |currency | String | 支付币种 |
 |amount | String | 支付金额 |
-|signature | String	|服务器端签名，算法为SHA-256 HMAC	
+|signature | String	|服务器端签名，算法为SHA-256 HMAC
 
 #### 例子
 
@@ -237,7 +235,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 ```
 
 #### 参数
-| 字段  | 类型  | 描述 | 
+| 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
 |user_id | String | 商户账号用户 id |
 |signature | String	|参数签名，算法为SHA-256 HMAC
@@ -251,16 +249,16 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### 结果
 
-| 字段  | 类型  | 描述 | 
+| 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
 |transaction_id  | String  | Latipay交易id  |
-|merchant_reference  | String  | 商户订单id  | 
+|merchant_reference  | String  | 商户订单id  |
 |currency  | String  | 支付币种  |
-|amount  | String  | 支付金额  | 
+|amount  | String  | 支付金额  |
 |payment_method  | String  | 支付方式，可能值：alipay, wechat, onlineBank  |
 |status  | String  | 支付状态，可能值: pending, paid, 或 failed  |
 |pay_time  | String  | 支付时间，北京时间 |
-|signature  | String  | 服务器端签名，算法为SHA-256 HMAC  | 
+|signature  | String  | 服务器端签名，算法为SHA-256 HMAC  |
 
 #### 参数例子
 
@@ -284,7 +282,3 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 加密文本: merchant_reference + payment_method + status + currency + amount
 密钥: api_key
 ```
-
-
-
-
