@@ -213,7 +213,7 @@ This is a payment result notification sent by Latipay to merchants after the pay
 
 ```
 POST merchant's callback_url
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 ```
 
 #### Parameters:    

@@ -177,7 +177,7 @@ Asynchronous Notification is a re-try mechanism to ensure the notification has b
 
 ```
 POST merchant's callback_url
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 ```
 
 Attributes
