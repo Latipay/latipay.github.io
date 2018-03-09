@@ -211,7 +211,7 @@ https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493
 
 ```
 POST 商户端的 callback_url
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 ```
 
 #### 参数

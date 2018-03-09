@@ -176,7 +176,7 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 ```
 POST 商户端的 callback_url
-Content-Type: application/json
+Content-Type: application/x-www-form-urlencoded
 ```
 
 #### 参数
