@@ -129,7 +129,7 @@ signature: cf3cf508b7b245be8921e324d5cb588598c36a07ffc62f998b90ab0e355f2d78
 
 ```json
 {
-  "host_url": "https://api.latipay.net/merchanthosted/gatewaydata",
+  "host_url": "https://api.latipay.net/v2/merchanthosted/gatewaydata",
   "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3",
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
 }
@@ -160,7 +160,7 @@ Loading the URI in PC browser, mobile browser or Alipay/ WeChat's embedded brows
 #### Example
 
 ```
-https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
+https://api.latipay.net/v2/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
 ```
 <p class="tip">`Alipay` payment is directly going to Alipay payment page. `Online Bank` payment is directly going to Banks payment page. But `Wechat` payment will response as below. </p>
 
