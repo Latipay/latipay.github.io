@@ -184,7 +184,7 @@ https://api.latipay.net/v2/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404
 | currency | String | The currency code of the transaction. |
 | product_name | String | The name of the product or service being sold. |
 |organisation_id | Integer | The merchant id which is used to process the transaction. |
-|org_name | String | The merchant's name |
+|organisation_name | String | The merchant's name |
 |user_id | String | The user account which is used to process the transaction. |
 |user_name | String | The user account's name |
 |wallet_id | String | The user wallet account which is used to process the transaction. |
