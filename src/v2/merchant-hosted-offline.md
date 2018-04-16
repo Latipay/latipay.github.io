@@ -134,7 +134,7 @@ secret: api_key
 #### Example
 
 ```
-https://api.latipay.net/v2/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
+GET https://api.latipay.net/v2/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3
 ```
 
 #### Response
