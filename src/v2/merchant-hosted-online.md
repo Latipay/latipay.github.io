@@ -152,7 +152,8 @@ secret: api_key
 
 ### STEP 2 - Latipay Payment Interface
 
-Loading the URI in PC browser, mobile browser or Alipay/ WeChat's embedded browser.
+For Alipay, load the api in PC browser, mobile browser or Alipay's embedded browser. For Wechat, send the GET request for retrieving QR code.
+
 ```
 {host_url}/{nonce}
 ```

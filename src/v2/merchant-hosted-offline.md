@@ -128,7 +128,7 @@ secret: api_key
 ### STEP 2 - Payment Interface
 
 ```
-{host_url}/{nonce}
+GET {host_url}/{nonce}
 ```
 
 #### Example
