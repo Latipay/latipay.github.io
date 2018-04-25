@@ -63,6 +63,7 @@ order: 2
 
 ```
 POST https://api.latipay.net/v2/transaction
+Content-Type: application/json;charset=UTF-8
 ```
 
 #### 参数:		

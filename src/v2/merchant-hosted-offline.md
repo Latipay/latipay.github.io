@@ -40,6 +40,7 @@ WeChat
 ### STEP 1 - Latipay Transaction Interface  
 ```
 POST https://api.latipay.net/v2/transaction
+Content-Type: application/json;charset=UTF-8
 ```
 
 #### Parameters:    

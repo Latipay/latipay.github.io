@@ -65,6 +65,7 @@ Powerful and robust online payment solutions, which work on a range of platforms
 
 ```
 POST https://api.latipay.net/v2/transaction
+Content-Type: application/json;charset=UTF-8
 ```
 
 #### Attributes:		
