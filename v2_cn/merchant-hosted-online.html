@@ -111,6 +111,8 @@
 <h4 id="人民币银行卡-1"><a href="#人民币银行卡-1" class="headerlink" title="人民币银行卡"></a>人民币银行卡</h4><p><img src="../images/Onlinebank_LatipayHosted.png" alt=""></p>
 <hr>
 <h2 id="API列表"><a href="#API列表" class="headerlink" title="API列表"></a>API列表</h2><h3 id="1-下单"><a href="#1-下单" class="headerlink" title="1. 下单"></a>1. 下单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/transaction</span><br><span class="line">Content-Type: application/json;charset=UTF-8</span><br></pre></td></tr></table></figure>
+<p>Demo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H &quot;Content-Type: application/json;charset=UTF-8&quot; -X POST -d &apos;&#123;&quot;signature&quot;:&quot;14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3&quot;,&quot;wallet_id&quot;:&quot;W00000001&quot;,&quot;amount&quot;:&quot;120.00&quot;,&quot;user_id&quot;:&quot;U000334333&quot;,&quot;merchant_reference&quot;:&quot;dsi39ej430sks03&quot;,&quot;return_url&quot;:&quot;&quot;,&quot;callback_url&quot;:&quot;https://merchantsite.com/confirm&quot;,&quot;ip&quot;:&quot;122.122.122.1&quot;,&quot;version&quot;:&quot;2.0&quot;,&quot;product_name&quot;:&quot;Pinot Noir, Otago&quot;,&quot;payment_method&quot;:&quot;alipay&quot;&#125;&apos; https://api.latipay.net/v2/transaction</span><br></pre></td></tr></table></figure>
 <h4 id="参数"><a href="#参数" class="headerlink" title="参数:"></a>参数:</h4><table>
 <thead>
 <tr>

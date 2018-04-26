@@ -62,6 +62,13 @@ order: 1
 ### 1. 下单
 ```
 POST https://api.latipay.net/v2/transaction
+Content-Type: application/json;charset=UTF-8
+```
+
+Demo
+
+```
+curl -H "Content-Type: application/json;charset=UTF-8" -X POST -d '{"user_id":"U000334333","wallet_id":"W00000001","amount":"120.00","payment_method":"alipay","return_url":"https://merchantsite.com/checkout","callback_url":"https://merchantsite.com/confirm","signature":"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3","merchant_reference":"dsi39ej430sks03","ip":"122.122.122.1","version":"2.0","product_name":"Pinot Noir, Otago"}' https://api.latipay.net/v2/transaction
 ```
 
 #### 参数
