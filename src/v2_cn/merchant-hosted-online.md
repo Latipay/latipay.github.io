@@ -69,7 +69,11 @@ Content-Type: application/json;charset=UTF-8
 Demo
 
 ```
-curl -H "Content-Type: application/json;charset=UTF-8" -X POST -d '{"signature":"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3","wallet_id":"W00000001","amount":"120.00","user_id":"U000334333","merchant_reference":"dsi39ej430sks03","return_url":"","callback_url":"https://merchantsite.com/confirm","ip":"122.122.122.1","version":"2.0","product_name":"Pinot Noir, Otago","payment_method":"alipay"}' https://api.latipay.net/v2/transaction
+curl \
+-X POST \
+-H "Content-Type: application/json;charset=UTF-8" \
+-d '{"signature":"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3","wallet_id":"W00000001","amount":"120.00","user_id":"U000334333","merchant_reference":"dsi39ej430sks03","return_url":"","callback_url":"https://merchantsite.com/confirm","ip":"122.122.122.1","version":"2.0","product_name":"Pinot Noir, Otago","payment_method":"alipay"}' \
+https://api.latipay.net/v2/transaction
 ```
 
 #### 参数:		
