@@ -154,7 +154,7 @@
 <tr>
 <td>merchant_reference</td>
 <td>String</td>
-<td>A unique id identifying order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
 <td>NO</td>
 </tr>
 <tr>
@@ -380,7 +380,7 @@
 <tr>
 <td>merchant_reference</td>
 <td>String</td>
-<td>A unique id identifying order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
 </tr>
 <tr>
 <td>signature</td>
@@ -407,7 +407,7 @@
 <tr>
 <td>merchant_reference</td>
 <td>String</td>
-<td>A unique id identifying order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -461,7 +461,7 @@
 <tr>
 <td>merchant_reference</td>
 <td>String</td>
-<td>A unique id identifying order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
 </tr>
 <tr>
 <td>payment_method</td>
@@ -495,7 +495,7 @@
 <p>SHA-256 HMAC Signature</p>
 <p>Merchant frontend need to validate the signature for protecting against malicious requests.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret_key: api_key</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-5-Payment-Result-Interface"><a href="#STEP-5-Payment-Result-Interface" class="headerlink" title="STEP 5 - Payment Result Interface"></a>STEP 5 - Payment Result Interface</h3><p>All customers can send requests to query payment status with merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.</p>
+<h3 id="STEP-5-Payment-Result-Interface"><a href="#STEP-5-Payment-Result-Interface" class="headerlink" title="STEP 5 - Payment Result Interface"></a>STEP 5 - Payment Result Interface</h3><p>All customers can send requests to query payment status with merchant order id(that should be <code>unique id</code> for the merchant) as merchant_reference by HTTP GET request.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https://api.latipay.net/v2/transaction/&#123;merchant_reference&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Attributes-2"><a href="#Attributes-2" class="headerlink" title="Attributes"></a>Attributes</h4><table>
 <thead>
@@ -532,7 +532,7 @@
 <tr>
 <td>merchant_reference</td>
 <td>String</td>
-<td>A unique id identifying order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
 </tr>
 <tr>
 <td>currency</td>
