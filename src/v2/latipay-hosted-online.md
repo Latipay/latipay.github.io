@@ -98,7 +98,7 @@ https://api.latipay.net/v2/transaction
 |amount | String | A decimal amount. | NO
 |return_url | String | The URL of the landing page where the customer will be directed to after payment. | NO
 |callback_url | String | Merchant webserver's URL that the payment result will send to. | NO
-|merchant_reference | String | A unique id identifying order in Merchant's system. | NO
+|merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 |signature | String | The `SHA-256 HMAC` API signature. | NO
 |ip | String | The customer's IP address | NO
 |version | String | The latest version of the Latipay platform which must be `"2.0"` | Yes
@@ -195,7 +195,7 @@ Attributes
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
-|merchant_reference | String | A unique id identifying order in Merchant's system. | NO
+|merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 |currency | String | The currency code of the transaction. |
 |amount | String | A decimal amount. |
 |payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. |
@@ -248,7 +248,7 @@ Redirect merchant's return_url
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
-|merchant_reference | String | A unique id identifying order in Merchant's system. | NO
+|merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 | payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. |
 | status | String | The status of the transaction can be `pending`, `paid`, or `failed`. |
 | currency | String | The currency code of the transaction. |
@@ -271,7 +271,7 @@ secret_key: api_key
 ```
 
 ### STEP 5 - Payment Result Interface
-All customers can send requests to query payment status with merchant order id(that should be unique id for the merchant) as merchant_reference by HTTP GET request.
+All customers can send requests to query payment status with merchant order id(that should be `unique id` for the merchant) as merchant_reference by HTTP GET request.
 
 ```
 GET https://api.latipay.net/v2/transaction/{merchant_reference}
@@ -301,7 +301,7 @@ GET https://api.latipay.net/v2/transaction/1289323A122DB?user_id=U000334333&sign
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
-|merchant_reference | String | A unique id identifying order in Merchant's system. |
+|merchant_reference | String | A `unique id` identifying the order in Merchant's system. |
 | currency | String | The currency code of the transaction. |
 | amount | String | A decimal amount. |
 | payment_method | String | The payment method used. Possible values are alipay and wechat. |
