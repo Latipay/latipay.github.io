@@ -462,7 +462,7 @@ JS code example:
 Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
 
 ```
-message: amount=120.00&order_id=23479798sdf7987234&reference=notes about this refund&user_id=U000334333111222333
+message: order_id=23479798sdf7987234&reference=notes about this refund&refund_amount=120.00&user_id=U000334333111222333
 secret(your api_key): 111222333
 
 signature: 3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c
