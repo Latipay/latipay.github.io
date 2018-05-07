@@ -74,7 +74,7 @@ Demo
 curl \
 -X POST \
 -H "Content-Type: application/json;charset=UTF-8" \
--d '{"signature":"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3","wallet_id":"W00000001","amount":"120.00","user_id":"U000334333","merchant_reference":"dsi39ej430sks03","return_url":"","callback_url":"https://merchantsite.com/confirm","ip":"122.122.122.1","version":"2.0","product_name":"Pinot Noir, Otago","payment_method":"alipay"}' \
+-d '{"signature":"a6b2ead2612b3ad51fd33688d4335d55ad426941fcf160745d3a49354224de22","wallet_id":"W00000001","amount":"120.00","user_id":"U000334333","merchant_reference":"dsi39ej430sks03","return_url":"","callback_url":"https://merchantsite.com/confirm","ip":"122.122.122.1","version":"2.0","product_name":"Pinot Noir, Otago","payment_method":"alipay"}' \
 https://api.latipay.net/v2/transaction
 ```
 
@@ -106,7 +106,6 @@ https://api.latipay.net/v2/transaction
 
 ```json
 {
-  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
   "wallet_id": "W00000001",
   "amount": "120.00",
   "user_id": "U000334333",
@@ -117,23 +116,30 @@ https://api.latipay.net/v2/transaction
   "version": "2.0",
   "product_name": "Pinot Noir, Otago",
   "payment_method": "alipay",
+
+  "signature": "a6b2ead2612b3ad51fd33688d4335d55ad426941fcf160745d3a49354224de22",
 }
 ```
 
 #### SHA-256 HMAC Signature
 
-```
-message: user_id + wallet_id + amount + payment_method + return_url + callback_url
-secret: api_key
-```
+JS code example:
 
-#### Example Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+```js
+  Object.keys(data)
+    .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+    .sort()
+    .map(item => `${item}=${data[item]}`)
+    .join('&')
+    .concat(api_key)
+```
+Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
 
 ```
-message: U000000001W000000010.01alipayhttp://merchant.com/callback
-secret: 111222333
+message: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
+secret(your api_key): 111222333
 
-signature: cf3cf508b7b245be8921e324d5cb588598c36a07ffc62f998b90ab0e355f2d78
+signature: a6b2ead2612b3ad51fd33688d4335d55ad426941fcf160745d3a49354224de22
 ```
 
 #### Response
@@ -237,14 +243,15 @@ https://api.latipay.net/v2/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404
 ```
 
 #### SHA-256 HMAC Signature
-Rearrange parameters in the `data` alphabetically (except `signature` and other parameters with value of null or empty string) and join rearranged parameters with `&`, and concat the value of api_key in the end.
+Rearrange parameters in the `data` alphabetically (except `signature` and other parameters with value of `null` or `empty` string) and join rearranged parameters with `&`, and concat the value of api_key in the end.
 
 ```
 message: amount=0.02&amount_cny=0.09&currency=NZD&currency_rate=4.65776&merchant_reference=M00001543-000001&nonce=41226220180411114422fdfdba5d94f84fdc873f0f9ea6d5a6&order_id=20180411000009&organisation_id=1&organisation_name=123123&payment_method=alipay&product_name=food&qr_code=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAE+klEQVR42u3dQW7jMBAEQP//07v3BfYQmNPTZKqBnJzYscQSMKQ0/PwRkf/m4xCIACICiAggIoCIACICiAggIoCIACIigIgAIgKICCAigIgAIgKICCD/vtHnE/05/f/+9Pv89P2+/f3T3+/03397PNvGByCAAAIIIIAAAggg9wFJn/BtUNsD8NsB+e3xvv2CAAgggAACCCCAAALIe0CmT1j7ADkNenuAbhfxgAACCCCAAAIIIIAA0n4Atv/+NMBpoOkLCiCAAAIIIIAAAggggPy2Ij19s93p4337zY+AAAIIIIAAAggggACyXcROF63TA3wa3PT3a1tY3Rp/gAACCCCAAAIIIIBo2pBaqPL67kKgriaAAAIIIF4HBBCvA9KeaVDt4LcXYl8NIIAAAggggAACCCDvAkkXZW2ATg/A0zdjTi/MtiwMAgIIIIAAAggggAByL5DtInEaQBpk+viePv/bF0RAAAEEEEAAAQQQQN4Dkm6C0Dag25tKpH9/e7wAAggggAACCCCAAPI+kJaFnVsWLrebRmxPgqQXFgEBBBBAAAEEEEAAAWT679tvfnxtEmH689culIAAAggggAACCCCA1AJpazJwWzPlNLDp85e+4AECCCCAAAIIIIAAAsjpL9y2aabXsxfIX7eJJyCAAAKI1wEBxOuAxBcGv/287Y3r0xeA228Grf0/AQEEEEAAAQQQQAB5BkjbwlJ7E4Pf1ljv13VWBAQQQAABBBBAAAFkvUg+/XntRWNbU4b0Ba91UgIQQAABBBBAAAEEkHuK9OkT2tYE4bYHxtomWQABBBBAAAEEEEAAASRdtKeLzOmf05MY6aK+vYgGBBBAAAEEEEAAAQSQ9EP96fe/rUje3nQzPUkCCCCAAAIIIIAAAggg7QtR20VqGnS6SG5b+AQEEEAAAQQQQAABBJDp5sSvbZo5/XnTx7N9UgQQQAABBBBAAAEEkPuBtC2UtU06tB+v9g1vnu9qAggggAACCCCAAAJIHND2A0zpB4TaN8RpWzi9rkgHBBBAAAEEEEAAASS+UNi+0JYu0tMLd6813otdGAABBBBAAAEEEEAAeQZIe/Pjtg2B0jd3pic1dDUBBBBAAAEEEEAAASS9kHS6KGsrOqcXHtsmOdrOJyCAAAIIIIAAAggg7wGZPiC3NyrbbizX3vy7tVEeIIAAAggggAACCCD3FumnQW1vIDMN+jbwbRcYQAABBBBAAAEEEEDeBzJeLIWLtNuaNrQ9kHYa1FYRDwgggAACCCCAAALIO43j0kXibQ/4bDfKay2a4xdmQAABBBBAAAEEEEBqgUwfsLYB2lbUbw/g9g13AAEEEEAAAQQQQAB5D8h6MRV+QCj9/0xPgrRtIAQIIIAAAggggAACCCDpA9w2wNo3DW1buEwfX0AAAQQQQAABBBBAAJkuwr/9/O0HoNJNGbbPz/QFChBAAAEEEEAAAQQQQNqKvOmitb2oTy/MvnLzIiCAAAIIIIAAAggggLQ0fZieVGhritAODhBAAAEEEEAAAQQQQNqAbDeVuH3Ty9smAQABBBBAAAEEEEAAAST9/rdvInp7E4fpSYvY5AQggAACCCCAAAIIINcASd+8Nl10pl+/rfHd6fGxPUkACCCAAAIIIIAAAkg/EJEXA4gIICKAiAAiAogIICKAiAAiAogIICICiAggIoCIACICiAggIoCIPJO/H7l2LoSyTzgAAAAASUVORK5CYII=&qr_code_url=https://qr.alipay.com/bax08151zdenrj3nltzi80a9&user_id=U00001534&user_name=abcdefghijklmnopqrstuvwxyz&wallet_id=W00000001&wallet_name=test accountXXXXXXXXX
-secret (api_key): XXXXXXXXX
+secret(your api_key): XXXXXXXXX
 ```
 
-js code example:
+JS code example:
+
 ```js
   Object.keys(data)
     .filter(item => item !== 'signature')
@@ -280,13 +287,14 @@ Content-Type: application/x-www-form-urlencoded
 
 ```json
 {
-  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
   "merchant_reference": "dsi39ej430sks03",
   "currency": "AUD",
   "amount": "120.00",
   "payment_method": "wechat",
   "status": "paid",
-  "pay_time": "2017-07-07 10:53:50"
+  "pay_time": "2017-07-07 10:53:50",
+
+  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"
 }
 ```
 
@@ -335,7 +343,7 @@ Merchant frontend need to validate the signature for protecting against maliciou
 
 ```
 message: merchant_reference + payment_method + status + currency + amount
-secret_key: api_key
+secret: api_key
 ```
 
 ### STEP 5 - Payment Result Interface
@@ -387,6 +395,7 @@ GET https://api.latipay.net/v2/transaction/1289323A122DB?user_id=U000334333&sign
   "payment_method": "wechat",
   "status": "paid",
   "pay_time": "2017-07-07 10:53:50",
+
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
 }
 ```
@@ -403,6 +412,6 @@ secret: api_key
 
 ```
 message: dsi39ej430sks03alipaypaidNZD120.00
-secret: 111222333
+secret(your api_key): 111222333
 signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ```
