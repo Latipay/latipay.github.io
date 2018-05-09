@@ -412,6 +412,11 @@
 <td>String</td>
 <td>The <code>SHA-256 HMAC</code> API signature.</td>
 </tr>
+<tr>
+<td>is_block</td>
+<td>Number</td>
+<td>Optional parameter, <code>1</code> means the http request use long poolling mechanism, the timeout is 180s.</td>
+</tr>
 </tbody>
 </table>
 <h4 id="SHA-256-HMAC-Signature"><a href="#SHA-256-HMAC-Signature" class="headerlink" title="SHA-256 HMAC Signature"></a>SHA-256 HMAC Signature</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + user_id</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
