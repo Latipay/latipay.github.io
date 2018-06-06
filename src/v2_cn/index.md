@@ -116,18 +116,26 @@ https://api.latipay.net/v2/transaction
 ```
 
 #### 参数 SHA-256 HMAC 签名
+
+将所有参数按字母表顺序从小到大排序（去掉其中值为null和空字符串的项），然后以key=value和&形式拼接，最后加上api_key
+
+JS代码
 ```
-待签名文本: user_id + wallet_id + amount + payment_method + return_url + callback_url
-密钥: api_key
+Object.keys(data)
+  .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+  .sort()
+  .map(item => `${item}=${data[item]}`)
+  .join('&')
+  .concat(api_key)
 ```
 
 #### 签名例子[在线签名测试](https://www.freeformatter.com/hmac-generator.html)
 
 ```
-签名文本: U000000001W000000010.01alipayhttp://merchant.com/returnhttp://merchant.com/callback
+待签名文本: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&return_url=https://merchantsite.com/checkout&signature=14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
 密钥: 111222333
 
-签名结果: 2367bcd9e9a2f9a547c85d7545d1217702a574b8084bbb7ae33b45a03a89983
+签名结果: d491ffabae6ee0be763e50f1620b7ce967f1eab4d04ecf9e822de5d34d4041e0
 ```
 
 #### 请求结果
@@ -151,7 +159,7 @@ https://api.latipay.net/v2/transaction
 服务器端返回结果前，会对nonce + host_url加密，商户端需要进行验证，以保证该请求的合法性
 
 ```
-签名文本: nonce + host_url
+待签名文本: nonce + host_url
 密钥: api_key
 ```
 
@@ -221,7 +229,7 @@ Content-Type: application/x-www-form-urlencoded
 商户端后台需要验证该签名
 
 ```
-签名文本: merchant_reference + payment_method + status + currency + amount
+待签名文本: merchant_reference + payment_method + status + currency + amount
 密钥: api_key
 ```
 
@@ -257,7 +265,7 @@ https://www.merchant.com/latipay?merchant_reference=dsi39ej430sks03&payment_meth
 商户端前端可以考虑验证该签名
 
 ```
-签名文本: merchant_reference + payment_method + status + currency + amount
+待签名文本: merchant_reference + payment_method + status + currency + amount
 密钥: api_key
 ```
 
@@ -278,7 +286,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 #### SHA-256 HMAC 签名
 
 ```
-签名文本: merchant_reference + user_id
+待签名文本: merchant_reference + user_id
 密钥: api_key
 ```
 

@@ -119,18 +119,25 @@ https://api.latipay.net/v2/transaction
 
 #### 参数 SHA-256 HMAC 签名
 
+将所有参数按字母表顺序从小到大排序（去掉其中值为null和空字符串的项），然后以key=value和&形式拼接，最后加上api_key
+
+JS代码
 ```
-待签名文本: user_id + wallet_id + amount + payment_method + return_url + callback_url
-密钥: api_key
+Object.keys(data)
+  .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+  .sort()
+  .map(item => `${item}=${data[item]}`)
+  .join('&')
+  .concat(api_key)
 ```
 
 #### 签名例子[在线签名测试](https://www.freeformatter.com/hmac-generator.html)
 
 ```
-签名文本: U000000001W000000010.01alipayhttp://merchant.com/callback
+待签名文本: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&signature=14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
 密钥: 111222333
 
-签名结果: cf3cf508b7b245be8921e324d5cb588598c36a07ffc62f998b90ab0e355f2d78
+签名结果: 965fd0f11ee9a4a4f1b579553187d3d1d9d44c6947541a5fde93ebcef473e201
 ```
 
 #### 请求结果
@@ -153,7 +160,7 @@ https://api.latipay.net/v2/transaction
 服务器端返回结果前，会对nonce + host_url加密，商户端需要进行验证，以保证该请求的合法性
 
 ```
-签名文本: nonce + host_url
+待签名文本: nonce + host_url
 密钥: api_key
 ```
 
@@ -236,7 +243,7 @@ https://api.latipay.net/merchanthosted/gatewaydata/7d5a88119354301ad3fc250404493
 将`data`中的数据按照字母顺序排列（去掉`signature`和其他null值或空字符串值）然后用`&`拼接
 
 ```
-签名文本: amount=1.00&amount_cny=5.00&currency=NZD&currency_rate=5.29930&merchant_reference=dsi39ej430sks03&nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&order_id=20170829-alipay-3990527237343&organisation_id=18&org_name=Latipay&payment_method=alipay&product_name=test&qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&type=Online&user_id=U000000051&wallet_id=W000000037&wallet_name=aud01
+待签名文本: amount=1.00&amount_cny=5.00&currency=NZD&currency_rate=5.29930&merchant_reference=dsi39ej430sks03&nonce=7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3&order_id=20170829-alipay-3990527237343&organisation_id=18&org_name=Latipay&payment_method=alipay&product_name=test&qr_code=https://qr.alipay.com/bax03286h4vlfpxldgwq4035&type=Online&user_id=U000000051&wallet_id=W000000037&wallet_name=aud01
 密钥: api_key
 ```
 
@@ -281,7 +288,7 @@ Content-Type: application/x-www-form-urlencoded
 商户端后台需要验证该签名
 
 ```
-签名文本: merchant_reference + payment_method + status + currency + amount
+待签名文本: merchant_reference + payment_method + status + currency + amount
 密钥: api_key
 ```
 
@@ -316,7 +323,7 @@ https://www.merchant.com/latipay?merchant_reference=dsi39ej430sks03&payment_meth
 商户端前端可以考虑验证该签名
 
 ```
-签名文本: merchant_reference + payment_method + status + currency + amount
+待签名文本: merchant_reference + payment_method + status + currency + amount
 密钥: api_key
 ```
 
@@ -337,7 +344,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 #### SHA-256 HMAC 签名
 
 ```
-签名文本: merchant_reference + user_id
+待签名文本: merchant_reference + user_id
 密钥: api_key
 ```
 
