@@ -462,3 +462,81 @@ signature: 3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c
   "message": "", //the reason when error happened
 }
 ```
+
+### STEP 7 - Cancel Transaction
+
+```
+POST https://api.latipay.net/cancel
+```
+
+#### Parameters
+
+| Name  | Type  | Description |
+|------------- |---------------| -------------|
+| user_id | String | The user account you want to use to process the transaction. |
+| merchant_reference | String | A `unique id` identifying the order in Merchant's system. |
+| signature | String | The `SHA-256 HMAC` API signature. |
+
+Example
+
+  ```json
+  {
+    "user_id":"U000000013",
+    "merchant_reference":"9872428736782682",
+
+    "signature": "3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c",
+  }
+  ```
+
+#### SHA-256 HMAC Signature
+Rearrange parameters alphabetically (except parameters with value of `null` or `empty` string) and join them with `&`, and concat the value of `api_key` in the end.
+
+JS code example:
+
+```js
+  Object.keys(data)
+    .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+    .sort()
+    .map(item => `${item}=${data[item]}`)
+    .join('&')
+    .concat(api_key)
+```
+
+Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+
+```
+message: user_id=U000000013&merchant_reference=9872428736782682111222333
+secret(your api_key): 111222333
+
+signature: da3b80be09665913e632f1bc0822e3d98d8dd235aebeb6f532b6bb7e329b9635
+```
+
+
+#### Response
+
+| Name  | Type  | Description |
+|------------- |---------------| -------------|
+|code | String | The response code of payment, 0 or Error Code, 0 means no error happened. |
+|message | String | The response message of payment interface. |
+
+#### Example Response
+
+```json
+{
+  "code": 0,
+  "message": "", //the reason when error happened
+}
+```
+
+#### Error Code
+
+| Code  | Message  | Description |
+|------------- |---------------| -------------|
+|1 | FAIL | cancellation failed |
+|3 | data error | parameters in request body are illlegal |
+|110 | User not exist | user specified by user_id doesn't exist |
+|201 | order not exist | can't find the transaction order by merchant_reference |
+|205 | Can not find out corresponding key for the user code or user is disabled or user is not activity | can't get api key by user_id |
+|206 | Signature from Merchant request is wrong | signature is not correct |
+|900 | transaction has been successfully completed | transaction has been successfully completed |
+|901 | transaction has been failed | transaction has been failed |

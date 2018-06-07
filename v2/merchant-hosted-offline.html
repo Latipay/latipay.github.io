@@ -619,6 +619,113 @@
 </tbody>
 </table>
 <h4 id="Example-Response-1"><a href="#Example-Response-1" class="headerlink" title="Example Response"></a>Example Response</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  "message": "", //the reason when error happened</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="STEP-7-Cancel-Transaction"><a href="#STEP-7-Cancel-Transaction" class="headerlink" title="STEP 7 - Cancel Transaction"></a>STEP 7 - Cancel Transaction</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/cancel</span><br></pre></td></tr></table></figure>
+<h4 id="Parameters-4"><a href="#Parameters-4" class="headerlink" title="Parameters"></a>Parameters</h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>The user account you want to use to process the transaction.</td>
+</tr>
+<tr>
+<td>merchant_reference</td>
+<td>String</td>
+<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>The <code>SHA-256 HMAC</code> API signature.</td>
+</tr>
+</tbody>
+</table>
+<p>Example</p>
+  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"user_id"</span>:<span class="string">"U000000013"</span>,</span><br><span class="line">  <span class="attr">"merchant_reference"</span>:<span class="string">"9872428736782682"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"signature"</span>: <span class="string">"3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="SHA-256-HMAC-Signature-5"><a href="#SHA-256-HMAC-Signature-5" class="headerlink" title="SHA-256 HMAC Signature"></a>SHA-256 HMAC Signature</h4><p>Rearrange parameters alphabetically (except parameters with value of <code>null</code> or <code>empty</code> string) and join them with <code>&amp;</code>, and concat the value of <code>api_key</code> in the end.</p>
+<p>JS code example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(data)</span><br><span class="line">  .filter(<span class="function"><span class="params">item</span> =&gt;</span> data[item] != <span class="literal">null</span> &amp;&amp; data[item] != <span class="literal">undefined</span> &amp;&amp; data[item] !== <span class="string">''</span>)</span><br><span class="line">  .sort()</span><br><span class="line">  .map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;item&#125;</span>=<span class="subst">$&#123;data[item]&#125;</span>`</span>)</span><br><span class="line">  .join(<span class="string">'&amp;'</span>)</span><br><span class="line">  .concat(api_key)</span><br></pre></td></tr></table></figure>
+<p>Example <a href="https://www.freeformatter.com/hmac-generator.html" target="_blank" rel="noopener">Try your signature online</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message: user_id=U000000013&amp;merchant_reference=9872428736782682111222333</span><br><span class="line">secret(your api_key): 111222333</span><br><span class="line"></span><br><span class="line">signature: da3b80be09665913e632f1bc0822e3d98d8dd235aebeb6f532b6bb7e329b9635</span><br></pre></td></tr></table></figure>
+<h4 id="Response-4"><a href="#Response-4" class="headerlink" title="Response"></a>Response</h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The response code of payment, 0 or Error Code, 0 means no error happened.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The response message of payment interface.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Example-Response-2"><a href="#Example-Response-2" class="headerlink" title="Example Response"></a>Example Response</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  "message": "", //the reason when error happened</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Error-Code"><a href="#Error-Code" class="headerlink" title="Error Code"></a>Error Code</h4><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>FAIL</td>
+<td>cancellation failed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>data error</td>
+<td>parameters in request body are illlegal</td>
+</tr>
+<tr>
+<td>110</td>
+<td>User not exist</td>
+<td>user specified by user_id doesn’t exist</td>
+</tr>
+<tr>
+<td>201</td>
+<td>order not exist</td>
+<td>can’t find the transaction order by merchant_reference</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Can not find out corresponding key for the user code or user is disabled or user is not activity</td>
+<td>can’t get api key by user_id</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Signature from Merchant request is wrong</td>
+<td>signature is not correct</td>
+</tr>
+<tr>
+<td>900</td>
+<td>transaction has been successfully completed</td>
+<td>transaction has been successfully completed</td>
+</tr>
+<tr>
+<td>901</td>
+<td>transaction has been failed</td>
+<td>transaction has been failed</td>
+</tr>
+</tbody>
+</table>
 
   
     <div class="guide-links">
