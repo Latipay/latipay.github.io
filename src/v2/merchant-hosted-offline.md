@@ -105,7 +105,7 @@ JS code example:
     .concat(api_key)
 ```
 
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: amount=120.00&callback_url=https://merchantsite.com/confirm&host_type=1&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
@@ -437,7 +437,7 @@ JS code example:
     .concat(api_key)
 ```
 
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: order_id=23479798sdf7987234&reference=notes about this refund&refund_amount=120.00&user_id=U000334333111222333
@@ -502,7 +502,7 @@ JS code example:
     .concat(api_key)
 ```
 
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: user_id=U000000013&merchant_reference=9872428736782682111222333

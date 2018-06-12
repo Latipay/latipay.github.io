@@ -133,7 +133,7 @@ JS code example:
     .join('&')
     .concat(api_key)
 ```
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
@@ -361,7 +361,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 | signature | String | The `SHA-256 HMAC` API signature. |
 | is_block | Number | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. |
 
-#### SHA-256 HMAC Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+#### SHA-256 HMAC Signature
 
 ```
 message: merchant_reference + user_id
@@ -409,7 +409,7 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-#### Example Signature [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+#### Example Signature
 
 ```
 message: dsi39ej430sks03alipaypaidNZD120.00
@@ -460,7 +460,7 @@ JS code example:
     .concat(api_key)
 ```
 
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: order_id=23479798sdf7987234&reference=notes about this refund&refund_amount=120.00&user_id=U000334333111222333

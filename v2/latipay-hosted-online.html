@@ -83,6 +83,10 @@
       <a href="/v2/error-code.html" class="sidebar-link">Error Code</a>
     </li>
   
+    <li>
+      <a href="/v2/latipay-wechat-mini-app.html" class="sidebar-link">Wechat Mini App Payment</a>
+    </li>
+  
 </ul>
 
     </div>
@@ -245,7 +249,7 @@
 </ul>
 <p>JS code example:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(data)</span><br><span class="line">  .filter(<span class="function"><span class="params">item</span> =&gt;</span> data[item] != <span class="literal">null</span> &amp;&amp; data[item] != <span class="literal">undefined</span> &amp;&amp; data[item] !== <span class="string">''</span>)</span><br><span class="line">  .sort()</span><br><span class="line">  .map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;item&#125;</span>=<span class="subst">$&#123;data[item]&#125;</span>`</span>)</span><br><span class="line">  .join(<span class="string">'&amp;'</span>)</span><br><span class="line">  .concat(api_key)</span><br></pre></td></tr></table></figure>
-<p>Example <a href="https://www.freeformatter.com/hmac-generator.html" target="_blank" rel="noopener">Try your signature online</a></p>
+<p>Example</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message: amount=120.00&amp;callback_url=https://merchantsite.com/confirm&amp;ip=122.122.122.1&amp;merchant_reference=dsi39ej430sks03&amp;payment_method=alipay&amp;product_name=Pinot Noir, Otago&amp;return_url=https://merchantsite.com/checkout&amp;user_id=U000334333&amp;version=2.0&amp;wallet_id=W00000001111222333</span><br><span class="line">secret(your api_key): 111222333</span><br><span class="line"></span><br><span class="line">signature: 8d1bea078eaacdae8388852851ec39e2e8561cdce64f359421d85ed4844496ec</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>Response</strong></li>
@@ -337,7 +341,7 @@
 <p>Example</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"merchant_reference"</span>: <span class="string">"dsi39ej430sks03"</span>,</span><br><span class="line">  <span class="attr">"amount"</span>: <span class="string">"120.00"</span>,</span><br><span class="line">  <span class="attr">"currency"</span>: <span class="string">"NZD"</span>,</span><br><span class="line">  <span class="attr">"payment_method"</span>: <span class="string">"alipay"</span>,</span><br><span class="line">  <span class="attr">"pay_time"</span>: <span class="string">"2017-07-07 10:53:50"</span>,</span><br><span class="line">  <span class="attr">"status"</span> : <span class="string">"paid"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">"signature"</span>: <span class="string">"840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>SHA-256 HMAC Signature<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure></p>
-<p>Example <a href="https://www.freeformatter.com/hmac-generator.html" target="_blank" rel="noopener">Try your signature online</a></p>
+<p>Example</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message: dsi39ej430sks03alipaypaidNZD120.00</span><br><span class="line">secret(your api_key): 111222333</span><br><span class="line"></span><br><span class="line">signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1</span><br></pre></td></tr></table></figure>
 <h4 id="Expected-the-text-“sent”-in-Response’s-body"><a href="#Expected-the-text-“sent”-in-Response’s-body" class="headerlink" title="Expected the text “sent” in Response’s body"></a>Expected the text “sent” in Response’s body</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sent</span><br></pre></td></tr></table></figure>
 <h3 id="STEP-4-Synchronous-Redirection"><a href="#STEP-4-Synchronous-Redirection" class="headerlink" title="STEP 4 - Synchronous Redirection"></a>STEP 4 - Synchronous Redirection</h3><p class="tip">This redirection only happens in Wechat pay’s embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>

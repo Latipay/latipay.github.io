@@ -129,7 +129,7 @@ Object.keys(data)
   .concat(api_key)
 ```
 
-#### 签名例子[在线签名测试](https://www.freeformatter.com/hmac-generator.html)
+#### 签名例子
 
 ```
 待签名文本: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&return_url=https://merchantsite.com/checkout&signature=14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
@@ -316,7 +316,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 }
 ```
 
-#### signature 服务器端签名[在线测试签名](https://www.freeformatter.com/hmac-generator.html)
+#### signature 服务器端签名
 服务器端返回结果前会对支付结果加密，商户端需要进行验证，以保证该请求的合法性。
 
 ```

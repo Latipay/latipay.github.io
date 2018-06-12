@@ -143,7 +143,7 @@ JS code example:
     .concat(api_key)
 ```
 
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&return_url=https://merchantsite.com/checkout&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
@@ -233,7 +233,7 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-Example [Try your signature online](https://www.freeformatter.com/hmac-generator.html)
+Example
 
 ```
 message: dsi39ej430sks03alipaypaidNZD120.00
