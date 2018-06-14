@@ -271,6 +271,8 @@ POST merchant's callback_url
 Content-Type: application/x-www-form-urlencoded
 ```
 
+<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a></p>
+
 #### Attributes:		
 
 | Name  | Type  | Description |
@@ -307,11 +309,6 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-#### Expected the text "sent" in Response's body
-
-```
-sent
-```
 
 ### STEP 4 - Synchronous Redirection
 <p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>

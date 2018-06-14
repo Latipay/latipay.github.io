@@ -199,6 +199,7 @@ Asynchronous Notification is a re-try mechanism to ensure the notification has b
 POST merchant's callback_url
 Content-Type: application/x-www-form-urlencoded
 ```
+<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a></p>
 
 Attributes
 
@@ -242,11 +243,6 @@ secret(your api_key): 111222333
 signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ```
 
-#### Expected the text "sent" in Response's body
-
-```
-sent
-```
 
 ### STEP 4 - Synchronous Redirection
 <p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>
