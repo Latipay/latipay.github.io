@@ -154,7 +154,7 @@ wx.requestPayment({
   paySign: payment.paySign,
   signType: payment.signType,
   timeStamp: payment.timeStamp,
-  package: payment.nonceStr, //the key is package
+  package: payment.packageStr, //the key is package
 
   success: function(res) {
 

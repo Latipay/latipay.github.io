@@ -80,11 +80,11 @@
     </li>
   
     <li>
-      <a href="/v2/error-code.html" class="sidebar-link">Error Code</a>
+      <a href="/v2/latipay-wechat-mini-app.html" class="sidebar-link current">Wechat Mini App Payment</a>
     </li>
   
     <li>
-      <a href="/v2/latipay-wechat-mini-app.html" class="sidebar-link current">Wechat Mini App Payment</a>
+      <a href="/v2/error-code.html" class="sidebar-link">Error Code</a>
     </li>
   
 </ul>
@@ -243,7 +243,7 @@
 </tbody>
 </table>
 <h3 id="STEP-4-Wechat-mini-app-payment"><a href="#STEP-4-Wechat-mini-app-payment" class="headerlink" title="STEP 4 - Wechat mini app payment"></a>STEP 4 - Wechat mini app payment</h3><p>This is the payment api in wechat document: <a href="https://developers.weixin.qq.com/miniprogram/dev/api/api-pay.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/api/api-pay.html</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wx.requestPayment(&#123;</span><br><span class="line">  nonceStr: payment.nonceStr,</span><br><span class="line">  paySign: payment.paySign,</span><br><span class="line">  signType: payment.signType,</span><br><span class="line">  timeStamp: payment.timeStamp,</span><br><span class="line">  package: payment.nonceStr, <span class="comment">//the key is package</span></span><br><span class="line"></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wx.requestPayment(&#123;</span><br><span class="line">  nonceStr: payment.nonceStr,</span><br><span class="line">  paySign: payment.paySign,</span><br><span class="line">  signType: payment.signType,</span><br><span class="line">  timeStamp: payment.timeStamp,</span><br><span class="line">  package: payment.packageStr, <span class="comment">//the key is package</span></span><br><span class="line"></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p>In your wechat mini app:</p>
 <ul>
 <li>login</li>
