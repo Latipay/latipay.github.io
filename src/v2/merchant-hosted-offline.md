@@ -525,15 +525,16 @@ signature: da3b80be09665913e632f1bc0822e3d98d8dd235aebeb6f532b6bb7e329b9635
 }
 ```
 
-#### Error Code
+#### Code
 
 | Code  | Message  | Description |
 |------------- |---------------| -------------|
-|1 | FAIL | cancellation failed |
+|0 | success | cancellation success |
+|1 | FAIL | cancellation failed，you can submit another request after at least 15 minutes |
 |3 | data error | parameters in request body are illlegal |
 |110 | User not exist | user specified by user_id doesn't exist |
 |201 | order not exist | can't find the transaction order by merchant_reference |
 |205 | Can not find out corresponding key for the user code or user is disabled or user is not activity | can't get api key by user_id |
 |206 | Signature from Merchant request is wrong | signature is not correct |
-|900 | transaction has been successfully completed | transaction has been successfully completed |
-|901 | transaction has been failed | transaction has been failed |
+|900 | transaction has been successfully completed | can't cancel this transaction, because it has been completed successfully |
+|901 | transaction has been failed | can't cancel this transaction, because it has been failed |

@@ -80,11 +80,11 @@
     </li>
   
     <li>
-      <a href="/v2/latipay-wechat-mini-app.html" class="sidebar-link">Wechat Mini App Payment</a>
+      <a href="/v2/error-code.html" class="sidebar-link">Error Code</a>
     </li>
   
     <li>
-      <a href="/v2/error-code.html" class="sidebar-link">Error Code</a>
+      <a href="/v2/latipay-wechat-mini-app.html" class="sidebar-link">Wechat Mini App Payment</a>
     </li>
   
 </ul>
@@ -680,7 +680,7 @@
 </tbody>
 </table>
 <h4 id="Example-Response-2"><a href="#Example-Response-2" class="headerlink" title="Example Response"></a>Example Response</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  "message": "", //the reason when error happened</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Error-Code"><a href="#Error-Code" class="headerlink" title="Error Code"></a>Error Code</h4><table>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h4><table>
 <thead>
 <tr>
 <th>Code</th>
@@ -690,9 +690,14 @@
 </thead>
 <tbody>
 <tr>
+<td>0</td>
+<td>success</td>
+<td>cancellation success</td>
+</tr>
+<tr>
 <td>1</td>
 <td>FAIL</td>
-<td>cancellation failed</td>
+<td>cancellation failed，you can submit another request after at least 15 minutes</td>
 </tr>
 <tr>
 <td>3</td>
@@ -722,12 +727,12 @@
 <tr>
 <td>900</td>
 <td>transaction has been successfully completed</td>
-<td>transaction has been successfully completed</td>
+<td>can’t cancel this transaction, because it has been completed successfully</td>
 </tr>
 <tr>
 <td>901</td>
 <td>transaction has been failed</td>
-<td>transaction has been failed</td>
+<td>can’t cancel this transaction, because it has been failed</td>
 </tr>
 </tbody>
 </table>
