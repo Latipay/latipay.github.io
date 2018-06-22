@@ -92,7 +92,7 @@ https://api.latipay.net/v2/transaction
 |callback_url | String | Merchant webserver's URL that the payment result will send to. | NO|
 | ip| String| The IP address of the customer.| NO|
 | version| String| The latest version of the platform. must be `"2.0"`| NO|
-| product_name| String| The name of the product or service being sold.| YES|
+| product_name| String| The name of the product or service being sold.| NO|
 | signature| String| The SHA-256 HMAC API signature.| NO|
 
 #### Extract Attributes (`Only for WeChat`):		

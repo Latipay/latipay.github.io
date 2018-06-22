@@ -101,7 +101,7 @@ https://api.latipay.net/v2/transaction
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 |ip | String | The customer's IP address | NO
 |version | String | The latest version of the Latipay platform which must be `"2.0"` | Yes
-|product_name | String | The name of the product or service being sold. | Yes
+|product_name | String | The name of the product or service being sold. | No
 |signature | String | The `SHA-256 HMAC` API signature. | NO
 
 #### Extract Attributes (`Only for WeChat`)

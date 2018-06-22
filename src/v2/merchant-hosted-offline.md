@@ -66,7 +66,7 @@ https://api.latipay.net/v2/transaction
 |callback_url | String | Merchant webserver's URL that the payment result will send to. | NO
 | ip| String| The IP address of the customer.| NO|
 | version| String| The latest version of the platform. must be `"2.0"`| NO|
-| product_name| String| The name of the product or service being sold.| YES|
+| product_name| String| The name of the product or service being sold.| NO|
 | host_type| String| must be `"1"`, for [#Payment Interface](#STEP-2-Payment-Interface) to return `QR code picture` in base64 | NO|
 | signature| String| The SHA-256 HMAC API signature.| NO|
 
