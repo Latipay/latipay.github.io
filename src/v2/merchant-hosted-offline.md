@@ -1,7 +1,7 @@
 ---
 title: Merchant Hosted Offline/Hardware
 type: v2
-order: 4
+order: 3
 ---
 
 [API Playground](https://pay.latipay.net/api-console-merchant-hosted-offline)

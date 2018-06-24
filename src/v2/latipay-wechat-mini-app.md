@@ -1,7 +1,7 @@
 ---
 title: Wechat Mini App Payment
 type: v2
-order: 6
+order: 5
 ---
 
 <p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values
