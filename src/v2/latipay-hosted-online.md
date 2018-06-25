@@ -185,7 +185,7 @@ Loading the URI in PC browser, mobile browser or Alipay/ WeChat's embedded brows
 {host_url}/{nonce}
 ```
 
-<p class="tip">Please load the url in this or similar way. `window.location.href={host_url}/{nonce}`, so the window will be redirected to payment gateway to finish the payment.</p>
+<p class="tip">If it's PC browser, you can load this url in current window or new window. But if it's mobile browser or  inside of Alipay or Wechat, please load the url in this or similar way: `window.location.href={host_url}/{nonce}`, so the window will be redirected to payment gateway to finish the payment.</p>
 
 Example
 
