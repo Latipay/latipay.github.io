@@ -98,6 +98,7 @@ https://api.latipay.net/v2/transaction
 |amount | String | A decimal amount. | NO
 |return_url | String | The URL of the landing page where the customer will be directed to after payment. | NO
 |callback_url | String | Merchant webserver's URL that the payment result will send to. | NO
+|backPage_url | String | Optional, A back link show on Latipay's payment page. Customer can back to merchant's website with this link. | YES
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 |ip | String | The customer's IP address | NO
 |version | String | The latest version of the Latipay platform which must be `"2.0"` | Yes

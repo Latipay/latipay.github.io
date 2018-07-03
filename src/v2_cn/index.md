@@ -85,6 +85,7 @@ https://api.latipay.net/v2/transaction
 |amount | String | 支付金额 | No
 |return_url | String | 支付完成后浏览器继续加载的地址 | No
 |callback_url | String | 支付完成后异步通知地址 | No
+|backPage_url | String | 如果有此参数，支付页面上会显示该链接：“<取消订单并返回”，顾客点击该链接，返回商户网站 | YES
 |signature | String | 参数签名，算法为SHA-256 HMAC | No
 |merchant_reference | String | 商户订单号 | No
 |ip | String | 客户端ip | No
