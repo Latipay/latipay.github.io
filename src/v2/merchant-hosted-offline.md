@@ -91,7 +91,8 @@ https://api.latipay.net/v2/transaction
 }
 ```
 
-#### SHA-256 HMAC Signature
+#### SHA-256 HMAC Signature [Try your signature online](https://jsfiddle.net/tonnyLTP/wj36tey4/45/)
+
 Rearrange parameters alphabetically (except parameters with value of `null` or `empty` string) and join them with `&`, and concat the value of `api_key` in the end.
 
 JS code example:

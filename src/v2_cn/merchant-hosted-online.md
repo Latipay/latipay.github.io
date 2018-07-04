@@ -117,7 +117,7 @@ https://api.latipay.net/v2/transaction
 }
 ```
 
-#### 参数 SHA-256 HMAC 签名
+#### 参数 SHA-256 HMAC 签名 [在线签名](https://jsfiddle.net/tonnyLTP/wj36tey4/45/)
 
 将所有参数按字母表顺序从小到大排序（去掉其中值为null和空字符串的项），然后以key=value和&形式拼接，最后加上api_key
 
