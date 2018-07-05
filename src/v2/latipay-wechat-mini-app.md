@@ -55,6 +55,8 @@ GET https://api.weixin.qq.com/sns/jscode2session?appid={your mini APP ID}&secret
 
 ### STEP 3 - Latipay Payment Interface
 
+<p class="tip">请将 https://api.latipay.net 域名添加到小程序合法域名里。https://mp.weixin.qq.com/wxopen/devprofile 设置 > 开发设置 > 服务器域名 > request合法域名 </p>
+
 ```
 POST https://api.latipay.net/v2/miniapppay
 Content-Type: application/json;charset=UTF-8
