@@ -4,3 +4,29 @@
 .ant-form-item {
   margin-bottom: 10px;
 }
+
+#header {
+  background-color: #fff;
+  height: 60px;
+  padding: 10px 30px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+ul.ant-menu-inline {
+  border-right: none;
+}
+
+.right {
+  border-left: 1px solid #e8e8e8;
+}
+
+.form-container {
+  padding: 20px 40px;
+}
+
+.btn-copy {
+  background: white;
+  border-color: white;
+}

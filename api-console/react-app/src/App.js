@@ -116,6 +116,7 @@ class App extends Component {
     let parameters = `'${JSON.stringify(data, null, 2)}'`;
     if (api.method === 'GET') {
       parameters = Object.keys(data)
+        .filter(item => data[item] !== undefined)
         .map(key => `${key}=${data[key]}`)
         .join('&');
     }
@@ -150,6 +151,10 @@ class App extends Component {
     return { api, account, menuTitle: menu.title };
   }
 
+  onClick = () => {
+    window.location.href = 'https://doc.latipay.net/v2';
+  };
+
   render() {
     const { current, env } = this.state;
     const { api, account, menuTitle } = this.getApiAndAccount(current, env);
@@ -159,24 +164,31 @@ class App extends Component {
     const title = menuTitle + ' - ' + api.title;
 
     return (
-      <Row>
-        <Col span={6}>
-          <Slide choseApi={this.choseApi} current={this.state.current} />
-        </Col>
-        <Col span={18}>
-          <APIForm
-            title={title}
-            api={api}
-            account={account}
-            curl={curl}
-            env={env}
-            message={message}
-            signature={signature}
-            allValues={allValues}
-            onValuesChange={this.onValuesChange}
-          />
-        </Col>
-      </Row>
+      <div>
+        <div id="header">
+          <a id="logo" onClick={this.onClick}>
+            <img src="https://doc.latipay.net/images/logo.svg" />
+          </a>
+        </div>
+        <Row>
+          <Col span={5}>
+            <Slide choseApi={this.choseApi} current={this.state.current} />
+          </Col>
+          <Col className="right" span={19}>
+            <APIForm
+              title={title}
+              api={api}
+              account={account}
+              curl={curl}
+              env={env}
+              message={message}
+              signature={signature}
+              allValues={allValues}
+              onValuesChange={this.onValuesChange}
+            />
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

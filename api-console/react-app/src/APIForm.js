@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { newSignature, initialValue } from './util';
+import Clipboard from 'react-clipboard.js';
 
 import {
   Spin,
@@ -11,7 +12,8 @@ import {
   Icon,
   Select,
   Button,
-  InputNumber
+  InputNumber,
+  message
 } from 'antd';
 
 const FormItem = Form.Item;
@@ -36,6 +38,10 @@ class RegistrationForm extends React.Component {
       loading: false
     };
   }
+
+  onCopied = () => {
+    message.success('Copied');
+  };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -62,13 +68,19 @@ class RegistrationForm extends React.Component {
 
         this.setState({ loading: true });
 
-        axios({
+        const config = {
           method: api.method,
           url: hosts[env] + api.url,
-          headers: { 'Content-Type': 'application/json' },
-          data: parameters,
-          params: parameters
-        })
+          headers: { 'Content-Type': 'application/json' }
+        };
+
+        if (api.method === 'GET') {
+          config.params = parameters;
+        } else {
+          config.data = parameters;
+        }
+
+        axios(config)
           .then(res => {
             this.setState({
               result: JSON.stringify(res.data, null, 2),
@@ -163,7 +175,7 @@ class RegistrationForm extends React.Component {
     } catch (e) {}
 
     return (
-      <div style={{ padding: 20 }}>
+      <div className="form-container">
         <h2>{title}</h2>
         <p>
           <span style={{ fontWeight: 'bold' }}>{api.method}</span>{' '}
@@ -223,11 +235,22 @@ class RegistrationForm extends React.Component {
         <div>
           <p>SHA 256 Signature</p>
           <pre>
-            {`message= ${message}
-Secret Key= ${api_key ? api_key : ''}
-Signature= ${signature ? signature : ''}`}
+            {`Message: ${message}
+SecretKey: ${api_key ? api_key : ''}
+Signature: ${signature ? signature : ''}`}
           </pre>
-          <p>curl</p>
+          <p>
+            curl
+            <span style={{ float: 'right' }}>
+              <Clipboard
+                data-clipboard-text={curl}
+                className="btn-copy"
+                onSuccess={this.onCopied}
+              >
+                <Icon type="copy" />Copy
+              </Clipboard>
+            </span>
+          </p>
           <pre>{curl}</pre>
           <p>Result</p>
           <pre>{result}</pre>
