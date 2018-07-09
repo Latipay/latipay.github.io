@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Menu } from 'antd';
 
 import apis from './apis-config.json';
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 class Sider extends React.Component {
   render() {

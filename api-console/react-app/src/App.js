@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 
 import './App.css';
 import apis from './apis-config.json';
@@ -7,9 +7,6 @@ import Slide from './Slide';
 
 import APIForm from './APIForm';
 import { newSignature, initialValue } from './util';
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 const hosts = {
   prod: 'https://api.latipay.net',
@@ -95,6 +92,17 @@ class App extends Component {
   };
 
   update = (allValues, current, env) => {
+    const { api } = this.getApiAndAccount(current, env);
+
+    //
+    api.parameters.forEach(item => {
+      const v = allValues[item.name];
+      if (item.type === 'boolean' && v) {
+        allValues[item.name] = v === 'true' ? true : false;
+      }
+    });
+    ///
+
     const api_key = allValues.api_key || '';
     const { message, signature } = newSignature(allValues, api_key);
 
@@ -105,7 +113,6 @@ class App extends Component {
 
     delete data.api_key;
 
-    const { api, account } = this.getApiAndAccount(current, env);
     let parameters = `'${JSON.stringify(data, null, 2)}'`;
     if (api.method === 'GET') {
       parameters = Object.keys(data)
@@ -135,8 +142,8 @@ class App extends Component {
 
   getApiAndAccount(current, env) {
     const arr = current.split('_');
-    const menu = apis.menus[parseInt(arr[0])];
-    const api = menu['apis'][parseInt(arr[1])];
+    const menu = apis.menus[parseInt(arr[0], 10)];
+    const api = menu['apis'][parseInt(arr[1], 10)];
 
     const account = apis.account[env];
 

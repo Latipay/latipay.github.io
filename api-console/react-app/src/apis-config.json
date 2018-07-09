@@ -311,7 +311,8 @@
               "name": "product_name"
             },
             {
-              "name": "period_time"
+              "name": "period_time",
+              "type": "number"
             },
             {
               "name": "max_open_count",
@@ -330,10 +331,13 @@
               "name": "return_url"
             },
             {
-              "name": "notify_url"
+              "name": "notify_url",
+              "required": true
             },
             {
-              "name": "qrcode"
+              "name": "qrcode",
+              "type": "boolean",
+              "options": [true, false]
             }
           ]
         },
@@ -433,7 +437,8 @@
               "name": "product_name"
             },
             {
-              "name": "period_time"
+              "name": "period_time",
+              "type": "number"
             },
             {
               "name": "max_open_count",
@@ -444,6 +449,7 @@
             },
             {
               "name": "qrcode",
+              "type": "boolean",
               "options": [true, false]
             }
           ]

@@ -16,8 +16,8 @@ module.exports = {
     const msg = Object.keys(payload)
       .filter(
         item =>
-          payload[item] != undefined &&
-          payload[item] != null &&
+          payload[item] !== undefined &&
+          payload[item] !== null &&
           payload[item] !== '' &&
           item !== 'api_key' &&
           item !== 'signature'
@@ -41,7 +41,7 @@ module.exports = {
     }
 
     if (defaultValue === '$now') {
-      return parseInt(new Date().getTime() / 1000);
+      return parseInt(new Date().getTime() / 1000, 10);
     } else if (defaultValue === '$randomId') {
       return makeid();
     }

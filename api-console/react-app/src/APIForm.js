@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { newSignature, initialValue } from './util';
 
@@ -9,11 +9,7 @@ import {
   Input,
   Tooltip,
   Icon,
-  Cascader,
   Select,
-  Row,
-  Col,
-  Checkbox,
   Button,
   InputNumber
 } from 'antd';
@@ -50,9 +46,17 @@ class RegistrationForm extends React.Component {
 
         const { api_key, ...parameters } = values;
 
-        const { message, signature } = newSignature(parameters, api_key);
+        const { signature } = newSignature(parameters, api_key);
 
         parameters.signature = signature;
+
+        //
+        api.parameters.forEach(item => {
+          const v = parameters[item.name];
+          if (item.type === 'boolean' && v) {
+            parameters[item.name] = v === 'true' ? true : false;
+          }
+        });
 
         const { env = 'prod' } = this.props;
 
@@ -119,7 +123,7 @@ class RegistrationForm extends React.Component {
       env = 'prod'
     } = this.props;
     const { api_key } = allValues;
-    const { data, result, loading } = this.state;
+    const { result, loading } = this.state;
 
     const component = item => {
       if (item.condition_options) {
@@ -127,7 +131,9 @@ class RegistrationForm extends React.Component {
         return (
           <Select>
             {options.map(item => (
-              <Option value={item}>{item.toString()}</Option>
+              <Option key={item.toString()} value={item}>
+                {item.toString()}
+              </Option>
             ))}
           </Select>
         );
@@ -135,7 +141,9 @@ class RegistrationForm extends React.Component {
         return (
           <Select allowClear={true}>
             {item.options.map(item => (
-              <Option value={item}>{item.toString()}</Option>
+              <Option key={item.toString()} value={item.toString()}>
+                {item.toString()}
+              </Option>
             ))}
           </Select>
         );
@@ -177,6 +185,7 @@ class RegistrationForm extends React.Component {
             })
             .map(item => (
               <FormItem
+                key={item.name}
                 {...formItemLayout}
                 label={
                   <span>
