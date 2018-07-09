@@ -30,3 +30,7 @@ ul.ant-menu-inline {
   background: white;
   border-color: white;
 }
+
+pre {
+  margin-bottom: 30px;
+}

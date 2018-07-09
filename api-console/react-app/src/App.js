@@ -167,7 +167,7 @@ class App extends Component {
       <div>
         <div id="header">
           <a id="logo" onClick={this.onClick}>
-            <img src="https://doc.latipay.net/images/logo.svg" />
+            <img src="https://doc.latipay.net/images/logo.svg" alt="logo" />
           </a>
         </div>
         <Row>
