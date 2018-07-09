@@ -1,0 +1,478 @@
+{
+  "account": {
+    "staging": {
+      "user_id": "U00001534",
+      "wallet_id": "W00000001",
+      "api_key": ""
+    },
+    "prod": {
+      "user_id": "U000000013",
+      "wallet_id": "W000000023",
+      "api_key": ""
+    }
+  },
+  "menus": [
+    {
+      "title": "Account",
+      "apis": [
+        {
+          "title": "FX Rate",
+          "method": "GET",
+          "url": "/v2/all_rate",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "wallet_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "request_time",
+              "required": true,
+              "default": "$now"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Payment",
+      "apis": [
+        {
+          "title": "Transaction",
+          "method": "POST",
+          "url": "/v2/transaction",
+          "parameters": [
+            {
+              "tips": "",
+              "name": "user_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "wallet_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "api_key",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "merchant's unique order id",
+              "name": "merchant_reference",
+              "default": "$randomId",
+              "required": true
+            },
+            {
+              "tips": "front end return url",
+              "name": "return_url",
+              "default": "http://pay.latipay.net/confirmation",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "callback_url",
+              "default": "https://yourwebsite.com/notify",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "ip",
+              "default": "127.0.0.1",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "version",
+              "disabled": true,
+              "default": "2.0",
+              "required": true
+            },
+            {
+              "name": "product_name",
+              "default": "ticket",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "amount",
+              "default": "0.01",
+              "required": true,
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "tips": "",
+              "name": "backPage_url",
+              "optional": true,
+              "placeholder": "https://yourwebsite.com/back"
+            },
+            {
+              "name": "payment_method",
+              "required": true,
+              "condition_options": [
+                {
+                  "name": "wechat"
+                },
+                {
+                  "name": "alipay"
+                },
+                {
+                  "name": "onlineBank"
+                },
+                {
+                  "name": "unionpay"
+                }
+              ]
+            },
+            {
+              "name": "present_qr",
+              "default": "1",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "is_staticpay",
+              "default": "0",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "is_spotpay",
+              "default": "0",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "goods_detail",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "host_type",
+              "default": "0",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "present_qr",
+              "condition": {
+                "payment_method": "alipay"
+              }
+            },
+            {
+              "name": "is_staticpay",
+              "default": "0",
+              "condition": {
+                "payment_method": "alipay"
+              }
+            },
+            {
+              "name": "is_spotpay",
+              "default": "0",
+              "condition": {
+                "payment_method": "alipay"
+              }
+            },
+            {
+              "name": "host_type",
+              "default": "0",
+              "condition": {
+                "payment_method": "alipay"
+              }
+            },
+            {
+              "name": "id_number",
+              "condition": {
+                "payment_method": "onlineBank"
+              }
+            },
+            {
+              "name": "id_name",
+              "condition": {
+                "payment_method": "onlineBank"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Barcode",
+          "method": "POST",
+          "url": "/barcode",
+          "parameters": [
+            {
+              "tips": "",
+              "name": "user_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "wallet_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "api_key",
+              "required": true,
+              "default": ""
+            },
+            {
+              "name": "amount",
+              "required": true,
+              "default": "0.05",
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "pay_code",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "After Payment",
+      "apis": [
+        {
+          "title": "Refund",
+          "method": "POST",
+          "url": "/refund",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "order_id",
+              "required": true
+            },
+            {
+              "name": "refund_amount",
+              "required": true,
+              "precision": 2,
+              "type": "number"
+            },
+            {
+              "name": "reference"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Invoice",
+      "apis": [
+        {
+          "title": "Create",
+          "method": "POST",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "wallet_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "amount",
+              "required": true,
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "product_name"
+            },
+            {
+              "name": "period_time"
+            },
+            {
+              "name": "max_open_count",
+              "type": "number"
+            },
+            {
+              "name": "app"
+            },
+            {
+              "name": "customer_order_id"
+            },
+            {
+              "name": "customer_reference"
+            },
+            {
+              "name": "return_url"
+            },
+            {
+              "name": "notify_url"
+            },
+            {
+              "name": "qrcode"
+            }
+          ]
+        },
+        {
+          "title": "Query ",
+          "method": "GET",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id"
+            },
+            {
+              "name": "customer_order_id"
+            }
+          ]
+        },
+        {
+          "title": "Query List",
+          "method": "GET",
+          "url": "/v2/invoices",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "start_time",
+              "required": true
+            },
+            {
+              "name": "end_time"
+            }
+          ]
+        },
+        {
+          "title": "Delete",
+          "method": "DELETE",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id"
+            },
+            {
+              "name": "customer_order_id"
+            }
+          ]
+        },
+        {
+          "title": "Update",
+          "method": "PUT",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "wallet_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id"
+            },
+            {
+              "name": "customer_order_id"
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "product_name"
+            },
+            {
+              "name": "period_time"
+            },
+            {
+              "name": "max_open_count",
+              "type": "number"
+            },
+            {
+              "name": "reference"
+            },
+            {
+              "name": "qrcode",
+              "options": [true, false]
+            }
+          ]
+        },
+        {
+          "title": "Refund",
+          "method": "POST",
+          "url": "/v2/invoice/refund",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id"
+            },
+            {
+              "name": "customer_order_id"
+            },
+            {
+              "name": "reference"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+@import '../node_modules/antd/dist/antd.css';
+
+
+.ant-form-item {
+  margin-bottom: 10px;
+}
