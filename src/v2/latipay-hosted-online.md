@@ -251,7 +251,7 @@ signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ### STEP 4 - Synchronous Redirection
 <p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>
 
-There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.
+There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done.
 
 ```
 Redirect merchant's return_url
@@ -261,7 +261,7 @@ Redirect merchant's return_url
 |------------- |---------------| -------------|
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 | payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. |
-| status | String | The status of the transaction can be `pending`, `paid`, or `failed`. |
+| status | String | The status of the transaction can be `paid`, or `cancel_or_fail`. |
 | currency | String | The currency code of the transaction. |
 | amount | String | A decimal amount. |
 | signature | String |The `SHA-256 HMAC` API signature.

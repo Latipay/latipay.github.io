@@ -239,7 +239,7 @@ JS code example:
 
 ### STEP 3 - Payment Result Asynchronous Notification
 
-This is a payment result notification sent by Latipay to merchants after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
+This is a payment result notification sent by Latipay to merchants after the payment is done. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
 
 
 ```
@@ -285,41 +285,7 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-
-### STEP 4 - Synchronous Redirection
-<p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>
-
-There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.
-
-```
-Redirect merchant's return_url
-```
-
-| Name  | Type  | Description |
-|------------- |---------------| -------------|
-| merchant_reference | String | A `unique id` identifying the order in Merchant's system. |
-| payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. |
-| status | String | The status of the transaction can be `pending`, `paid`, or `failed`. |
-| currency | String | The currency code of the transaction. |
-| amount | String | A decimal amount. |
-| signature | String |The `SHA-256 HMAC` API signature.
-
-Example
-
-```
-https://www.merchant.com/latipay?merchant_reference=dsi39ej430sks03&payment_method=alipay&status=paid&currency=NZD&amount=100.00&signature= 14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3
-```
-
-SHA-256 HMAC Signature
-
-Merchant frontend need to validate the signature for protecting against malicious requests.
-
-```
-message: merchant_reference + payment_method + status + currency + amount
-secret: api_key
-```
-
-### STEP 5 - Payment Result Interface
+### STEP 4 - Payment Result Interface
 All customers can send requests to query payment status with merchant order id(that should be `unique id` for the merchant) as merchant_reference by HTTP GET request.
 
 ```
@@ -392,7 +358,7 @@ signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 
 ```
 
-### STEP 6 - Refund
+### STEP 5 - Refund
 
 ```
 POST https://api.latipay.net/refund
@@ -461,7 +427,7 @@ signature: 3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c
 }
 ```
 
-### STEP 7 - Cancel Transaction
+### STEP 6 - Cancel Transaction
 
 ```
 POST https://api.latipay.net/cancel

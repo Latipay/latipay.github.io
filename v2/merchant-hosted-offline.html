@@ -384,7 +384,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: amount=0.02&amp;amount_cny=0.09&amp;currency=NZD&amp;currency_rate=4.65776&amp;merchant_reference=M00001543-000001&amp;nonce=41226220180411114422fdfdba5d94f84fdc873f0f9ea6d5a6&amp;order_id=20180411000009&amp;organisation_id=1&amp;organisation_name=123123&amp;payment_method=alipay&amp;product_name=food&amp;qr_code=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAE+klEQVR42u3dQW7jMBAEQP//07v3BfYQmNPTZKqBnJzYscQSMKQ0/PwRkf/m4xCIACICiAggIoCIACICiAggIoCIACIigIgAIgKICCAigIgAIgKICCD/vtHnE/05/f/+9Pv89P2+/f3T3+/03397PNvGByCAAAIIIIAAAggg9wFJn/BtUNsD8NsB+e3xvv2CAAgggAACCCCAAALIe0CmT1j7ADkNenuAbhfxgAACCCCAAAIIIIAA0n4Atv/+NMBpoOkLCiCAAAIIIIAAAggggPy2Ij19s93p4337zY+AAAIIIIAAAggggACyXcROF63TA3wa3PT3a1tY3Rp/gAACCCCAAAIIIIBo2pBaqPL67kKgriaAAAIIIF4HBBCvA9KeaVDt4LcXYl8NIIAAAggggAACCCDvAkkXZW2ATg/A0zdjTi/MtiwMAgIIIIAAAggggAByL5DtInEaQBpk+viePv/bF0RAAAEEEEAAAQQQQN4Dkm6C0Dag25tKpH9/e7wAAggggAACCCCAAPI+kJaFnVsWLrebRmxPgqQXFgEBBBBAAAEEEEAAAWT679tvfnxtEmH689culIAAAggggAACCCCA1AJpazJwWzPlNLDp85e+4AECCCCAAAIIIIAAAsjpL9y2aabXsxfIX7eJJyCAAAKI1wEBxOuAxBcGv/287Y3r0xeA228Grf0/AQEEEEAAAQQQQAB5BkjbwlJ7E4Pf1ljv13VWBAQQQAABBBBAAAFkvUg+/XntRWNbU4b0Ba91UgIQQAABBBBAAAEEkHuK9OkT2tYE4bYHxtomWQABBBBAAAEEEEAAASRdtKeLzOmf05MY6aK+vYgGBBBAAAEEEEAAAQSQ9EP96fe/rUje3nQzPUkCCCCAAAIIIIAAAggg7QtR20VqGnS6SG5b+AQEEEAAAQQQQAABBJDp5sSvbZo5/XnTx7N9UgQQQAABBBBAAAEEkPuBtC2UtU06tB+v9g1vnu9qAggggAACCCCAAAJIHND2A0zpB4TaN8RpWzi9rkgHBBBAAAEEEEAAASS+UNi+0JYu0tMLd6813otdGAABBBBAAAEEEEAAeQZIe/Pjtg2B0jd3pic1dDUBBBBAAAEEEEAAASS9kHS6KGsrOqcXHtsmOdrOJyCAAAIIIIAAAggg7wGZPiC3NyrbbizX3vy7tVEeIIAAAggggAACCCD3FumnQW1vIDMN+jbwbRcYQAABBBBAAAEEEEDeBzJeLIWLtNuaNrQ9kHYa1FYRDwgggAACCCCAAALIO43j0kXibQ/4bDfKay2a4xdmQAABBBBAAAEEEEBqgUwfsLYB2lbUbw/g9g13AAEEEEAAAQQQQAB5D8h6MRV+QCj9/0xPgrRtIAQIIIAAAggggAACCCDpA9w2wNo3DW1buEwfX0AAAQQQQAABBBBAAJkuwr/9/O0HoNJNGbbPz/QFChBAAAEEEEAAAQQQQNqKvOmitb2oTy/MvnLzIiCAAAIIIIAAAggggLQ0fZieVGhritAODhBAAAEEEEAAAQQQQNqAbDeVuH3Ty9smAQABBBBAAAEEEEAAAST9/rdvInp7E4fpSYvY5AQggAACCCCAAAIIINcASd+8Nl10pl+/rfHd6fGxPUkACCCAAAIIIIAAAkg/EJEXA4gIICKAiAAiAogIICKAiAAiAogIICICiAggIoCIACICiAggIoCIPJO/H7l2LoSyTzgAAAAASUVORK5CYII=&amp;qr_code_url=https://qr.alipay.com/bax08151zdenrj3nltzi80a9&amp;user_id=U00001534&amp;user_name=abcdefghijklmnopqrstuvwxyz&amp;wallet_id=W00000001&amp;wallet_name=test accountXXXXXXXXX</span><br><span class="line">secret(your api_key): XXXXXXXXX</span><br></pre></td></tr></table></figure>
 <p>JS code example:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(data)</span><br><span class="line">  .filter(<span class="function"><span class="params">item</span> =&gt;</span> item !== <span class="string">'signature'</span>)</span><br><span class="line">  .sort()</span><br><span class="line">  .map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;item&#125;</span>=<span class="subst">$&#123;data[item]&#125;</span>`</span>)</span><br><span class="line">  .join(<span class="string">'&amp;'</span>)</span><br><span class="line">  .concat(<span class="string">'XXXXXXXXX'</span>)</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="STEP-3-Payment-Result-Asynchronous-Notification"><a href="#STEP-3-Payment-Result-Asynchronous-Notification" class="headerlink" title="STEP 3 - Payment Result Asynchronous Notification"></a>STEP 3 - Payment Result Asynchronous Notification</h3><p>This is a payment result notification sent by Latipay to merchants after the payment is done successfully. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.</p>
+<h3 id="STEP-3-Payment-Result-Asynchronous-Notification"><a href="#STEP-3-Payment-Result-Asynchronous-Notification" class="headerlink" title="STEP 3 - Payment Result Asynchronous Notification"></a>STEP 3 - Payment Result Asynchronous Notification</h3><p>This is a payment result notification sent by Latipay to merchants after the payment is done. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST merchant&apos;s callback_url</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br></pre></td></tr></table></figure>
 <p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank" rel="noopener">200</a></p>
 
@@ -437,57 +437,7 @@
 <h4 id="Example-input"><a href="#Example-input" class="headerlink" title="Example input"></a>Example input</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"merchant_reference"</span>: <span class="string">"dsi39ej430sks03"</span>,</span><br><span class="line">  <span class="attr">"currency"</span>: <span class="string">"AUD"</span>,</span><br><span class="line">  <span class="attr">"amount"</span>: <span class="string">"120.00"</span>,</span><br><span class="line">  <span class="attr">"payment_method"</span>: <span class="string">"wechat"</span>,</span><br><span class="line">  <span class="attr">"status"</span>: <span class="string">"paid"</span>,</span><br><span class="line">  <span class="attr">"pay_time"</span>: <span class="string">"2017-07-07 10:53:50"</span></span><br><span class="line"></span><br><span class="line">  <span class="string">"signature"</span>: <span class="string">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="SHA-256-HMAC-Signature-1"><a href="#SHA-256-HMAC-Signature-1" class="headerlink" title="SHA-256 HMAC Signature"></a>SHA-256 HMAC Signature</h4><p>Merchant backend needs to validate the signature for protecting against malicious requests.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-4-Synchronous-Redirection"><a href="#STEP-4-Synchronous-Redirection" class="headerlink" title="STEP 4 - Synchronous Redirection"></a>STEP 4 - Synchronous Redirection</h3><p class="tip">This redirection only happens in Wechat pay’s embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app.</p>
-
-<p>There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done successfully.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Redirect merchant&apos;s return_url</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>merchant_reference</td>
-<td>String</td>
-<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
-</tr>
-<tr>
-<td>payment_method</td>
-<td>String</td>
-<td>The payment methods can be <code>wechat</code>, <code>alipay</code> or <code>onlineBank</code>.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td>The status of the transaction can be <code>pending</code>, <code>paid</code>, or <code>failed</code>.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>String</td>
-<td>The currency code of the transaction.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td>String</td>
-<td>A decimal amount.</td>
-</tr>
-<tr>
-<td>signature</td>
-<td>String</td>
-<td>The <code>SHA-256 HMAC</code> API signature.</td>
-</tr>
-</tbody>
-</table>
-<p>Example</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.merchant.com/latipay?merchant_reference=dsi39ej430sks03&amp;payment_method=alipay&amp;status=paid&amp;currency=NZD&amp;amount=100.00&amp;signature= 14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3</span><br></pre></td></tr></table></figure>
-<p>SHA-256 HMAC Signature</p>
-<p>Merchant frontend need to validate the signature for protecting against malicious requests.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-5-Payment-Result-Interface"><a href="#STEP-5-Payment-Result-Interface" class="headerlink" title="STEP 5 - Payment Result Interface"></a>STEP 5 - Payment Result Interface</h3><p>All customers can send requests to query payment status with merchant order id(that should be <code>unique id</code> for the merchant) as merchant_reference by HTTP GET request.</p>
+<h3 id="STEP-4-Payment-Result-Interface"><a href="#STEP-4-Payment-Result-Interface" class="headerlink" title="STEP 4 - Payment Result Interface"></a>STEP 4 - Payment Result Interface</h3><p>All customers can send requests to query payment status with merchant order id(that should be <code>unique id</code> for the merchant) as merchant_reference by HTTP GET request.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https://api.latipay.net/v2/transaction/&#123;merchant_reference&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters-2"><a href="#Parameters-2" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
@@ -567,7 +517,7 @@
 <h4 id="Signature-in-Response-1"><a href="#Signature-in-Response-1" class="headerlink" title="Signature in Response"></a>Signature in Response</h4><p>For security reasons, we highly recommend you verify the signature in the response.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
 <h4 id="Example-Signature"><a href="#Example-Signature" class="headerlink" title="Example Signature"></a>Example Signature</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">message: dsi39ej430sks03alipaypaidNZD120.00</span><br><span class="line">secret(your api_key): 111222333</span><br><span class="line"></span><br><span class="line">signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-6-Refund"><a href="#STEP-6-Refund" class="headerlink" title="STEP 6 - Refund"></a>STEP 6 - Refund</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/refund</span><br></pre></td></tr></table></figure>
+<h3 id="STEP-5-Refund"><a href="#STEP-5-Refund" class="headerlink" title="STEP 5 - Refund"></a>STEP 5 - Refund</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/refund</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters-3"><a href="#Parameters-3" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
 <tr>
@@ -633,7 +583,7 @@
 </tbody>
 </table>
 <h4 id="Example-Response-1"><a href="#Example-Response-1" class="headerlink" title="Example Response"></a>Example Response</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  "message": "", //the reason when error happened</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="STEP-7-Cancel-Transaction"><a href="#STEP-7-Cancel-Transaction" class="headerlink" title="STEP 7 - Cancel Transaction"></a>STEP 7 - Cancel Transaction</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/cancel</span><br></pre></td></tr></table></figure>
+<h3 id="STEP-6-Cancel-Transaction"><a href="#STEP-6-Cancel-Transaction" class="headerlink" title="STEP 6 - Cancel Transaction"></a>STEP 6 - Cancel Transaction</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/cancel</span><br></pre></td></tr></table></figure>
 <h4 id="Parameters-4"><a href="#Parameters-4" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
 <tr>
