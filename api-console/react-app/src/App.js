@@ -61,7 +61,6 @@ class App extends Component {
       message: d.message,
       curl: d.curl,
       signature: d.signature,
-      parameters: '',
       allValues
     };
   }
@@ -77,10 +76,15 @@ class App extends Component {
       allValues[item.name] = initialValue(account, item.name, item.default);
     });
 
+    const d = this.update(allValues, current, env);
+
     this.setState({
       ...this.update(allValues, current, env),
       allValues,
-      current
+      current,
+      message: d.message,
+      curl: d.curl,
+      signature: d.signature
     });
   };
 

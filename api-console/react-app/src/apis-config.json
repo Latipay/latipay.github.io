@@ -355,10 +355,12 @@
               "required": true
             },
             {
-              "name": "invoice_id"
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
             },
             {
-              "name": "customer_order_id"
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
             }
           ]
         },
@@ -398,10 +400,12 @@
               "required": true
             },
             {
-              "name": "invoice_id"
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
             },
             {
-              "name": "customer_order_id"
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
             }
           ]
         },
@@ -423,10 +427,12 @@
               "required": true
             },
             {
-              "name": "invoice_id"
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
             },
             {
-              "name": "customer_order_id"
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
             },
             {
               "name": "amount",
@@ -468,10 +474,12 @@
               "required": true
             },
             {
-              "name": "invoice_id"
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
             },
             {
-              "name": "customer_order_id"
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
             },
             {
               "name": "reference"

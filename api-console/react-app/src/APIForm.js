@@ -171,6 +171,8 @@ class RegistrationForm extends React.Component {
       const r = JSON.parse(result);
       if (r.host_url && r.nonce) {
         link = r.host_url + '/' + r.nonce;
+      } else if (r.invoice_url) {
+        link = r.invoice_url;
       }
     } catch (e) {}
 
