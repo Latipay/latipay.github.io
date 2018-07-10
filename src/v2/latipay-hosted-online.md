@@ -294,7 +294,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 |------------- |---------------| -------------|
 | user_id | String | The user account you want to use to process the transaction. |
 | signature | String | The `SHA-256 HMAC` API signature. |
-| is_block | Number | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. |
+| is_block | Int | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. |
 
 #### SHA-256 HMAC Signature
 
