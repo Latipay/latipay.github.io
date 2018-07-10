@@ -1,7 +1,7 @@
 ---
 title: Error Code
 type: v2
-order: 4
+order: 6
 ---
 
 | Code | Description |
