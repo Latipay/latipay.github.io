@@ -35,7 +35,7 @@ class App extends Component {
     if (whichApi) {
       const map = {};
       apis.menus.forEach((item, index0) => {
-        item.apis.forEach((api, index1) => {
+        item.apis.reverse().forEach((api, index1) => {
           map[api.url] = `${index0}_${index1}`;
         });
       });
