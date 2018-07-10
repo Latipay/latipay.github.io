@@ -395,7 +395,7 @@ signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ### STEP 6 - Refund
 
 ```
-POST https://api.latipay.net/finance/refund
+POST https://api.latipay.net/refund
 ```
 
 #### Parameters

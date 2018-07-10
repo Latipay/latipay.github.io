@@ -4,7 +4,7 @@ type: v2_cn
 order: 1
 ---
 
-[在线测试API](https://pay.latipay.net/api-console-latipay-hosted-online)
+[在线测试API](http://doc.latipay.net/api-console/index.html?api=/v2/transaction)
 
 <p class="tip">1. 集成Latipay API需要提前准备好Wallet ID, User ID 和 API key。 <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values；
 2. 对应的Wallet ID需要事先开通alipay，wechat或者onlineBank权限；

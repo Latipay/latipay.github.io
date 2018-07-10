@@ -245,12 +245,30 @@
               "required": true
             }
           ]
-        }
-      ]
-    },
-    {
-      "title": "After Payment",
-      "apis": [
+        },
+        {
+          "title": "Query",
+          "method": "GET",
+          "url": "/v2/transaction/$merchant_reference",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
+            },
+            {
+              "name": "is_block",
+              "options": [0, 1]
+            }
+          ]
+        },
         {
           "title": "Refund",
           "method": "POST",
@@ -276,6 +294,25 @@
             },
             {
               "name": "reference"
+            }
+          ]
+        },
+        {
+          "title": "Cancel",
+          "method": "POST",
+          "url": "/cancel",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
             }
           ]
         }

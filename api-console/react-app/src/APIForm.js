@@ -43,6 +43,19 @@ class RegistrationForm extends React.Component {
     message.success('Copied');
   };
 
+  handleChange = value => {
+    console.log(JSON.stringify(value));
+
+    // const { api } = this.props;
+    // api.forEach(item => {
+    //   if (prevProps[item.name] && item.exclude && prevProps[item.exclude]) {
+    //     this.props.form.setFieldsValue({
+    //       note: `Hi, ${value === 'male' ? 'man' : 'lady'}!`
+    //     });
+    //   }
+    // });
+  };
+
   handleSubmit = e => {
     e.preventDefault();
 
@@ -163,7 +176,21 @@ class RegistrationForm extends React.Component {
         return <InputNumber precision={item.precision ? item.precision : 0} />;
       }
 
-      return <Input disabled={item.disabled} placeholder={item.placeholder} />;
+      if (item.exclude) {
+        return (
+          <Input
+            disabled={item.disabled}
+            placeholder={item.placeholder}
+            onChange={() => {
+              this.props.form.resetFields([item.exclude]);
+            }}
+          />
+        );
+      } else {
+        return (
+          <Input disabled={item.disabled} placeholder={item.placeholder} />
+        );
+      }
     };
 
     let link = '';

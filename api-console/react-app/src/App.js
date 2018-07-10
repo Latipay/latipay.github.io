@@ -133,7 +133,21 @@ class App extends Component {
     } ${host}${api.url} -d ${parameters}`;
 
     if (api.method === 'GET') {
-      curl = `curl -X ${api.method} ${host}${api.url}?${parameters}`;
+      if (api.url.indexOf("/v2/transaction/$merchant_reference") !== -1) {
+        if (data.merchant_reference) {
+          const newPara = parameters.replace(
+            `merchant_reference=${data.merchant_reference}`,
+            ''
+          );
+          curl = `curl -X ${api.method} ${host}/v2/transaction/${
+            data.merchant_reference
+          }?${newPara}`;
+        } else {
+          curl = '';
+        }
+      } else {
+        curl = `curl -X ${api.method} ${host}${api.url}?${parameters}`;
+      }
     }
 
     //

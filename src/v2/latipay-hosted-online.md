@@ -3,7 +3,7 @@ title: Latipay Hosted Online
 type: v2
 order: 2
 ---
-[API Playground](https://pay.latipay.net/api-console-latipay-hosted-online)
+[API Playground]((http://doc.latipay.net/api-console/index.html?api=/v2/transaction))
 
 <p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values
 Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
