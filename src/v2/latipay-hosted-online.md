@@ -261,7 +261,7 @@ Redirect merchant's return_url
 |------------- |---------------| -------------|
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 | payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. |
-| status | String | The status of the transaction can be `paid`, or `cancel_or_fail`. |
+| status | String | The status of the transaction can be `paid`, or `cancel_or_fail`(only for wechat). |
 | currency | String | The currency code of the transaction. |
 | amount | String | A decimal amount. |
 | signature | String |The `SHA-256 HMAC` API signature.
