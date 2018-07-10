@@ -100,7 +100,7 @@ https://api.latipay.net/v2/transaction
 |callback_url | String | Merchant webserver's URL that the payment result will send to. | NO
 |backPage_url | String | Optional, A back link show on Latipay's payment page. Customer can back to merchant's website with this link. | YES
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
-|ip | String | The customer's IP address | NO
+|ip | String(16) | The customer's IPv4 address | NO
 |version | String | The latest version of the Latipay platform which must be `"2.0"` | Yes
 |product_name | String | The name of the product or service being sold. | No
 |signature | String | The `SHA-256 HMAC` API signature. | NO
