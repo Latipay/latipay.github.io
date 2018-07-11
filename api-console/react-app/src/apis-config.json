@@ -249,7 +249,7 @@
         {
           "title": "Query",
           "method": "GET",
-          "url": "/v2/transaction/$merchant_reference",
+          "url": "/v2/transaction/{merchant_reference}",
           "parameters": [
             {
               "name": "user_id",

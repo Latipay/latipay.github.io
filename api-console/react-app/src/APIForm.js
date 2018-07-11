@@ -79,7 +79,7 @@ class RegistrationForm extends React.Component {
 
         const { env = 'prod' } = this.props;
 
-        this.setState({ loading: true });
+        this.setState({ loading: true, result: '' });
 
         const config = {
           method: api.method,

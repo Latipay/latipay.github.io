@@ -1,0 +1,25 @@
+{
+  "account": {
+    "staging": {
+    },
+    "prod": {
+    }
+  },
+  "menus": [
+    {
+      "title": "Barcode",
+      "apis": [
+        {
+          "title": "Payment",
+          "method": "POST",
+          "url": "/barcode",
+        },
+        {
+          "title": "Query",
+          "method": "GET",
+          "url": "/v2/transaction/{merchant_reference}",
+        },
+      ]
+    }
+  ]
+}

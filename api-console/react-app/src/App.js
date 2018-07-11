@@ -133,7 +133,7 @@ class App extends Component {
     } ${host}${api.url} -d ${parameters}`;
 
     if (api.method === 'GET') {
-      if (api.url.indexOf("/v2/transaction/$merchant_reference") !== -1) {
+      if (api.url.indexOf("/v2/transaction/{merchant_reference}") !== -1) {
         if (data.merchant_reference) {
           const newPara = parameters.replace(
             `merchant_reference=${data.merchant_reference}`,
