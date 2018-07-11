@@ -259,7 +259,7 @@ Redirect merchant's return_url
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
-|merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
+|merchant_reference | String | A `unique id` identifying the order in Merchant's system. |
 | payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. |
 | status | String | The status of the transaction can be `paid`, or `cancel_or_fail`(only for wechat). |
 | currency | String | The currency code of the transaction. |
