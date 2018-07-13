@@ -117,10 +117,18 @@ class App extends Component {
 
     delete data.api_key;
 
-    let parameters = `'${JSON.stringify(data, null, 2)}'`;
+    let parametersText = `'${JSON.stringify(data, null, 2)}'`;
+    const urlContainsParameter =
+      api.url === '/v2/transaction/{merchant_reference}';
+
     if (api.method === 'GET') {
-      parameters = Object.keys(data)
-        .filter(item => data[item] !== undefined)
+      parametersText = Object.keys(data)
+        .filter(item => {
+          if (urlContainsParameter && item === 'merchant_reference') {
+            return false;
+          }
+          return data[item] !== undefined;
+        })
         .map(key => `${key}=${data[key]}`)
         .join('&');
     }
@@ -130,23 +138,19 @@ class App extends Component {
     //
     let curl = `curl -H 'Content-Type: application/json' -X ${
       api.method
-    } ${host}${api.url} -d ${parameters}`;
+    } ${host}${api.url} -d ${parametersText}`;
 
     if (api.method === 'GET') {
-      if (api.url.indexOf("/v2/transaction/{merchant_reference}") !== -1) {
+      if (urlContainsParameter) {
         if (data.merchant_reference) {
-          const newPara = parameters.replace(
-            `merchant_reference=${data.merchant_reference}`,
-            ''
-          );
           curl = `curl -X ${api.method} ${host}/v2/transaction/${
             data.merchant_reference
-          }?${newPara}`;
+          }?${parametersText}`;
         } else {
           curl = '';
         }
       } else {
-        curl = `curl -X ${api.method} ${host}${api.url}?${parameters}`;
+        curl = `curl -X ${api.method} ${host}${api.url}?${parametersText}`;
       }
     }
 

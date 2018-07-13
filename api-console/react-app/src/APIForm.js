@@ -81,9 +81,17 @@ class RegistrationForm extends React.Component {
 
         this.setState({ loading: true, result: '' });
 
+        let url = api.url;
+
+        if (url === '/v2/transaction/{merchant_reference}') {
+          url = '/v2/transaction/' + parameters.merchant_reference;
+
+          delete parameters.merchant_reference;
+        }
+
         const config = {
           method: api.method,
-          url: hosts[env] + api.url,
+          url: hosts[env] + url,
           headers: { 'Content-Type': 'application/json' }
         };
 
