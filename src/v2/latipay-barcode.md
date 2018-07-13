@@ -120,11 +120,25 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
+| merchant_reference | String | A `unique id` identifying the order in Merchant's system. |
 | user_id | String | The user account you want to use to process the transaction. |
-| signature | String | The `SHA-256 HMAC` API signature. |
 | is_block | Int | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. |
+| signature | String | The `SHA-256 HMAC` API signature. |
 
-#### SHA-256 HMAC Signature
+* <strong>SHA-256 HMAC Signature</strong> [Try your signature online](https://jsfiddle.net/tonnyLTP/wj36tey4/45/)
+
+Rearrange parameters alphabetically (except parameters with value of `null` or `empty` string) and join them with `&`, and concat the value of `api_key` in the end.
+
+JS code example:
+
+```js
+  Object.keys(data)
+    .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+    .sort()
+    .map(item => `${item}=${data[item]}`)
+    .join('&')
+    .concat(api_key)
+```
 
 ```
 Message: merchant_reference=6000324&user_id=U000000013111222333
