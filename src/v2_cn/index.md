@@ -301,6 +301,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 |payment_method  | String  | 支付方式，可能值：alipay, wechat, onlineBank  |
 |status  | String  | 支付状态，可能值: pending, paid, 或 failed  |
 |pay_time  | String  | 支付时间，北京时间 `UTC/GMT+08:00`|
+|transaction_id  | String  | Latiapy系统内的唯一支付单号|
 |signature  | String  | 服务器端签名，算法为SHA-256 HMAC  |
 
 #### 参数例子
@@ -313,7 +314,8 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
   "amount": "120.00",
   "payment_method": "wechat",
   "status": "paid",
-  "pay_time": "2017-07-07 10:53:50"
+  "pay_time": "2017-07-07 10:53:50",
+  "transaction_id": "2018327230129"
 }
 ```
 

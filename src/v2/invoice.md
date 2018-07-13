@@ -13,7 +13,7 @@ Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 ## API Details
 
-### STEP 1 - Create Invoice
+### 1 - Create Invoice
 
 ```
 POST https://api.latipay.net/v2/invoice
@@ -87,7 +87,7 @@ Signature: 9361c9e5ac5fc269296cc946377b3b4dea03685aa623482981a82101047672d9
 | signature | String | The SHA-256 HMAC API signature.
 
 
-### STEP 2 - Query an Invoice
+### 2 - Query an Invoice
 
 ```
 GET https://api.latipay.net/v2/invoice
@@ -105,7 +105,7 @@ GET https://api.latipay.net/v2/invoice
 *invoice_id and customer_order_id are alternative
 
 
-### STEP 3 - Query Invoices
+### 3 - Query Invoices
 
 ```
 GET https://api.latipay.net/v2/invoices
@@ -153,7 +153,7 @@ GET https://api.latipay.net/v2/invoices
 |payment_methods|[String]|Optional payment methods.
 |payer|String|The customers who paid.
 
-### STEP 4 - Refund Invoice
+### 4 - Refund Invoice
 
 ```
 POST https://api.latipay.net/v2/invoice/refund
@@ -179,7 +179,7 @@ POST https://api.latipay.net/v2/invoice/refund
 | message | String | The response message of payment interface.
 
 
-### STEP 5 - Delete Invoice
+### 5 - Delete Invoice
 
 ```
 DELETE https://api.latipay.net/v2/invoice
@@ -204,7 +204,7 @@ DELETE https://api.latipay.net/v2/invoice
 | message | String | The response message of payment interface.
 
 
-### STEP 6 - Update Invoice
+### 6 - Update Invoice
 
 ```
 PUT https://api.latipay.net/v2/invoice

@@ -37,7 +37,7 @@ WeChat
 ## API Details
 
 
-### STEP 1 - Latipay Transaction Interface  
+### 1 - Latipay Transaction Interface  
 ```
 POST https://api.latipay.net/v2/transaction
 Content-Type: application/json;charset=UTF-8
@@ -67,7 +67,7 @@ https://api.latipay.net/v2/transaction
 | ip| String| The IP address of the customer.| NO|
 | version| String| The latest version of the platform. must be `"2.0"`| NO|
 | product_name| String| The name of the product or service being sold.| NO|
-| host_type| String| must be `"1"`, for [#Payment Interface](#STEP-2-Payment-Interface) to return `QR code picture` in base64 | NO|
+| host_type| String| must be `"1"`, for [#Payment Interface](#2-Payment-Interface) to return `QR code picture` in base64 | NO|
 | signature| String| The SHA-256 HMAC API signature.| NO|
 
 
@@ -144,7 +144,7 @@ secret: api_key
 
 ---
 
-### STEP 2 - Payment Interface
+### 2 - Payment Interface
 
 ```
 GET {host_url}/{nonce}
@@ -237,7 +237,7 @@ JS code example:
 
 ---
 
-### STEP 3 - Payment Result Asynchronous Notification
+### 3 - Payment Result Asynchronous Notification
 
 This is a payment result notification sent by Latipay to merchants after the payment is done. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
 
@@ -285,7 +285,7 @@ message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
 ```
 
-### STEP 4 - Payment Result Interface
+### 4 - Payment Result Interface
 All customers can send requests to query payment status with merchant order id(that should be `unique id` for the merchant) as merchant_reference by HTTP GET request.
 
 ```
@@ -358,7 +358,7 @@ signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 
 ```
 
-### STEP 5 - Refund
+### 5 - Refund
 
 ```
 POST https://api.latipay.net/refund
@@ -427,7 +427,7 @@ signature: 3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c
 }
 ```
 
-### STEP 6 - Cancel Transaction
+### 6 - Cancel Transaction
 
 ```
 POST https://api.latipay.net/cancel
