@@ -210,6 +210,7 @@
 <th>Name</th>
 <th>Type</th>
 <th>Description</th>
+<th>Nullable</th>
 </tr>
 </thead>
 <tbody>
@@ -217,21 +218,25 @@
 <td>merchant_reference</td>
 <td>String</td>
 <td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
+<td>NO</td>
 </tr>
 <tr>
 <td>user_id</td>
 <td>String</td>
 <td>The user account you want to use to process the transaction.</td>
+<td>NO</td>
 </tr>
 <tr>
 <td>is_block</td>
 <td>Int</td>
 <td>Optional parameter, <code>1</code> means the http request use long poolling mechanism, the timeout is 180s.</td>
+<td>YES</td>
 </tr>
 <tr>
 <td>signature</td>
 <td>String</td>
 <td>The <code>SHA-256 HMAC</code> API signature.</td>
+<td>NO</td>
 </tr>
 </tbody>
 </table>

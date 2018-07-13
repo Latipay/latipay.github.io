@@ -294,11 +294,12 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### Parameters
 
-| Name  | Type  | Description |
-|------------- |---------------| -------------|
-| user_id | String | The user account you want to use to process the transaction. |
-| signature | String | The `SHA-256 HMAC` API signature. |
-| is_block | Number | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. |
+| Name  | Type  | Description | Nullable |
+|------------- |---------------| -------------| -------------|
+| merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO |
+| user_id | String | The user account you want to use to process the transaction. | NO |
+| is_block | Int | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. | YES |
+| signature | String | The `SHA-256 HMAC` API signature. | NO |
 
 #### SHA-256 HMAC Signature
 

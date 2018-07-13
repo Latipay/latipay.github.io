@@ -290,18 +290,34 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### Parameters
 
-| Name  | Type  | Description |
-|------------- |---------------| -------------|
-| user_id | String | The user account you want to use to process the transaction. |
-| signature | String | The `SHA-256 HMAC` API signature. |
-| is_block | Int | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. |
+| Name  | Type  | Description | Nullable |
+|------------- |---------------| -------------| -------------|
+| merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO |
+| user_id | String | The user account you want to use to process the transaction. | NO |
+| is_block | Int | Optional parameter, `1` means the http request use long poolling mechanism, the timeout is 180s. | YES |
+| signature | String | The `SHA-256 HMAC` API signature. | NO |
 
-#### SHA-256 HMAC Signature
+* <strong>SHA-256 HMAC Signature</strong> [Try your signature online](https://jsfiddle.net/tonnyLTP/wj36tey4/45/)
+
+Rearrange parameters alphabetically (except parameters with value of `null` or `empty` string) and join them with `&`, and concat the value of `api_key` in the end.
+
+JS code example:
+
+```js
+  Object.keys(data)
+    .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+    .sort()
+    .map(item => `${item}=${data[item]}`)
+    .join('&')
+    .concat(api_key)
+```
 
 ```
-message: merchant_reference + user_id
-secret: api_key
+Message: merchant_reference=6000324&user_id=U000000013111222333
+SecretKey: 111222333
+Signature: 58f93f458880120d650611f2452917a25a39edc2f5e3a03baac73a7a49bc81f4
 ```
+
 
 #### Example
 
