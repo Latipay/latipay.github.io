@@ -167,7 +167,7 @@ signature: 8d1bea078eaacdae8388852851ec39e2e8561cdce64f359421d85ed4844496ec
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
 | host_url | String | A URL will direct customer to finish the payment.
-| nonce | String | The transaction nonce must be appended to the `host_url`. `Do not save it` for using later.
+| nonce | String | The transaction nonce must be appended to the `host_url`. Please make sure it always be fresh, `Do not save it` for using later.
 | signature | String | The SHA-256 HMAC API signature.
 
 Signature in Response

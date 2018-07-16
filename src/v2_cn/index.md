@@ -152,7 +152,7 @@ Object.keys(data)
 | 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
 |host_url	| 	String	| 	供浏览器加载的url，使用url和nonce可以完成下一步支付
-|nonce	| 	String	| 	订单的唯一编号
+|nonce	| 	String	| 	订单的临时编号。每次付款都应该调用本接口来保证nonce是最新的，永远不要存储此nonce
 |signature	| String	| 服务器端签名，算法为SHA-256 HMAC
 
 
