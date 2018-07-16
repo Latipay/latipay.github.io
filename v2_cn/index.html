@@ -236,7 +236,7 @@
 <tr>
 <td>nonce</td>
 <td>String</td>
-<td>订单的唯一编号</td>
+<td>订单的临时编号。每次付款都应该调用本接口来保证nonce是最新的，永远不要存储此nonce</td>
 </tr>
 <tr>
 <td>signature</td>
