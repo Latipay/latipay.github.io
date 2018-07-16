@@ -121,7 +121,7 @@ signature: a60318f763c88d7f4efe9cec33342f0d303233bd0ded2bc6902b1cc867790411
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
 |host_url | String | The url for request a QR code picture. The nonce should be appended to the end. |
-|nonce | String | The transaction nonce must be appended to the host_url URL. |
+|nonce | String | The transaction nonce must be appended to the host_url URL. `Do not save it` for using later. |
 |signature | String | The SHA-256 HMAC API signature. |
 
 #### Example
