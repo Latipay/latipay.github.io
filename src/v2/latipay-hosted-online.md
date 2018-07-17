@@ -249,7 +249,7 @@ signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 
 
 ### 4 - Synchronous Redirection
-<p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app. `Do not relay on the value of status in parameters, you need check it from your own server`</p>
+<p class="tip">This redirection only happens in Wechat pay's embedded browser and OnlineBank. For Alipay, it only happens in PC browser, not in Alipay app. This api being called does not mean the payment is successful. `Do not relay on the value of status in parameters, you need check it from your own server`</p>
 
 There is a sync and front-end payment result redirection sent from Latipay to merchant after the payment is done.
 
