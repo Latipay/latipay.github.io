@@ -19,8 +19,12 @@ This API will return `QR code` in a diagramatic format along with the Transactio
 
 ## How it works?
 
-Alipay Or WeChat
+Alipay Or WeChat with Server
 ![](/images/merchant_hosted_offline_wechat_alipay.jpg)
+---
+
+Alipay Or WeChat without Server
+![](/images/merchant_hosted_offline_wechat_alipay_without_server.jpg)
 ---
 
 ## Payment Scenarios
