@@ -412,14 +412,17 @@
             },
             {
               "name": "api_key",
-              "required": true
+              "required": true,
+              "placeholder": "String"
             },
             {
               "name": "start_time",
-              "required": true
+              "required": true,
+              "placeholder": "String"
             },
             {
-              "name": "end_time"
+              "name": "end_time",
+              "placeholder": "String"
             }
           ]
         },

@@ -117,8 +117,8 @@ GET https://api.latipay.net/v2/invoices
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The ID of the wallet you want to use.  | YES
-|start_time | Int | The start time of a query. | NO
-|end_time | Int | The end time of a query. If null, it means up to now. | YES
+|start_time | String | The start time of a query. | NO
+|end_time | String | The end time of a query. If null, it means up to now. | YES
 |signature | String | The `SHA-256 HMAC` API signature. | NO
 
 
