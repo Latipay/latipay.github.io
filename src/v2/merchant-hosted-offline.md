@@ -241,7 +241,7 @@ JS code example:
 
 ### 3 - Payment Result Asynchronous Notification
 
-Asynchronous Notification is a re-try mechanism to ensure the notification has been updated to the merchant’s web server. There is no times limitation until it returns an indicating "sent" text to Latipay. The time interval of this notification is about 30 seconds.
+Asynchronous Notification is a re-try mechanism to ensure the notification has been updated to the merchant’s web server. There is no times limitation until it returns an indicating `sent` text to Latipay. The time interval of this notification is about 30 seconds.
 
 
 ```
