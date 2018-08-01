@@ -241,7 +241,7 @@ JS code example:
 
 ### 3 - Payment Result Asynchronous Notification
 
-This is a payment result notification sent by Latipay to merchants after the payment is done. There is a re-try mechanism with the notification to ensure the notification could be delivered to the merchant.
+Asynchronous Notification is a re-try mechanism to ensure the notification has been updated to the merchant’s web server. There is no times limitation until it returns an indicating "sent" text to Latipay. The time interval of this notification is about 30 seconds.
 
 
 ```
@@ -278,13 +278,18 @@ Content-Type: application/x-www-form-urlencoded
 }
 ```
 
-
 #### SHA-256 HMAC Signature
 Merchant backend needs to validate the signature for protecting against malicious requests.
 
 ```
 message: merchant_reference + payment_method + status + currency + amount
 secret: api_key
+```
+
+#### Expected response
+
+```
+sent
 ```
 
 ### 4 - Payment Result Interface
