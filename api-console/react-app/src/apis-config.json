@@ -363,7 +363,8 @@
               "name": "return_url"
             },
             {
-              "name": "notify_url"
+              "name": "notify_url",
+              "default": ""
             },
             {
               "name": "qrcode",
