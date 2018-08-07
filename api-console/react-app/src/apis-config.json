@@ -71,7 +71,7 @@
             {
               "tips": "front end return url",
               "name": "return_url",
-              "default": "http://pay.latipay.net/confirmation",
+              "default": "http://spotpay.latipay.net/static_qr_confirmation",
               "required": true
             },
             {
