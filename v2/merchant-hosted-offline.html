@@ -229,6 +229,11 @@
 </thead>
 <tbody>
 <tr>
+<td>code</td>
+<td>Int</td>
+<td>0 means success.</td>
+</tr>
+<tr>
 <td>host_url</td>
 <td>String</td>
 <td>The url for request a QR code picture. The nonce should be appended to the end.</td>
@@ -245,7 +250,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"host_url"</span>: <span class="string">"https://api.latipay.net/v2/merchanthosted/gatewaydata"</span>,</span><br><span class="line">  <span class="attr">"nonce"</span>: <span class="string">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span>,</span><br><span class="line">  <span class="attr">"signature"</span>: <span class="string">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"code"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"message"</span>: <span class="string">"SUCCESS"</span>,</span><br><span class="line">  <span class="attr">"host_url"</span>: <span class="string">"https://api.latipay.net/v2/merchanthosted/gatewaydata"</span>,</span><br><span class="line">  <span class="attr">"nonce"</span>: <span class="string">"7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3"</span>,</span><br><span class="line">  <span class="attr">"signature"</span>: <span class="string">"14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Signature-in-Response"><a href="#Signature-in-Response" class="headerlink" title="Signature in Response"></a>Signature in Response</h4><p>For security reasons, we highly recommend you verify the signature in the response.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: nonce + host_url</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
 <hr>

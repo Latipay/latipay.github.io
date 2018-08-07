@@ -122,6 +122,7 @@ signature: a60318f763c88d7f4efe9cec33342f0d303233bd0ded2bc6902b1cc867790411
 
 | Name  | Type  | Description |
 |------------- |---------------| -------------|
+| code | Int | 0 means success. |
 |host_url | String | The url for request a QR code picture. The nonce should be appended to the end. |
 |nonce | String | The transaction nonce must be appended to the host_url URL. Please make sure it always be fresh, `Do not save it` for using later. |
 |signature | String | The SHA-256 HMAC API signature. |
@@ -130,6 +131,8 @@ signature: a60318f763c88d7f4efe9cec33342f0d303233bd0ded2bc6902b1cc867790411
 
 ```json
 {
+  "code": 0,
+  "message": "SUCCESS",
   "host_url": "https://api.latipay.net/v2/merchanthosted/gatewaydata",
   "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3",
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",

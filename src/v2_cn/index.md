@@ -143,6 +143,8 @@ Object.keys(data)
 
 ```json
 {
+  "code": 0,
+  "message": "SUCCESS",
   "host_url": "https://pay.latipay.net/pay",
   "nonce": "7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed11860a46e1bf3",
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
@@ -151,6 +153,7 @@ Object.keys(data)
 
 | 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
+|code	| 	Int	| 	0 代表成功
 |host_url	| 	String	| 	供浏览器加载的url，使用url和nonce可以完成下一步支付
 |nonce	| 	String	| 	订单的临时编号。每次付款都应该调用本接口来保证nonce是最新的，永远不要存储此nonce
 |signature	| String	| 服务器端签名，算法为SHA-256 HMAC
