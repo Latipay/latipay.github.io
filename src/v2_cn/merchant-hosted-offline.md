@@ -235,6 +235,7 @@ Content-Type: application/x-www-form-urlencoded
 | 字段  | 类型  | 描述 |
 |------------- |---------------| -------------|
 |merchant_reference | String | 商户订单id |
+|order_id|	String|	Latipay交易id|
 |currency | String | 支付币种 |
 |amount | String | 支付金额 |
 |payment_method | String | 支付方式 |
