@@ -221,11 +221,13 @@ Content-Type: application/x-www-form-urlencoded
 ``` json
 {
   "merchant_reference": "dsi39ej430sks03",
+  "order_id": "2017232323345671",
   "amount": "120.00",
   "currency": "NZD",
   "payment_method": "alipay",
   "pay_time": "2017-07-07 10:53:50",
   "status" : "paid",
+
   "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
 }
 ```

@@ -226,6 +226,7 @@ Example
 ```json
 {
   "merchant_reference": "dsi39ej430sks03",
+  "order_id": "2017232323345678",
   "amount": "120.00",
   "currency": "NZD",
   "payment_method": "alipay",

@@ -205,7 +205,20 @@ class RegistrationForm extends React.Component {
     try {
       const r = JSON.parse(result);
       if (r.host_url && r.nonce) {
-        link = r.host_url + '/' + r.nonce;
+        if (
+          env === 'staging' &&
+          r.host_url.indexOf('api.latipay.co.nz') !== -1
+        ) {
+          link =
+            r.host_url.replace(
+              'api.latipay.co.nz',
+              'api-staging.latipay.co.nz'
+            ) +
+            '/' +
+            r.nonce;
+        } else {
+          link = r.host_url + '/' + r.nonce;
+        }
       } else if (r.invoice_url) {
         link = r.invoice_url;
       }
