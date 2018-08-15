@@ -133,10 +133,10 @@ Object.keys(data)
 #### 签名例子
 
 ```
-待签名文本: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&return_url=https://merchantsite.com/checkout&signature=14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
+待签名文本: amount=120.00&callback_url=https://merchantsite.com/confirm&ip=122.122.122.1&merchant_reference=dsi39ej430sks03&payment_method=alipay&product_name=Pinot Noir, Otago&return_url=https://merchantsite.com/checkout&user_id=U000334333&version=2.0&wallet_id=W00000001111222333
 密钥: 111222333
 
-签名结果: d491ffabae6ee0be763e50f1620b7ce967f1eab4d04ecf9e822de5d34d4041e0
+签名结果: 8d1bea078eaacdae8388852851ec39e2e8561cdce64f359421d85ed4844496ec
 ```
 
 #### 请求结果
