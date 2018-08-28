@@ -318,6 +318,7 @@ body.docs #header {
   position: fixed;
   width: 100%;
   top: 0;
+  background: white;
 }
 body.docs #nav {
   position: fixed;
