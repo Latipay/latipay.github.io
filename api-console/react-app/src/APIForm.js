@@ -65,9 +65,11 @@ class RegistrationForm extends React.Component {
 
         const { api_key, ...parameters } = values;
 
-        const { signature } = newSignature(parameters, api_key);
+        if (api_key) {
+          const { signature } = newSignature(parameters, api_key);
 
-        parameters.signature = signature;
+          parameters.signature = signature;
+        }
 
         //
         api.parameters.forEach(item => {
@@ -110,7 +112,10 @@ class RegistrationForm extends React.Component {
           })
           .catch(error => {
             this.setState({
-              result: error.response.statusText,
+              result:
+                error.response.status +
+                '\n' +
+                (error.response.data || {}).message,
               loading: false
             });
           });
@@ -157,6 +162,13 @@ class RegistrationForm extends React.Component {
     } = this.props;
     const { api_key } = allValues;
     const { result, loading } = this.state;
+
+    let hasAPIKey = false;
+    api.parameters.forEach(item => {
+      if (item.name === 'api_key') {
+        hasAPIKey = true;
+      }
+    });
 
     const component = item => {
       if (item.condition_options) {
@@ -282,26 +294,32 @@ class RegistrationForm extends React.Component {
         </Form>
 
         <Divider />
+
         <div>
-          <p>SHA 256 Signature</p>
-          <pre>
-            {`Message: ${message}
+          {hasAPIKey && (
+            <div>
+              <p>SHA 256 Signature</p>
+              <pre>
+                {`Message: ${message}
 SecretKey: ${api_key ? api_key : ''}
 Signature: ${signature ? signature : ''}`}
-          </pre>
-          <p>
-            curl
-            <span style={{ float: 'right' }}>
-              <Clipboard
-                data-clipboard-text={curl}
-                className="btn-copy"
-                onSuccess={this.onCopied}
-              >
-                <Icon type="copy" />Copy
-              </Clipboard>
-            </span>
-          </p>
-          <pre>{curl}</pre>
+              </pre>
+              <p>
+                curl
+                <span style={{ float: 'right' }}>
+                  <Clipboard
+                    data-clipboard-text={curl}
+                    className="btn-copy"
+                    onSuccess={this.onCopied}
+                  >
+                    <Icon type="copy" />Copy
+                  </Clipboard>
+                </span>
+              </p>
+              <pre>{curl}</pre>
+            </div>
+          )}
+
           <p>Result</p>
           <pre>{result}</pre>
 

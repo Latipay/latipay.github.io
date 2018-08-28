@@ -1,0 +1,165 @@
+{
+  "account": {
+    "staging": {},
+    "prod": {}
+  },
+  "menus": [
+    {
+      "title": "Payment",
+      "apis": [
+        {
+          "title": "Transaction",
+          "method": "POST",
+          "url": "/v2/transaction",
+          "parameters": [
+            {
+              "tips": "",
+              "name": "user_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "wallet_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "api_key",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "merchant's unique order id",
+              "name": "merchant_reference",
+              "default": "$randomId",
+              "required": true
+            },
+            {
+              "tips": "front end return url",
+              "name": "return_url",
+              "default": "http://spotpay.latipay.net/static_qr_confirmation",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "callback_url",
+              "default": "https://yourwebsite.com/notify",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "ip",
+              "default": "127.0.0.1",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "version",
+              "disabled": true,
+              "default": "2.0",
+              "required": true
+            },
+            {
+              "name": "product_name",
+              "default": "ticket",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "amount",
+              "default": "0.01",
+              "required": true,
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "payment_method",
+              "required": true,
+              "condition_options": [
+                {
+                  "name": "wechat"
+                },
+                {
+                  "name": "alipay"
+                }
+              ]
+            },
+            {
+              "name": "host_type",
+              "default": "1",
+              "disabled": true
+            }
+          ]
+        },
+        {
+          "title": "Query",
+          "method": "GET",
+          "url": "/v2/transaction/{merchant_reference}",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Refund",
+          "method": "POST",
+          "url": "/refund",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "order_id",
+              "required": true
+            },
+            {
+              "name": "refund_amount",
+              "required": true,
+              "precision": 2,
+              "type": "number"
+            },
+            {
+              "name": "reference"
+            }
+          ]
+        },
+        {
+          "title": "Cancel",
+          "method": "POST",
+          "url": "/cancel",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

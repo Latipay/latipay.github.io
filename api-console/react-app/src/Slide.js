@@ -1,12 +1,12 @@
 import React from 'react';
 import { Menu } from 'antd';
 
-import apis from './apis-config.json';
-
 const SubMenu = Menu.SubMenu;
 
 class Sider extends React.Component {
   render() {
+    const { apis } = this.props;
+
     const menus = apis.menus;
     const openKeys = menus.map(item => item.title);
     const arr = menus.map(({ title, apis }, index0) => {

@@ -1,24 +1,81 @@
 {
   "account": {
     "staging": {
+      "user_id": "U00001534",
+      "wallet_id": "W00000001",
+      "api_key": ""
     },
     "prod": {
+      "user_id": "U000000013",
+      "wallet_id": "W000000022",
+      "api_key": ""
     }
   },
   "menus": [
     {
-      "title": "Barcode",
+      "title": "Payment",
       "apis": [
         {
-          "title": "Payment",
+          "title": "Barcode",
           "method": "POST",
           "url": "/barcode",
+          "parameters": [
+            {
+              "tips": "",
+              "name": "user_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "wallet_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "api_key",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "merchant_reference",
+              "required": true,
+              "default": ""
+            },
+            {
+              "name": "amount",
+              "required": true,
+              "default": "0.05",
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "pay_code",
+              "required": true
+            }
+          ]
         },
         {
           "title": "Query",
           "method": "GET",
           "url": "/v2/transaction/{merchant_reference}",
-        },
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
+            }
+          ]
+        }
       ]
     }
   ]

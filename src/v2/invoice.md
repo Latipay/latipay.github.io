@@ -3,12 +3,10 @@ title: Latipay Invoice
 type: v2
 order: 6
 ---
-[API Playground](http://doc.latipay.net/api-console/index.html?api=/v2/invoice)
+[API Playground](http://doc.latipay.net/api-console/invoice)
 
 <p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` via <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values
 Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
-
-## Payment Scenarios
 
 
 ## API Details

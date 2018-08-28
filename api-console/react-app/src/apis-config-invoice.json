@@ -1,0 +1,218 @@
+{
+  "account": {
+    "staging": {},
+    "prod": {}
+  },
+  "menus": [
+    {
+      "title": "Invoice",
+      "apis": [
+        {
+          "title": "Create",
+          "method": "POST",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "wallet_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "amount",
+              "required": true,
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "product_name"
+            },
+            {
+              "name": "period_time",
+              "type": "number"
+            },
+            {
+              "name": "max_open_count",
+              "type": "number"
+            },
+            {
+              "name": "app"
+            },
+            {
+              "name": "customer_order_id"
+            },
+            {
+              "name": "customer_reference"
+            },
+            {
+              "name": "return_url"
+            },
+            {
+              "name": "notify_url",
+              "default": ""
+            },
+            {
+              "name": "qrcode",
+              "type": "boolean",
+              "options": [true, false]
+            }
+          ]
+        },
+        {
+          "title": "Query ",
+          "method": "GET",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
+            },
+            {
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
+            }
+          ]
+        },
+        {
+          "title": "Query List",
+          "method": "GET",
+          "url": "/v2/invoices",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true,
+              "placeholder": "String"
+            },
+            {
+              "name": "start_time",
+              "required": true,
+              "placeholder": "String"
+            },
+            {
+              "name": "end_time",
+              "placeholder": "String"
+            }
+          ]
+        },
+        {
+          "title": "Delete",
+          "method": "DELETE",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
+            },
+            {
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
+            }
+          ]
+        },
+        {
+          "title": "Update",
+          "method": "PUT",
+          "url": "/v2/invoice",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "wallet_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
+            },
+            {
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
+            },
+            {
+              "name": "amount",
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "name": "product_name"
+            },
+            {
+              "name": "period_time",
+              "type": "number"
+            },
+            {
+              "name": "max_open_count",
+              "type": "number"
+            },
+            {
+              "name": "reference"
+            },
+            {
+              "name": "qrcode",
+              "type": "boolean",
+              "options": [true, false]
+            }
+          ]
+        },
+        {
+          "title": "Refund",
+          "method": "POST",
+          "url": "/v2/invoice/refund",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "invoice_id",
+              "exclude": "customer_order_id"
+            },
+            {
+              "name": "customer_order_id",
+              "exclude": "invoice_id"
+            },
+            {
+              "name": "reference"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

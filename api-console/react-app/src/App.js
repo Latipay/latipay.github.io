@@ -2,11 +2,32 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 
 import './App.css';
-import apis from './apis-config.json';
+import apisConfig from './apis-config.json';
+import apisMiniAppConfig from './apis-config-miniapp.json';
+import apisInvoiceConfig from './apis-config-invoice.json';
+import apisMerchantHostConfig from './apis-config-merchant-host.json';
+import apisOnlineConfig from './apis-config-online.json';
+import apisBarcodeConfig from './apis-config-barcode.json';
+
 import Slide from './Slide';
 
 import APIForm from './APIForm';
 import { newSignature, initialValue } from './util';
+
+function apis(props) {
+  const { pathname } = props.location || {};
+
+  const map = {
+    '/': apisConfig,
+    '/miniapp': apisMiniAppConfig,
+    '/invoice': apisInvoiceConfig,
+    '/merchant-host': apisMerchantHostConfig,
+    '/online': apisOnlineConfig,
+    '/barcode': apisBarcodeConfig
+  };
+
+  return map[pathname] || apisConfig;
+}
 
 const hosts = {
   prod: 'https://api.latipay.net',
@@ -34,7 +55,7 @@ class App extends Component {
     const whichApi = query.api;
     if (whichApi) {
       const map = {};
-      apis.menus.forEach((item, index0) => {
+      apis(props).menus.forEach((item, index0) => {
         [...item.apis].reverse().forEach((api, index1) => {
           map[api.url] = `${index0}_${index1}`;
         });
@@ -165,10 +186,10 @@ class App extends Component {
 
   getApiAndAccount(current, env) {
     const arr = current.split('_');
-    const menu = apis.menus[parseInt(arr[0], 10)];
+    const menu = apis(this.props).menus[parseInt(arr[0], 10)];
     const api = menu['apis'][parseInt(arr[1], 10)];
 
-    const account = apis.account[env];
+    const account = apis(this.props).account[env];
 
     return { api, account, menuTitle: menu.title };
   }
@@ -194,7 +215,11 @@ class App extends Component {
         </div>
         <Row>
           <Col span={5}>
-            <Slide choseApi={this.choseApi} current={this.state.current} />
+            <Slide
+              apis={apis(this.props)}
+              choseApi={this.choseApi}
+              current={this.state.current}
+            />
           </Col>
           <Col className="right" span={19}>
             <APIForm

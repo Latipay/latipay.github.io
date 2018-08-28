@@ -1,0 +1,221 @@
+{
+  "account": {
+    "staging": {
+      "user_id": "U00001534",
+      "wallet_id": "W00000001",
+      "api_key": ""
+    },
+    "prod": {
+      "user_id": "U000000013",
+      "wallet_id": "W000000022",
+      "api_key": ""
+    }
+  },
+  "menus": [
+    {
+      "title": "Payment",
+      "apis": [
+        {
+          "title": "Transaction",
+          "method": "POST",
+          "url": "/v2/transaction",
+          "parameters": [
+            {
+              "tips": "",
+              "name": "user_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "wallet_id",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "",
+              "name": "api_key",
+              "required": true,
+              "default": ""
+            },
+            {
+              "tips": "merchant's unique order id",
+              "name": "merchant_reference",
+              "default": "$randomId",
+              "required": true
+            },
+            {
+              "tips": "front end return url",
+              "name": "return_url",
+              "default": "http://spotpay.latipay.net/static_qr_confirmation",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "callback_url",
+              "default": "https://yourwebsite.com/notify",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "ip",
+              "default": "127.0.0.1",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "version",
+              "disabled": true,
+              "default": "2.0",
+              "required": true
+            },
+            {
+              "name": "product_name",
+              "default": "ticket",
+              "required": true
+            },
+            {
+              "tips": "",
+              "name": "amount",
+              "default": "0.01",
+              "required": true,
+              "type": "number",
+              "precision": 2
+            },
+            {
+              "tips": "",
+              "name": "backPage_url",
+              "optional": true,
+              "placeholder": "https://yourwebsite.com/back"
+            },
+            {
+              "name": "payment_method",
+              "required": true,
+              "condition_options": [
+                {
+                  "name": "wechat"
+                },
+                {
+                  "name": "alipay"
+                }
+              ]
+            },
+            {
+              "name": "present_qr",
+              "default": "1",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "is_spotpay",
+              "default": "0",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "goods_detail",
+              "condition": {
+                "payment_method": "wechat"
+              }
+            },
+            {
+              "name": "present_qr",
+              "default": "0",
+              "condition": {
+                "payment_method": "alipay"
+              }
+            },
+            {
+              "name": "is_spotpay",
+              "default": "0",
+              "condition": {
+                "payment_method": "alipay"
+              }
+            },
+            {
+              "name": "id_number",
+              "condition": {
+                "payment_method": "onlineBank"
+              }
+            },
+            {
+              "name": "id_name",
+              "condition": {
+                "payment_method": "onlineBank"
+              }
+            }
+          ]
+        },
+
+        {
+          "title": "Query",
+          "method": "GET",
+          "url": "/v2/transaction/{merchant_reference}",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
+            }
+          ]
+        },
+        {
+          "title": "Refund",
+          "method": "POST",
+          "url": "/refund",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "order_id",
+              "required": true
+            },
+            {
+              "name": "refund_amount",
+              "required": true,
+              "precision": 2,
+              "type": "number"
+            },
+            {
+              "name": "reference"
+            }
+          ]
+        },
+        {
+          "title": "Cancel",
+          "method": "POST",
+          "url": "/cancel",
+          "parameters": [
+            {
+              "name": "user_id",
+              "required": true
+            },
+            {
+              "name": "api_key",
+              "required": true
+            },
+            {
+              "name": "merchant_reference",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
