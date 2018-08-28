@@ -14,16 +14,16 @@ import Slide from './Slide';
 import APIForm from './APIForm';
 import { newSignature, initialValue } from './util';
 
-function apis(props) {
+function apis(props = {}) {
   const { pathname } = props.location || {};
 
   const map = {
     '/': apisConfig,
-    '/miniapp': apisMiniAppConfig,
-    '/invoice': apisInvoiceConfig,
-    '/merchant-host': apisMerchantHostConfig,
-    '/online': apisOnlineConfig,
-    '/barcode': apisBarcodeConfig
+    '/api-console/miniapp.html': apisMiniAppConfig,
+    '/api-console/invoice.html': apisInvoiceConfig,
+    '/api-console/merchant-host.html': apisMerchantHostConfig,
+    '/api-console/online.html': apisOnlineConfig,
+    '/api-console/barcode.html': apisBarcodeConfig
   };
 
   return map[pathname] || apisConfig;
