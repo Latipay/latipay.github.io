@@ -195,12 +195,15 @@ https://pay.latipay.net/pay/7d5a88119354301ad3fc250404493bd27abf4467283a061d1ed1
 
 
 ### 3. 支付结果异步通知
-此接口为商户端后台提供，在支付完成后，Latipay服务器每隔30秒调用该接口，直到收到“sent”文本，在调用该接口时，Latipay会传入支付结果信息。
+此接口为商户端后台提供，在支付完成后，Latipay服务器每隔30秒调用该接口，直到收到`sent`文本，在调用该接口时，Latipay会传入支付结果信息。
 
 ```
 POST 商户端的 callback_url
 Content-Type: application/x-www-form-urlencoded
 ```
+
+<p class="tip">返回的请求头状态必须为 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a>，请求的body必须是文本：`send`</p>
+
 
 #### 参数
 

@@ -78,6 +78,8 @@ POST https://api.latipay.net/v2/transaction
 Content-Type: application/json;charset=UTF-8
 ```
 
+[API Playground](http://doc.latipay.net/api-console/barcode.html?api=/v2/transaction)
+
 Demo
 
 ```
@@ -206,7 +208,7 @@ Asynchronous Notification is a re-try mechanism to ensure the notification has b
 POST merchant's callback_url
 Content-Type: application/x-www-form-urlencoded
 ```
-<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a></p>
+<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a>, the body of response must be the string `send`</p>
 
 Attributes
 

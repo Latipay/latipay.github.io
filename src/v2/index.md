@@ -32,7 +32,7 @@ For example, after redirecting users to a Latipay/Merchant Hosted Payment Page t
 https://merchant.latipay.net
 
 #### Request And Parameters
-Request for payment Interface is using `POST` method. Request for Query Interface is using `GET` method. All requests including Request Entity are in JSON format. Accept in the request header shall be set to `application/json` for all api. 
+Request for payment Interface is using `POST` method. Request for Query Interface is using `GET` method. All requests including Request Entity are in JSON format. Accept in the request header shall be set to `application/json`.
 
 System charset is UTF-8.
 

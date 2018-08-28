@@ -31,6 +31,8 @@ POST https://api.latipay.net/barcode
 Content-Type: application/json;charset=UTF-8
 ```
 
+[API Playground](http://doc.latipay.net/api-console/barcode.html?api=/barcode)
+
 Demo
 
 ```
@@ -115,6 +117,8 @@ All customers can send requests to query payment status with merchant order id(t
 ```
 GET https://api.latipay.net/v2/transaction/{merchant_reference}
 ```
+
+[API Playground](http://doc.latipay.net/api-console/barcode.html)
 
 #### Parameters
 

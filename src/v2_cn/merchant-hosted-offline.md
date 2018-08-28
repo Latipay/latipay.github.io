@@ -230,6 +230,8 @@ POST 商户端的 callback_url
 Content-Type: application/x-www-form-urlencoded
 ```
 
+<p class="tip">返回的请求头状态必须为 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a>，请求的body必须是文本：`send`</p>
+
 #### 参数
 
 | 字段  | 类型  | 描述 |

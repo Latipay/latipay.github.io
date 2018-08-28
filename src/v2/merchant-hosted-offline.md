@@ -46,6 +46,9 @@ WeChat
 POST https://api.latipay.net/v2/transaction
 Content-Type: application/json;charset=UTF-8
 ```
+
+[API Playground](http://doc.latipay.net/api-console/merchant-host.html?api=/v2/transaction)
+
 Demo
 
 ```
@@ -254,7 +257,7 @@ POST merchant's callback_url
 Content-Type: application/x-www-form-urlencoded
 ```
 
-<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a></p>
+<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200">200</a>, the body of response must be the string `send`</p>
 
 #### Parameters:    
 
@@ -379,6 +382,8 @@ signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 POST https://api.latipay.net/refund
 ```
 
+[API Playground](http://doc.latipay.net/api-console/merchant-host.html?api=/refund)
+
 #### Parameters
 
 | Name  | Type  | Description |
@@ -447,6 +452,8 @@ signature: 3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c
 ```
 POST https://api.latipay.net/cancel
 ```
+
+[API Playground](http://doc.latipay.net/api-console/merchant-host.html?api=/cancel)
 
 #### Parameters
 

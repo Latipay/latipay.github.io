@@ -61,6 +61,8 @@ POST https://api.latipay.net/v2/miniapppay
 Content-Type: application/json;charset=UTF-8
 ```
 
+[API Playground](http://doc.latipay.net/api-console/miniapp.html?api=/v2/miniapppay)
+
 - <strong>Parameters</strong>
 
 | Name               | Type   | Description                                                                       | Nullable |
