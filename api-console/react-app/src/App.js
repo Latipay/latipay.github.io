@@ -53,11 +53,12 @@ class App extends Component {
     const env = query.staging ? 'staging' : 'prod';
 
     const whichApi = query.api;
+    const method = query.method || '';
     if (whichApi) {
       const map = {};
       apis(props).menus.forEach((item, index0) => {
-        [...item.apis].reverse().forEach((api, index1) => {
-          map[api.url] = `${index0}_${index1}`;
+        [...item.apis].forEach((api, index1) => {
+          map[(method ? api.method : '') + api.url] = `${index0}_${index1}`;
         });
       });
 

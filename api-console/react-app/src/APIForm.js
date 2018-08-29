@@ -228,6 +228,9 @@ class RegistrationForm extends React.Component {
             ) +
             '/' +
             r.nonce;
+
+          //https证书有问题，微信app拒绝跳转，无法完成公众号支付
+          link = link.replace('https', 'http');
         } else {
           link = r.host_url + '/' + r.nonce;
         }
