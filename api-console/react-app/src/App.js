@@ -62,7 +62,7 @@ class App extends Component {
         });
       });
 
-      const c = map[whichApi];
+      const c = map[(method?method:'')+whichApi];
       if (c) {
         current = c;
       }

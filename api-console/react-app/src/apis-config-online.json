@@ -83,12 +83,6 @@
               "precision": 2
             },
             {
-              "tips": "",
-              "name": "backPage_url",
-              "optional": true,
-              "placeholder": "https://yourwebsite.com/back"
-            },
-            {
               "name": "payment_method",
               "required": true,
               "condition_options": [

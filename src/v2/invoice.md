@@ -18,7 +18,7 @@ POST https://api.latipay.net/v2/invoice
 Content-Type: application/json;charset=UTF-8
 ```
 
-[API Playground](http://doc.latipay.net/api-console/invoice.html)
+[API Playground](http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&method=POST)
 
 * <strong>Parameters</strong>
 
@@ -93,7 +93,7 @@ Signature: 9361c9e5ac5fc269296cc946377b3b4dea03685aa623482981a82101047672d9
 GET https://api.latipay.net/v2/invoice
 ```
 
-[API Playground](http://doc.latipay.net/api-console/invoice.html)
+[API Playground](http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&method=GET)
 
 * <strong>Parameters</strong>
 
@@ -163,7 +163,7 @@ GET https://api.latipay.net/v2/invoices
 POST https://api.latipay.net/v2/invoice/refund
 ```
 
-[API Playground](http://doc.latipay.net/api-console/invoice.html?api=/v2/refund)
+[API Playground](http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice/refund)
 
 * <strong>Parameters</strong>
 
@@ -191,7 +191,7 @@ POST https://api.latipay.net/v2/invoice/refund
 DELETE https://api.latipay.net/v2/invoice
 ```
 
-[API Playground](http://doc.latipay.net/api-console/invoice.html)
+[API Playground](http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&method=DELETE)
 
 * <strong>Parameters</strong>
 
@@ -218,7 +218,7 @@ DELETE https://api.latipay.net/v2/invoice
 PUT https://api.latipay.net/v2/invoice
 ```
 
-[API Playground](http://doc.latipay.net/api-console/invoice.html)
+[API Playground](http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&method=PUT)
 
 * <strong>Parameters</strong>
 

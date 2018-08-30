@@ -426,6 +426,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: merchant_reference + payment_method + status + currency + amount</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
 <h3 id="5-Payment-Result-Interface"><a href="#5-Payment-Result-Interface" class="headerlink" title="5 - Payment Result Interface"></a>5 - Payment Result Interface</h3><p>All customers can send requests to query payment status with merchant order id(that should be <code>unique id</code> for the merchant) as merchant_reference by HTTP GET request.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https://api.latipay.net/v2/transaction/&#123;merchant_reference&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://doc.latipay.net/api-console/online.html?api=/v2/transaction/{merchant_reference}" target="_blank" rel="noopener">API Playground</a></p>
 <h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h4><table>
 <thead>
 <tr>

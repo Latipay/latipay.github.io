@@ -118,7 +118,8 @@ All customers can send requests to query payment status with merchant order id(t
 GET https://api.latipay.net/v2/transaction/{merchant_reference}
 ```
 
-[API Playground](http://doc.latipay.net/api-console/barcode.html)
+[API Playground](http://doc.latipay.net/api-console/barcode.html?api=/v2/transaction/{merchant_reference})
+
 
 #### Parameters
 
