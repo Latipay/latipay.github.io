@@ -10,9 +10,9 @@ Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 TLTR
   1. use wx js api to login and get code in mini app
-  2. use weixin api for getting openid with the code
-  3. send a request to latipay with the openid
-  4. use wx mini app payment api to make a payment
+  2. use weixin api for getting openid with the code in your server
+  3. send a request to latipay with the openid in your server
+  4. use wx mini app payment api to make a payment in mini app
 
 
 ## API Details
