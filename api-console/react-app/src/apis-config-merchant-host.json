@@ -25,7 +25,7 @@
               "default": ""
             },
             {
-              "tips": "",
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true,
               "default": ""
@@ -103,6 +103,7 @@
               "required": true
             },
             {
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -122,6 +123,7 @@
               "required": true
             },
             {
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -150,6 +152,7 @@
               "required": true
             },
             {
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },

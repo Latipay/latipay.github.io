@@ -10,7 +10,7 @@ Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 ## Summary
 
-The Online / E-Commerce API is an independent Hosted Payments Page (HPP) solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay and 19 main Chinese banks information securely without exposing the merchant to sensitive financial data. This Hosted API provides merchants with a secure and versatile solution for online payments and enables payments by redirecting users to a Latipay Hosted Payment Page. A real-time confirmation notification of payment from Latipay will be sent to the merchants in the form of a callback notification. These notifications are handled effectively and sent to an allocated callback_url in less than `30s`. Merchants also can track payment status through the Latipay Order Query API. More available from the Merchant and Transaction portals of Latipay.
+The Online / E-Commerce API is an independent Hosted Payments Page solution provided by Latipay. The page provides a solution for capturing WeChat/ Alipay and 16 main Chinese banks information securely without exposing the merchant to sensitive financial data. This Hosted API provides merchants with a secure and versatile solution for online payments and enables payments by redirecting users to a Latipay Hosted Payment Page. A real-time confirmation notification of payment from Latipay will be sent to the merchants in the form of a callback notification. These notifications are handled effectively and sent to an allocated callback_url in less than `30s`. Merchants also can track payment status through the Latipay Order Query API. More available from the Merchant and Transaction portals of Latipay.
 
 ** Available Payment Methods **
 
@@ -56,7 +56,7 @@ Online Bank
 * <strong>The payment scenario is basing on the customer using Latipay payment services by `Mobile browser`</strong>, Such as Safari in iPhone.
 
 Alipay
-The mobile browser Safari will try to launch Alipay app to make the payment. It doesn't support Wechat pay.
+The mobile browser Safari will try to launch Alipay app to make the payment. But Wechat App does not support launch from mobile browsers.
 ![](../images/Alipay_LatipayHosted - mobile browser.png)
 
 
@@ -80,36 +80,27 @@ Content-Type: application/json;charset=UTF-8
 
 [API Playground](http://doc.latipay.net/api-console/online.html?api=/v2/transaction)
 
-Demo
-
-```
-curl \
--X POST \
--H "Content-Type: application/json;charset=UTF-8" \
--d '{"user_id":"U000334333","wallet_id":"W00000001","amount":"120.00","payment_method":"alipay","return_url":"https://merchantsite.com/checkout","callback_url":"https://merchantsite.com/confirm","signature":"8d1bea078eaacdae8388852851ec39e2e8561cdce64f359421d85ed4844496ec","merchant_reference":"dsi39ej430sks03","ip":"122.122.122.1","version":"2.0","product_name":"Pinot Noir, Otago"}' \
-https://api.latipay.net/v2/transaction
-```
 
 * <strong>Attributes</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The wallet ID that using for online transactions.  | NO
 |payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. | NO
 |amount | String | A decimal amount. | NO
-|return_url | String | The URL of the landing page where the customer will be directed to after payment. | NO
-|callback_url | String | Merchant webserver's URL that the payment result will send to. | NO
-|backPage_url | String | Optional, A back link show on Latipay's payment page. Customer can back to merchant's website with this link. | YES
+|return_url | String | The URL of the landing page where the customer will be directed to after payment when successful or failed. | NO
+|callback_url | String | Merchant web server's URL that the payment result will send to. | NO
+|backPage_url | String | A back link show on Latipay's payment page. Customer can back to merchant's website with this link. | YES
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO
 |ip | String(16) | The customer's IPv4 address | NO
-|version | String | The latest version of the Latipay platform which must be `"2.0"` | Yes
+|version | String | The latest version of the Latipay platform which must be `"2.0"` | NO
 |product_name | String | The name of the product or service being sold. | No
 |signature | String | The `SHA-256 HMAC` API signature. | NO
 
-#### Extract Attributes (`Only for WeChat`)
+#### Extract Attributes (`for WeChat`)
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 | present_qr | String| Must be `"1"`, to show a Latipay hosted page which presenting QR code waiting for scanning. It only works outside of Wechat App, such as PC browser. | NO|
 
@@ -305,7 +296,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### Parameters
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 | merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO |
 | user_id | String | The user account you want to use to process the transaction. | NO |

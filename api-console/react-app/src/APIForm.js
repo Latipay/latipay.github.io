@@ -239,6 +239,9 @@ class RegistrationForm extends React.Component {
       }
     } catch (e) {}
 
+    const apiKeyParameter = api.parameters
+      .filter(item => item.name === 'api_key')[0]
+
     return (
       <div className="form-container">
         <h2>{title}</h2>
@@ -249,8 +252,41 @@ class RegistrationForm extends React.Component {
 
         <Divider />
         <Form onSubmit={this.handleSubmit}>
+          {apiKeyParameter && <div>
+
+              <FormItem
+                key={apiKeyParameter.name}
+                {...formItemLayout}
+                label={
+                  <span>
+                    {apiKeyParameter.name} &nbsp;
+                    {apiKeyParameter.tips && (
+                      <Tooltip title={apiKeyParameter.tips}>
+                        <Icon type="question-circle-o" />
+                      </Tooltip>
+                    )}
+                  </span>
+                }
+              >
+                {getFieldDecorator(apiKeyParameter.name, {
+                  rules: [
+                    {
+                      required: apiKeyParameter.required,
+                      message: `Please input your ${apiKeyParameter.name}`
+                    }
+                  ],
+                  initialValue: initialValue(account, apiKeyParameter.name, apiKeyParameter.default)
+                })(component(apiKeyParameter))}
+              </FormItem>
+
+              <div style={{height: 30}} />
+            </div>
+          }
+
           {api.parameters
             .filter(item => {
+              if (item.name === 'api_key') { return false }
+
               const con = item.condition;
               if (con) {
                 const key = Object.keys(con)[0];

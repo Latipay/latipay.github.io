@@ -65,14 +65,14 @@ Content-Type: application/json;charset=UTF-8
 
 - <strong>Parameters</strong>
 
-| Name               | Type   | Description                                                                       | Nullable |
+| Name               | Type   | Description                                                                       | Optional |
 | ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
 | user_id            | String | The Latipay user account which is using for processing the transactions. | NO |
 | wallet_id          | String | The wallet ID that using for online transactions. | NO |
 | amount             | String | A decimal amount. | NO |
 | notify_url         | String | Merchant webserver's URL that the payment result will send to. | NO |
 | merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO |
-| product_name       | String | The name of the product or service being sold. | Yes |
+| product_name       | String | The name of the product or service being sold. | NO |
 | app_id             | String | Wechat mini app id  | NO |
 | open_id            | String | Wechat mini app openid for current wechat user. | NO |
 | signature          | String | The `SHA-256 HMAC` API signature. | NO |

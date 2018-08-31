@@ -33,7 +33,7 @@
               "default": ""
             },
             {
-              "tips": "",
+              "tips": "Do not put your api_key in public.","tips": "",
               "name": "api_key",
               "required": true,
               "default": ""
@@ -91,41 +91,18 @@
                 },
                 {
                   "name": "alipay"
+                },
+                {
+                  "name": "onlineBank"
                 }
               ]
             },
             {
               "name": "present_qr",
               "default": "1",
+              "disabled": true,
               "condition": {
                 "payment_method": "wechat"
-              }
-            },
-            {
-              "name": "is_spotpay",
-              "default": "0",
-              "condition": {
-                "payment_method": "wechat"
-              }
-            },
-            {
-              "name": "goods_detail",
-              "condition": {
-                "payment_method": "wechat"
-              }
-            },
-            {
-              "name": "present_qr",
-              "default": "0",
-              "condition": {
-                "payment_method": "alipay"
-              }
-            },
-            {
-              "name": "is_spotpay",
-              "default": "0",
-              "condition": {
-                "payment_method": "alipay"
               }
             },
             {
@@ -152,7 +129,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -171,7 +148,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -199,7 +176,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },

@@ -22,7 +22,7 @@ Content-Type: application/json;charset=UTF-8
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The wallet ID that using for online transactions.  | NO
@@ -97,7 +97,7 @@ GET https://api.latipay.net/v2/invoice
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |invoice_id | String | The unique ID of the invoice in Latipay.  | YES
@@ -117,7 +117,7 @@ GET https://api.latipay.net/v2/invoices
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The ID of the wallet you want to use.  | YES
@@ -167,7 +167,7 @@ POST https://api.latipay.net/v2/invoice/refund
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |invoice_id | String | The unique ID of the invoice.  | YES
@@ -195,7 +195,7 @@ DELETE https://api.latipay.net/v2/invoice
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |invoice_id | String | The unique ID of the invoice.  | YES
@@ -222,7 +222,7 @@ PUT https://api.latipay.net/v2/invoice
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The ID of the wallet you want to use.  | NO

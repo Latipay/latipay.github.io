@@ -62,14 +62,14 @@ https://api.latipay.net/v2/transaction
 #### Parameters:    
 
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 | user_id| String| The user account you want to use to process the transaction.| NO|
 | wallet_id| String| The ID of the wallet you want to use.| NO|
 | amount| String| A decimal amount.| NO|
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO|
 | payment_method| String| Payment method options are `alipay` and `wechat`.| NO|
-| return_url| String| The URL of the landing page where Latipay will return the customer after payment. | NO|
+| return_url| String| The URL of the landing page where Latipay will return the customer after payment when successful or failed. | NO|
 |callback_url | String | Merchant webserver's URL that the payment result will send to. | NO
 | ip| String| The IP address of the customer.| NO|
 | version| String| The latest version of the platform. must be `"2.0"`| NO|
@@ -311,7 +311,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### Parameters
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 | merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO |
 | user_id | String | The user account you want to use to process the transaction. | NO |

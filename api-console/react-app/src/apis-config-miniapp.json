@@ -25,6 +25,7 @@
               "required": true
             },
             {
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -45,7 +46,8 @@
               "required": true
             },
             {
-              "name": "product_name"
+              "name": "product_name",
+              "required": true
             }
           ]
         },
@@ -59,6 +61,7 @@
               "required": true
             },
             {
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },

@@ -51,7 +51,7 @@ https://api.latipay.net/barcode
 
 * <strong>Parameters</strong>
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The wallet ID that using for online transactions.  | NO
@@ -123,7 +123,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 
 #### Parameters
 
-| Name  | Type  | Description | Nullable |
+| Name  | Type  | Description | Optional |
 |------------- |---------------| -------------| -------------|
 | merchant_reference | String | A `unique id` identifying the order in Merchant's system. | NO |
 | user_id | String | The user account you want to use to process the transaction. | NO |

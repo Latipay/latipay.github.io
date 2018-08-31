@@ -28,7 +28,7 @@
               "name": "wallet_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             }
@@ -57,7 +57,7 @@
               "default": ""
             },
             {
-              "tips": "",
+              "tips": "Do not put your api_key in public.","tips": "",
               "name": "api_key",
               "required": true,
               "default": ""
@@ -223,7 +223,7 @@
               "default": ""
             },
             {
-              "tips": "",
+              "tips": "Do not put your api_key in public.","tips": "",
               "name": "api_key",
               "required": true,
               "default": ""
@@ -250,7 +250,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -273,7 +273,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -301,7 +301,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -329,7 +329,7 @@
               "name": "wallet_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -382,7 +382,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -405,7 +405,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true,
               "placeholder": "String"
@@ -430,7 +430,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -457,7 +457,7 @@
               "name": "wallet_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
@@ -504,7 +504,7 @@
               "name": "user_id",
               "required": true
             },
-            {
+            {"tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true
             },
