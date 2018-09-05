@@ -176,7 +176,7 @@ GET https://api.latipay.net/v2/transaction/6000324?user_id=U000000013&signature=
 {
   "merchant_reference": "6000324",
   "currency": "AUD",
-  "amount": "120.00",
+  "amount": 120.00,
   "payment_method": "wechat",
   "status": "paid",
   "pay_time": "2017-07-07 10:53:50",

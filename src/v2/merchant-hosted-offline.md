@@ -351,7 +351,7 @@ GET https://api.latipay.net/v2/transaction/1289323A122DB?user_id=U000334333&sign
   "merchant_reference": "dsi39ej430sks03",
   "order_id": "2017232323345670",
   "currency": "AUD",
-  "amount": "120.00",
+  "amount": 120.00,
   "payment_method": "wechat",
   "status": "paid",
   "pay_time": "2017-07-07 10:53:50",
