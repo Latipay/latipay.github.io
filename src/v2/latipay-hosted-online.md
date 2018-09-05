@@ -337,7 +337,7 @@ GET https://api.latipay.net/v2/transaction/1289323A122DB?user_id=U000334333&sign
 |------------- |---------------| -------------|
 |merchant_reference | String | A `unique id` identifying the order in Merchant's system. |
 | currency | String | The currency code of the transaction. |
-| amount | String | A decimal amount. |
+| amount | Number | A decimal amount. |
 | payment_method | String | The payment method used. Possible values are alipay and wechat. |
 | status | String | The status of the transaction. Possible values are: pending, paid, or failed. |
 | pay_time | String | Show the payment time of the transaction order. `UTC/GMT+08:00`|

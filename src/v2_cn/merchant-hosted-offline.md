@@ -338,7 +338,7 @@ GET https://api.latipay.net/v2/transaction/{merchant_reference}
 |------------- |---------------| -------------|
 |merchant_reference  | String  | 商户订单id  |
 |currency  | String  | 支付币种  |
-|amount  | String  | 支付金额  |
+|amount  | Number  | 支付金额  |
 |payment_method  | String  | 支付方式，可能值：alipay, wechat, onlineBank  |
 |status  | String  | 支付状态，可能值: pending, paid, 或 failed  |
 |pay_time  | String  | 支付时间，北京时间 `UTC/GMT+08:00`|

@@ -33,7 +33,7 @@
               "default": ""
             },
             {
-              "tips": "Do not put your api_key in public.","tips": "",
+              "tips": "Do not put your api_key in public.",
               "name": "api_key",
               "required": true,
               "default": ""
