@@ -87,7 +87,7 @@ Content-Type: application/json;charset=UTF-8
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The wallet ID that using for online transactions.  | NO
-|payment_method | String | The payment methods can be `wechat`, `alipay` or `onlineBank`. | NO
+|payment_method | String | The payment methods can be `wechat`, `alipay`, `onlineBank` or `unionpay`. | NO
 |amount | String | A decimal amount. | NO
 |return_url | String | The URL of the landing page where the customer will be directed to after payment when successful or failed. | NO
 |callback_url | String | Merchant web server's URL that the payment result will send to. | NO

@@ -83,7 +83,7 @@ https://api.latipay.net/v2/transaction
 |------------- |---------------| -------------| -------------|
 | user_id | String | 商户账号用户 id | No |
 |wallet_id | String | 商户账号wallet id | No
-|payment_method | String | 支付方式 `wechat`, `alipay`, or `onlineBank` | No
+|payment_method | String | 支付方式 `wechat`, `alipay`, `onlineBank`, or `unionpay` | No
 |amount | String | 支付金额 | No
 |return_url | String | 支付完成后浏览器继续加载的地址 | No
 |callback_url | String | 支付完成后异步通知地址 | No
