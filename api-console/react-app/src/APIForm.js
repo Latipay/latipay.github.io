@@ -123,6 +123,15 @@ class RegistrationForm extends React.Component {
     });
   };
 
+  fieldValidator = (rule, value, callback) => {
+    if (rule.field === 'amount' && value <= 0) {
+        callback('Amount must larger than 0')
+    }
+
+    // Note: 必须总是返回一个 callback，否则 validateFieldsAndScroll 无法响应
+    callback()
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
 
@@ -316,6 +325,8 @@ class RegistrationForm extends React.Component {
                     {
                       required: item.required,
                       message: `Please input your ${item.name}`
+                    }, {
+                      validator: this.fieldValidator
                     }
                   ],
                   initialValue: initialValue(account, item.name, item.default)
@@ -351,7 +362,7 @@ Signature: ${signature ? signature : ''}`}
                     className="btn-copy"
                     onSuccess={this.onCopied}
                   >
-                    <Icon type="copy" />Copy
+                    <div><Icon type="copy" />Copy</div>
                   </Clipboard>
                 </span>
               </p>
