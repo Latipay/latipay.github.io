@@ -94,6 +94,9 @@
                 },
                 {
                   "name": "onlineBank"
+                },
+                {
+                  "name": "unionpay"
                 }
               ]
             },
