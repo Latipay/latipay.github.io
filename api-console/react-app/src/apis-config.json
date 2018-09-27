@@ -340,6 +340,10 @@
               "precision": 2
             },
             {
+              "name": "pay_currency",
+              "required": true
+            },
+            {
               "name": "product_name"
             },
             {
