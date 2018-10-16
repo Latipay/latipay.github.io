@@ -306,7 +306,7 @@
 </table>
 <h3 id="3-支付结果异步通知"><a href="#3-支付结果异步通知" class="headerlink" title="3. 支付结果异步通知"></a>3. 支付结果异步通知</h3><p>此接口为商户端后台提供，在支付完成后，Latipay服务器每隔30秒调用该接口，直到收到<code>sent</code>文本，在调用该接口时，Latipay会传入支付结果信息。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST 商户端的 callback_url</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br></pre></td></tr></table></figure>
-<p class="tip">返回的请求头状态必须为 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank" rel="noopener">200</a>，请求的body必须是文本：<code>send</code></p>
+<p class="tip">返回的请求头状态必须为 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank" rel="noopener">200</a>，请求的body必须是文本：<code>sent</code></p>
 
 
 <h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><table>
