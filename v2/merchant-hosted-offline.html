@@ -393,7 +393,7 @@
 <hr>
 <h3 id="3-Payment-Result-Asynchronous-Notification"><a href="#3-Payment-Result-Asynchronous-Notification" class="headerlink" title="3 - Payment Result Asynchronous Notification"></a>3 - Payment Result Asynchronous Notification</h3><p>Asynchronous Notification is a re-try mechanism to ensure the notification has been updated to the merchant’s web server. There is no times limitation until it returns an indicating <code>sent</code> text to Latipay. The time interval of this notification is about 30 seconds.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST merchant&apos;s callback_url</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br></pre></td></tr></table></figure>
-<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank" rel="noopener">200</a>, the body of response must be the string <code>send</code></p>
+<p class="tip">The status of response must be <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank" rel="noopener">200</a>, the body of response must be the string <code>sent</code></p>
 
 <h4 id="Parameters-1"><a href="#Parameters-1" class="headerlink" title="Parameters:"></a>Parameters:</h4><table>
 <thead>
