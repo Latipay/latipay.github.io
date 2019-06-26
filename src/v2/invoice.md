@@ -29,7 +29,6 @@ Content-Type: application/json;charset=UTF-8
 |amount | String | A decimal amount. | NO
 |product_name | String | The name of the product or service being sold. | YES
 |period_time | Int | Page valid time. | YES
-|max_open_count | Int | The maximum number of times pages open. | YES
 |app | Int | 1 is created by the mobile, 0 is created by other devices. | YES
 |customer_order_id | String | A unique id identifying the order in merchant system. | YES
 |customer_reference | String | Notes about this order. | YES
@@ -142,7 +141,6 @@ GET https://api.latipay.net/v2/invoices
 | product_name | String | The name of the product or service.
 | period_time | Int | Page valid time.
 | open_count | Int | The number of times pages have opened.
-| max_open_count | Int | The maximum number of times pages open.
 | customer_order_id | String | A unique id identifying the order in merchant system.
 | customer_reference | String | Notes about this order.
 |created_time|String|Show the create time of the transaction order
@@ -230,7 +228,6 @@ PUT https://api.latipay.net/v2/invoice
 |amount | String | A decimal amount. | NO
 |product_name | String | The name of the product or service being sold. | YES
 |period_time | Int | Page valid time. | YES
-|max_open_count | Int | The maximum number of times pages open. | YES
 |customer_order_id | String | A unique id identifying the order in merchant system. | YES
 |customer_reference | String | Notes about this order. | YES
 |qrcode | Boolean | Choosing true or false, whether the QR picture is displayed. | YES
