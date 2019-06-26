@@ -35,7 +35,7 @@ Content-Type: application/json;charset=UTF-8
 |customer_reference | String | Notes about this order. | YES
 |return_url | String | The URL of the landing page where Latipay will return the customer after payment. | YES
 |notify_url | String | The URL of the notification with payment result. | YES
-|qrcode | Boolean | Choosing true or false, whether the QR picture is displayed). | YES
+|qrcode | Boolean | Choosing true or false, whether the QR picture is displayed. | YES
 |signature | String | The `SHA-256 HMAC` API signature. | NO
 
 Example
@@ -233,7 +233,7 @@ PUT https://api.latipay.net/v2/invoice
 |max_open_count | Int | The maximum number of times pages open. | YES
 |customer_order_id | String | A unique id identifying the order in merchant system. | YES
 |customer_reference | String | Notes about this order. | YES
-|qrcode | Boolean | Choosing true or false, whether the QR picture is displayed). | YES
+|qrcode | Boolean | Choosing true or false, whether the QR picture is displayed. | YES
 
 
 * <strong>Response</strong>
