@@ -271,19 +271,10 @@ Content-Type: application/x-www-form-urlencoded
 | pay_time | String | Show the payment time of the transaction order. |
 | signature | String | The `SHA-256 HMAC` API signature. |  
 
-#### Example input
+#### Example
 
-```json
-{
-  "merchant_reference": "dsi39ej430sks03",
-  "currency": "AUD",
-  "amount": "120.00",
-  "payment_method": "wechat",
-  "status": "paid",
-  "pay_time": "2017-07-07 10:53:50"
-
-  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-}
+```
+merchant_reference=dsi39ej430sks03&currency=NZD&amount=120.00&payment_method=alipay&status=paid&pay_time=2017-07-07%2010%3A53%3A50&signature=840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ```
 
 #### SHA-256 HMAC Signature

@@ -216,18 +216,8 @@ Attributes
 
 Example
 
-```json
-{
-  "merchant_reference": "dsi39ej430sks03",
-  "order_id": "2017232323345678",
-  "amount": "120.00",
-  "currency": "NZD",
-  "payment_method": "alipay",
-  "pay_time": "2017-07-07 10:53:50",
-  "status" : "paid",
-
-  "signature": "840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1",
-}
+```
+merchant_reference=dsi39ej430sks03&order_id=2017232323345678&amount=120.00&currency=NZD&payment_method=alipay&pay_time=2017-07-07%2010%3A53%3A50&status=paid&signature=840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ```
 
 SHA-256 HMAC Signature

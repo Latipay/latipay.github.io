@@ -223,18 +223,8 @@ Content-Type: application/x-www-form-urlencoded
 
 #### 参数例子
 
-``` json
-{
-  "merchant_reference": "dsi39ej430sks03",
-  "order_id": "2017232323345671",
-  "amount": "120.00",
-  "currency": "NZD",
-  "payment_method": "alipay",
-  "pay_time": "2017-07-07 10:53:50",
-  "status" : "paid",
-
-  "signature": "14d5b06a2a5a2ec509a148277ed4cbeb3c43301b239f080a3467ff0aba4070e3",
-}
+``` 
+merchant_reference=dsi39ej430sks03&order_id=2017232323345678&amount=120.00&currency=NZD&payment_method=alipay&pay_time=2017-07-07%2010%3A53%3A50&status=paid&signature=840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 ```
 
 #### SHA-256 HMAC签名
