@@ -3,3 +3,4 @@ node_modules
 db.json
 public
 !api-console/react-app/public
+yarn.lock
