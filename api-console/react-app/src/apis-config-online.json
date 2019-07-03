@@ -87,16 +87,13 @@
               "required": true,
               "condition_options": [
                 {
+                  "name": "latipay"
+                },
+                {
                   "name": "wechat"
                 },
                 {
                   "name": "alipay"
-                },
-                {
-                  "name": "onlineBank"
-                },
-                {
-                  "name": "unionpay"
                 }
               ]
             },
@@ -106,18 +103,6 @@
               "disabled": true,
               "condition": {
                 "payment_method": "wechat"
-              }
-            },
-            {
-              "name": "id_number",
-              "condition": {
-                "payment_method": "onlineBank"
-              }
-            },
-            {
-              "name": "id_name",
-              "condition": {
-                "payment_method": "onlineBank"
               }
             }
           ]

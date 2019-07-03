@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start": "hexo server",
-    "build-hexo": "hexo clean && hexo generate && hexo deploy && cp -r public/* ./",
-    "build-node": "rm -rf api-console/static api-console/*.html && cd api-console/react-app && npm run build && cd ../../ && cp -r api-console/react-app/build/* api-console/ && sed -i '' 's#/static#./static#g' api-console/index.html && cp api-console/index.html api-console/miniapp.html && cp api-console/index.html api-console/barcode.html && cp api-console/index.html api-console/merchant-host.html && cp api-console/index.html api-console/online.html && cp api-console/index.html api-console/invoice.html",
+    "build-hexo": "yarn && hexo clean && hexo generate && hexo deploy && cp -r public/* ./",
+    "build-node": "rm -rf api-console/static api-console/*.html && cd api-console/react-app && yarn && npm run build && cd ../../ && cp -r api-console/react-app/build/* api-console/ && sed -i '' 's#/static#./static#g' api-console/index.html && cp api-console/index.html api-console/miniapp.html && cp api-console/index.html api-console/barcode.html && cp api-console/index.html api-console/merchant-host.html && cp api-console/index.html api-console/online.html && cp api-console/index.html api-console/invoice.html",
     "build": "npm run build-hexo && npm run build-node"
   },
   "dependencies": {
