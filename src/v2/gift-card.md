@@ -43,10 +43,11 @@ Content-Type: application/json;charset=UTF-8
 
 - <strong>Response</strong>
 
-| Name        | Type   | Description                                       |
-| ----------- | ------ | ------------------------------------------------- |
-| code        | number | Result Code of the request                        |
-| redeem_code | string | A unique code to present the redeeming transation |
+| Name        | Type   | Description                                        |
+| ----------- | ------ | -------------------------------------------------- |
+| code        | number | Result Code of the request                         |
+| face_value  | number | The value of the redeemming gift card.             |
+| redeem_code | string | A unique code to present the redeeming transation. |
 
 ### 3 - Drawback Gift Card
 ```
@@ -60,7 +61,7 @@ Content-Type: application/json;charset=UTF-8
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
 | merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
-| redeem_code        | string |                                                                          | N        |
+| redeem_code        | string | A unique code to present the redeeming transation.                       |
 | signature          | string |                                                                          | N        |
 
 - <strong>Response</strong>
