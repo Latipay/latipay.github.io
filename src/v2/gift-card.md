@@ -11,21 +11,21 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description                                                                       | Optional |
-| ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
-| merchant_reference | string ||N|
-| merchant_code | string ||N|
-| wallet_code | string ||N|
-| gift_card_code | string ||N|
-| currency | string ||Y|
-| amount | number ||N|
-| signature | string ||N|
+| Name               | Type   | Description | Optional |
+| ------------------ | ------ | ----------- | -------- |
+| merchant_reference | string |             | N        |
+| merchant_code      | string |             | N        |
+| wallet_code        | string |             | N        |
+| gift_card_code     | string |             | N        |
+| currency           | string |             | Y        |
+| amount             | number |             | N        |
+| signature          | string |             | N        |
 
 - <strong>Response</strong>
 
-| Name | Type | Description |
-| -- | -- | -- |
-|code|number|Result Code of the request|
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| code | number | Result Code of the request |
 
 ### 2 - Redeem Gift Card
 ```
@@ -34,19 +34,19 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description                                                                       | Optional |
-| ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
-| merchant_reference | string ||N|
-| merchant_code | string ||N|
-| wallet_code | string ||N|
-| signature | string ||N|
+| Name               | Type   | Description | Optional |
+| ------------------ | ------ | ----------- | -------- |
+| merchant_reference | string |             | N        |
+| merchant_code      | string |             | N        |
+| wallet_code        | string |             | N        |
+| signature          | string |             | N        |
 
 - <strong>Response</strong>
 
-| Name | Type | Description |
-| -- | -- | -- |
-|code|number|Result Code of the request|
-| redeem_code | string ||
+| Name        | Type   | Description                                       |
+| ----------- | ------ | ------------------------------------------------- |
+| code        | number | Result Code of the request                        |
+| redeem_code | string | A unique code to present the redeeming transation |
 
 ### 3 - Drawback Gift Card
 ```
@@ -55,16 +55,16 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description                                                                       | Optional |
-| ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
-| redeem_code | string ||N|
-| merchant_reference | string ||N|
-| merchant_code | string ||N|
-| wallet_code | string ||N|
-| signature | string ||N|
+| Name               | Type   | Description | Optional |
+| ------------------ | ------ | ----------- | -------- |
+| redeem_code        | string |             | N        |
+| merchant_reference | string |             | N        |
+| merchant_code      | string |             | N        |
+| wallet_code        | string |             | N        |
+| signature          | string |             | N        |
 
 - <strong>Response</strong>
 
-| Name | Type | Description |
-| -- | -- | -- |
-|code|number|Result Code of the request|
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| code | number | Result Code of the request |
