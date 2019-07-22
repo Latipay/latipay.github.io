@@ -19,7 +19,7 @@ Content-Type: application/json;charset=UTF-8
 | gift_card_code     | string |                                                                          | N        |
 | currency           | string | The currency code of the transaction.                                    | Y        |
 | amount             | number | A decimal amount.                                                        | Y        |
-| signature          | string |                                                                          | N        |
+| signature          | string | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>
 
