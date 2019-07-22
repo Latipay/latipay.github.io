@@ -46,7 +46,7 @@ Content-Type: application/json;charset=UTF-8
 | Name | Type | Description |
 | -- | -- | -- |
 |code|number|Result Code of the request|
-| redeem_code | string ||N|
+| redeem_code | string ||
 
 ### 3 - Drawback Gift Card
 ```
