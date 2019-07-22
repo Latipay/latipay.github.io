@@ -145,7 +145,7 @@
 <tr>
 <td>merchant_reference</td>
 <td>string</td>
-<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the redeeming order in Merchant’s system.</td>
 <td>N</td>
 </tr>
 <tr>
@@ -190,6 +190,11 @@
 <td>code</td>
 <td>number</td>
 <td>Result Code of the request</td>
+</tr>
+<tr>
+<td>face_value</td>
+<td>number</td>
+<td>The value of the redeemming gift card.</td>
 </tr>
 </tbody>
 </table>
@@ -250,16 +255,6 @@
 <td>number</td>
 <td>Result Code of the request</td>
 </tr>
-<tr>
-<td>face_value</td>
-<td>number</td>
-<td>The value of the redeemming gift card.</td>
-</tr>
-<tr>
-<td>redeem_code</td>
-<td>string</td>
-<td>A unique code to present the redeeming transation.</td>
-</tr>
 </tbody>
 </table>
 <h3 id="3-Drawback-Gift-Card"><a href="#3-Drawback-Gift-Card" class="headerlink" title="3 - Drawback Gift Card"></a>3 - Drawback Gift Card</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/gift-card/drawback</span><br><span class="line">Content-Type: application/json;charset=UTF-8</span><br></pre></td></tr></table></figure>
@@ -291,13 +286,8 @@
 <tr>
 <td>merchant_reference</td>
 <td>string</td>
-<td>A <code>unique id</code> identifying the order in Merchant’s system.</td>
+<td>A <code>unique id</code> identifying the redeeming order in Merchant’s system.</td>
 <td>N</td>
-</tr>
-<tr>
-<td>redeem_code</td>
-<td>string</td>
-<td>A unique code to present the redeeming transation.</td>
 </tr>
 <tr>
 <td>signature</td>

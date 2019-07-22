@@ -15,7 +15,7 @@ Content-Type: application/json;charset=UTF-8
 | ------------------ | ------ | ------------------------------------------------------------------------ | -------- |
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
-| merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
+| merchant_reference | string | A `unique id` identifying the redeeming order in Merchant’s system.      | N        |
 | gift_card_code     | string |                                                                          | N        |
 | currency           | string | The currency code of the transaction.                                    | Y        |
 | amount             | number | A decimal amount.                                                        | Y        |
@@ -23,9 +23,10 @@ Content-Type: application/json;charset=UTF-8
 
 - <strong>Response</strong>
 
-| Name | Type   | Description                |
-| ---- | ------ | -------------------------- |
-| code | number | Result Code of the request |
+| Name       | Type   | Description                            |
+| ---------- | ------ | -------------------------------------- |
+| code       | number | Result Code of the request             |
+| face_value | number | The value of the redeemming gift card. |
 
 ### 2 - Redeem Gift Card
 ```
@@ -43,11 +44,9 @@ Content-Type: application/json;charset=UTF-8
 
 - <strong>Response</strong>
 
-| Name        | Type   | Description                                        |
-| ----------- | ------ | -------------------------------------------------- |
-| code        | number | Result Code of the request                         |
-| face_value  | number | The value of the redeemming gift card.             |
-| redeem_code | string | A unique code to present the redeeming transation. |
+| Name | Type   | Description                |
+| ---- | ------ | -------------------------- |
+| code | number | Result Code of the request |
 
 ### 3 - Drawback Gift Card
 ```
@@ -60,8 +59,7 @@ Content-Type: application/json;charset=UTF-8
 | ------------------ | ------ | ------------------------------------------------------------------------ | -------- |
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
-| merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
-| redeem_code        | string | A unique code to present the redeeming transation.                       |
+| merchant_reference | string | A `unique id` identifying the redeeming order in Merchant’s system.      | N        |
 | signature          | string | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>
