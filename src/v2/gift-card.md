@@ -11,15 +11,15 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description | Optional |
-| ------------------ | ------ | ----------- | -------- |
-| merchant_reference | string |             | N        |
-| merchant_code      | string |             | N        |
-| wallet_code        | string |             | N        |
-| gift_card_code     | string |             | N        |
-| currency           | string |             | Y        |
-| amount             | number |             | N        |
-| signature          | string |             | N        |
+| Name               | Type   | Description                                                              | Optional |
+| ------------------ | ------ | ------------------------------------------------------------------------ | -------- |
+| user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
+| wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
+| merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
+| gift_card_code     | string |                                                                          | N        |
+| currency           | string | The currency code of the transaction.                                    | Y        |
+| amount             | number | A decimal amount.                                                        | Y        |
+| signature          | string |                                                                          | N        |
 
 - <strong>Response</strong>
 
@@ -34,12 +34,12 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description | Optional |
-| ------------------ | ------ | ----------- | -------- |
-| merchant_reference | string |             | N        |
-| merchant_code      | string |             | N        |
-| wallet_code        | string |             | N        |
-| signature          | string |             | N        |
+| Name               | Type   | Description                                                              | Optional |
+| ------------------ | ------ | ------------------------------------------------------------------------ | -------- |
+| user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
+| wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
+| merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
+| signature          | string |                                                                          | N        |
 
 - <strong>Response</strong>
 
@@ -55,13 +55,13 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description | Optional |
-| ------------------ | ------ | ----------- | -------- |
-| redeem_code        | string |             | N        |
-| merchant_reference | string |             | N        |
-| merchant_code      | string |             | N        |
-| wallet_code        | string |             | N        |
-| signature          | string |             | N        |
+| Name               | Type   | Description                                                              | Optional |
+| ------------------ | ------ | ------------------------------------------------------------------------ | -------- |
+| user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
+| wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
+| merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
+| redeem_code        | string |                                                                          | N        |
+| signature          | string |                                                                          | N        |
 
 - <strong>Response</strong>
 
