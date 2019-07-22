@@ -39,7 +39,7 @@ Content-Type: application/json;charset=UTF-8
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
 | merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
-| signature          | string |                                                                          | N        |
+| signature          | string | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>
 
@@ -62,7 +62,7 @@ Content-Type: application/json;charset=UTF-8
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
 | merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
 | redeem_code        | string | A unique code to present the redeeming transation.                       |
-| signature          | string |                                                                          | N        |
+| signature          | string | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>
 
