@@ -13,8 +13,14 @@ Content-Type: application/json;charset=UTF-8
 
 | Name               | Type   | Description                                                                       | Optional |
 | ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
-| merchantReference | string ||N|
+| merchant_reference | string ||N|
+| merchant_code | string ||N|
+| wallet_code | string ||N|
+| gift_card_code | string ||N|
+| currency | string ||Y|
+| amount | number ||N|
 | signature | string ||N|
+
 - <strong>Response</strong>
 
 | Name | Type | Description |
@@ -30,7 +36,9 @@ Content-Type: application/json;charset=UTF-8
 
 | Name               | Type   | Description                                                                       | Optional |
 | ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
-| merchantReference | string ||N|
+| merchant_reference | string ||N|
+| merchant_code | string ||N|
+| wallet_code | string ||N|
 | signature | string ||N|
 
 - <strong>Response</strong>
@@ -38,6 +46,7 @@ Content-Type: application/json;charset=UTF-8
 | Name | Type | Description |
 | -- | -- | -- |
 |code|number|Result Code of the request|
+| redeem_code | string ||N|
 
 ### 3 - Drawback Gift Card
 ```
@@ -48,6 +57,10 @@ Content-Type: application/json;charset=UTF-8
 
 | Name               | Type   | Description                                                                       | Optional |
 | ------------------ | ------ | --------------------------------------------------------------------------------- | -------- |
+| redeem_code | string ||N|
+| merchant_reference | string ||N|
+| merchant_code | string ||N|
+| wallet_code | string ||N|
 | signature | string ||N|
 
 - <strong>Response</strong>
