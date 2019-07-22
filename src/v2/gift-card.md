@@ -16,7 +16,7 @@ Content-Type: application/json;charset=UTF-8
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
 | merchant_reference | string | A `unique id` identifying the redeeming order in Merchant’s system.      | N        |
-| gift_card_code     | string |                                                                          | N        |
+| gift_card_code     | string | A 12 digits code for identifying the gift card.                          | N        |
 | currency           | string | The currency code of the transaction.                                    | Y        |
 | amount             | number | A decimal amount.                                                        | Y        |
 | signature          | string | The SHA-256 HMAC API signature.                                          | N        |
@@ -60,6 +60,7 @@ Content-Type: application/json;charset=UTF-8
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
 | merchant_reference | string | A `unique id` identifying the redeeming order in Merchant’s system.      | N        |
+| drawback_reference | string | A reference that can be added for the merchant's intention               | Y        |
 | signature          | string | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>
