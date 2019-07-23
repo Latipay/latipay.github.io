@@ -4,9 +4,9 @@ type: v2
 order: 7
 ---
 
-### 1 - Lock Gift Card
+### 1 - Freeze Gift Card
 ```
-POST https://api.latipay.net/v2/gift-card/lock
+POST https://api.latipay.net/v2/gift-card/freeze
 Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
@@ -19,7 +19,7 @@ Content-Type: application/json;charset=UTF-8
 | gift_card_code     | string  | A 12 digits code for identifying the gift card.                          | N        |
 | currency           | string  | The currency code of the transaction.                                    | Y        |
 | amount             | number  | A decimal amount.                                                        | Y        |
-| unlock             | boolean | When set `true` the reuquest would unlock the gift card.                 | Y        |
+| unfreeze           | boolean | When set `true` the reuquest would unfreeze the gift card.               | Y        |
 | signature          | string  | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>

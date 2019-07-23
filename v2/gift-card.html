@@ -116,7 +116,7 @@
   
     <h1>Gift Card (Beta)</h1>
   
-  <h3 id="1-Lock-Gift-Card"><a href="#1-Lock-Gift-Card" class="headerlink" title="1 - Lock Gift Card"></a>1 - Lock Gift Card</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/gift-card/lock</span><br><span class="line">Content-Type: application/json;charset=UTF-8</span><br></pre></td></tr></table></figure>
+  <h3 id="1-Freeze-Gift-Card"><a href="#1-Freeze-Gift-Card" class="headerlink" title="1 - Freeze Gift Card"></a>1 - Freeze Gift Card</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/gift-card/freeze</span><br><span class="line">Content-Type: application/json;charset=UTF-8</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>Request Parameters</strong></li>
 </ul>
@@ -167,9 +167,9 @@
 <td>Y</td>
 </tr>
 <tr>
-<td>unlock</td>
+<td>unfreeze</td>
 <td>boolean</td>
-<td>When set <code>true</code> the reuquest would unlock the gift card.</td>
+<td>When set <code>true</code> the reuquest would unfreeze the gift card.</td>
 <td>Y</td>
 </tr>
 <tr>
