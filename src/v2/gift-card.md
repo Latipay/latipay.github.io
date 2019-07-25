@@ -11,16 +11,16 @@ Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
 
-| Name               | Type   | Description                                                                                                            | Optional |
-| ------------------ | ------ | ---------------------------------------------------------------------------------------------------------------------- | -------- |
-| user_id            | string | The Latipay user account which is using for processing the transactions.                                               | N        |
-| wallet_id          | string | The wallet ID that using for online transactions.                                                                      | N        |
-| merchant_reference | string | A `unique id` identifying the redeeming order in Merchant’s system.                                                    | N        |
-| gift_card_code     | string | A 12 digits code for identifying the gift card.                                                                        | N        |
-| currency           | string | The currency code of the transaction.                                                                                  | Y        |
-| amount             | number | A decimal amount.                                                                                                      | Y        |
-| freeze_type        | string | Set it as `freeze` means to freeze the gift card, while set is as `unfreeze` the request would unfreeze the gift card. | Y        |
-| signature          | string | The SHA-256 HMAC API signature.                                                                                        | N        |
+| Name               | Type   | Description                                                                                                                       | Optional |
+| ------------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| user_id            | string | The Latipay user account which is using for processing the transactions.                                                          | N        |
+| wallet_id          | string | The wallet ID that using for online transactions.                                                                                 | N        |
+| merchant_reference | string | A `unique id` identifying the redeeming order in Merchant’s system.                                                               | N        |
+| gift_card_code     | string | A 12 digits code for identifying the gift card.                                                                                   | N        |
+| currency           | string | The currency code of the transaction.                                                                                             | Y        |
+| amount             | number | A decimal amount.                                                                                                                 | Y        |
+| freeze_type        | string | Set is as `unfreeze` the request would unfreeze the gift card. While set `freeze` or leave it empty means to freeze the gift card | Y        |
+| signature          | string | The SHA-256 HMAC API signature.                                                                                                   | N        |
 
 - <strong>Response</strong>
 
