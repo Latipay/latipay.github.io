@@ -19,7 +19,7 @@ Content-Type: application/json;charset=UTF-8
 | gift_card_code     | string | A 12 digits code for identifying the gift card.                                                                                          | N        |
 | currency           | string | The currency code of the transaction.                                                                                                    | Y        |
 | amount             | number | A decimal amount.                                                                                                                        | Y        |
-| freeze_type        | string | Set it as `freeze` or leave it empty means to freeze the gift card, while set it as `unfreeze` the request would unfreeze the gift card. | Y        |
+| freeze_type        | string | Set it as `freeze` or leave it empty means to freeze the gift card, while set it as `unfreeze` the request would unfreeze the gift card. | N        |
 | signature          | string | The SHA-256 HMAC API signature.                                                                                                          | N        |
 
 - <strong>Response</strong>
