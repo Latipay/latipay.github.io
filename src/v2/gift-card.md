@@ -22,6 +22,21 @@ Content-Type: application/json;charset=UTF-8
 | freeze_type        | string | Set it as `freeze` means to freeze the gift card, while set it as `unfreeze` the request would unfreeze the gift card. | N        |
 | signature          | string | The SHA-256 HMAC API signature.                                                                                        | N        |
 
+* <strong>SHA-256 HMAC Signature</strong> [Try your signature online](https://jsfiddle.net/tonnyLTP/wj36tey4/45/)
+
+Rearrange all parameters alphabetically (except parameters with value of `null` or `empty` string) and join them with `&`, and concat the value of `api_key` in the end.
+
+JS code example:
+
+```js
+  Object.keys(data)
+    .filter(item => data[item] != null && data[item] != undefined && data[item] !== '')
+    .sort()
+    .map(item => `${item}=${data[item]}`)
+    .join('&')
+    .concat(api_key)
+```
+
 - <strong>Response</strong>
 
 | Name       | Type   | Description                            |
