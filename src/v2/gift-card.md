@@ -46,7 +46,7 @@ JS code example:
 
 ### 2 - Redeem Gift Card
 ```
-POST https://api.latipay.net/v2/gift-card/redeam
+POST https://api.latipay.net/v2/gift-card/redeem
 Content-Type: application/json;charset=UTF-8
 ```
 - <strong>Request Parameters</strong>
