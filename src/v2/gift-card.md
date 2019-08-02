@@ -56,7 +56,7 @@ Content-Type: application/json;charset=UTF-8
 | user_id            | string | The Latipay user account which is using for processing the transactions. | N        |
 | wallet_id          | string | The wallet ID that using for online transactions.                        | N        |
 | merchant_reference | string | A `unique id` identifying the order in Merchant’s system.                | N        |
-| confirm_codes      | string | A string of the frozon gift cards, seperated by `','`.                   | N        |
+| confirm_codes      | string | A string of the frozon gift cards, seperated by `,`.                   | N        |
 | signature          | string | The SHA-256 HMAC API signature.                                          | N        |
 
 - <strong>Response</strong>
