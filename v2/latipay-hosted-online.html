@@ -308,7 +308,7 @@
 <p>Signature in Response</p>
 <p class="tip">We are highly recommending you to verify the <strong>signature</strong> in merchant’s webserver to ensure the security.</p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: nonce + host_url</span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message: host_url + nonce </span><br><span class="line">secret: api_key</span><br></pre></td></tr></table></figure>
 <h3 id="2-Latipay-Payment-Interface"><a href="#2-Latipay-Payment-Interface" class="headerlink" title="2 - Latipay Payment Interface"></a>2 - Latipay Payment Interface</h3><p>Loading the URI in PC browser, mobile browser or Alipay/ WeChat’s embedded browser.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;host_url&#125;/&#123;nonce&#125;</span><br></pre></td></tr></table></figure></p>
 <p class="tip">If it’s PC browser, you can load this url in current window or new window. But if it’s mobile browser or  inside of Alipay or Wechat, please load the url in this or similar way: <code>window.location.href={host_url}/{nonce}</code>, so the window will be redirected to payment gateway to finish the payment.</p>
 

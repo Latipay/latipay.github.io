@@ -171,7 +171,7 @@ Signature in Response
 <p class="tip">We are highly recommending you to verify the **signature** in merchant's webserver to ensure the security.</p>
 
 ```
-message: nonce + host_url
+message: host_url + nonce 
 secret: api_key
 ```
 
