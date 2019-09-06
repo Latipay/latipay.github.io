@@ -168,10 +168,10 @@ signature: 8d1bea078eaacdae8388852851ec39e2e8561cdce64f359421d85ed4844496ec
 
 Signature in Response
 
-<p class="tip">We are highly recommending you to verify the **signature** in merchant's webserver to ensure the security.</p>
+<p class="tip">We are highly recommeding you to verify the **signature** in merchant's webserver to ensure the security.</p>
 
 ```
-message: host_url + nonce 
+message: nonce + host_url
 secret: api_key
 ```
 
