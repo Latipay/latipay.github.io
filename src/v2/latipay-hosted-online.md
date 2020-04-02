@@ -61,7 +61,7 @@ The mobile browser Safari will try to launch Alipay app to make the payment. But
 
 
 ---
-* <strong>The payment scenario is basing on the customer using Latipay payment services by `Embedded browser in App`.</strong>
+* <strong>The payment scenario is basing on the customer using Latipay payment services by `Embedded browser in Wechat App or Alipay app`.</strong>
 
 Alipay
 ![](../images/Alipay_LatipayHosted - emebbed browser.png)
@@ -87,7 +87,7 @@ Content-Type: application/json;charset=UTF-8
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The wallet ID that using for online transactions.  | NO
-|payment_method | String | The payment methods can be `wechat`, `alipay` or `moneymore`. | NO
+|payment_method | String | The payment methods can be `wechat`, `alipay`, `moneymore` or 'polipay'. | NO
 |amount | String | A decimal amount. | NO
 |return_url | String | The URL of the landing page where the customer will be directed to after payment when successful or failed. | NO
 |callback_url | String | Merchant web server's URL that the payment result will send to. | NO
@@ -438,4 +438,3 @@ signature: 3052b51072570b743bf9a12a20a45b0adf280aee84907ef0e54d1079fb3f961c
   "message": "", //the reason when error happened
 }
 ```
-
