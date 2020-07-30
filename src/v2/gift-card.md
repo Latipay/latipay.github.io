@@ -1,7 +1,7 @@
 ---
 title: Gift Card (Beta)
 type: v2
-order: 7
+order: 8
 ---
 
 ### 1 - Freeze Gift Card

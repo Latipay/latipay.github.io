@@ -1,7 +1,7 @@
 ---
 title: Latipay Invoice
 type: v2
-order: 6
+order: 7
 ---
 [API Playground](http://doc.latipay.net/api-console/invoice.html)
 

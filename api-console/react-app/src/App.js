@@ -1,68 +1,68 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import React, { Component } from "react";
+import { Row, Col } from "antd";
 
-import './App.css';
-import apisConfig from './apis-config.json';
-import apisMiniAppConfig from './apis-config-miniapp.json';
-import apisInvoiceConfig from './apis-config-invoice.json';
-import apisMerchantHostConfig from './apis-config-merchant-host.json';
-import apisOnlineConfig from './apis-config-online.json';
-import apisBarcodeConfig from './apis-config-barcode.json';
+import "./App.css";
+import apisConfig from "./apis-config.json";
+import apisMiniAppConfig from "./apis-config-miniapp.json";
+import apisInvoiceConfig from "./apis-config-invoice.json";
+import apisMerchantHostConfig from "./apis-config-merchant-host.json";
+import apisOnlineConfig from "./apis-config-online.json";
+import apisBarcodeConfig from "./apis-config-barcode.json";
 
-import Slide from './Slide';
+import Slide from "./Slide";
 
-import APIForm from './APIForm';
-import { newSignature, initialValue } from './util';
+import APIForm from "./APIForm";
+import { newSignature, initialValue } from "./util";
 
 function apis(props = {}) {
   const { pathname } = props.location || {};
 
   const map = {
-    '/': apisConfig,
-    '/api-console/miniapp.html': apisMiniAppConfig,
-    '/api-console/invoice.html': apisInvoiceConfig,
-    '/api-console/merchant-host.html': apisMerchantHostConfig,
-    '/api-console/online.html': apisOnlineConfig,
-    '/api-console/barcode.html': apisBarcodeConfig
+    "/": apisConfig,
+    "/api-console/miniapp.html": apisMiniAppConfig,
+    "/api-console/invoice.html": apisInvoiceConfig,
+    "/api-console/merchant-host.html": apisMerchantHostConfig,
+    "/api-console/online.html": apisOnlineConfig,
+    "/api-console/barcode.html": apisBarcodeConfig
   };
 
   return map[pathname] || apisConfig;
 }
 
 const hosts = {
-  prod: 'https://api.latipay.net',
-  staging: 'https://api-staging.latipay.net'
+  prod: "https://api.latipay.net",
+  staging: "https://api-staging.latipay.net"
 };
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    let current = '0_0';
+    let current = "0_0";
 
     const search = (window.location || {}).search;
     const query = {};
-    search.split('&').forEach(item => {
-      if (item.indexOf('?') !== -1) {
+    search.split("&").forEach(item => {
+      if (item.indexOf("?") !== -1) {
         item = item.substr(1);
       }
-      const a = item.trim('?').split('=');
+      const a = item.trim("?").split("=");
       query[a[0]] = a[1];
     });
 
-    const env = query.staging ? 'staging' : 'prod';
+    const env = query.staging ? "staging" : "prod";
 
     const whichApi = query.api;
-    const method = query.method || '';
+    const method = query.method || "";
     if (whichApi) {
       const map = {};
       apis(props).menus.forEach((item, index0) => {
         [...item.apis].forEach((api, index1) => {
-          map[(method ? api.method : '') + api.url] = `${index0}_${index1}`;
+          map[(method ? api.method : "") + api.url] = `${index0}_${index1}`;
         });
       });
 
-      const c = map[(method?method:'')+whichApi];
+      const c = map[(method ? method : "") + whichApi];
       if (c) {
         current = c;
       }
@@ -123,13 +123,13 @@ class App extends Component {
     //
     api.parameters.forEach(item => {
       const v = allValues[item.name];
-      if (item.type === 'boolean' && v) {
-        allValues[item.name] = v === 'true' ? true : false;
+      if (item.type === "boolean" && v) {
+        allValues[item.name] = v === "true" ? true : false;
       }
     });
     ///
 
-    const api_key = allValues.api_key || '';
+    const api_key = allValues.api_key || "";
     const { message, signature } = newSignature(allValues, api_key);
 
     const data = {
@@ -141,18 +141,18 @@ class App extends Component {
 
     let parametersText = `'${JSON.stringify(data, null, 2)}'`;
     const urlContainsParameter =
-      api.url === '/v2/transaction/{merchant_reference}';
+      api.url === "/v2/transaction/{merchant_reference}";
 
-    if (api.method === 'GET') {
+    if (api.method === "GET") {
       parametersText = Object.keys(data)
         .filter(item => {
-          if (urlContainsParameter && item === 'merchant_reference') {
+          if (urlContainsParameter && item === "merchant_reference") {
             return false;
           }
           return data[item] !== undefined;
         })
         .map(key => `${key}=${data[key]}`)
-        .join('&');
+        .join("&");
     }
 
     const host = hosts[env];
@@ -162,14 +162,14 @@ class App extends Component {
       api.method
     } ${host}${api.url} -d ${parametersText}`;
 
-    if (api.method === 'GET') {
+    if (api.method === "GET") {
       if (urlContainsParameter) {
         if (data.merchant_reference) {
           curl = `curl -X ${api.method} ${host}/v2/transaction/${
             data.merchant_reference
           }?${parametersText}`;
         } else {
-          curl = '';
+          curl = "";
         }
       } else {
         curl = `curl -X ${api.method} ${host}${api.url}?${parametersText}`;
@@ -186,9 +186,9 @@ class App extends Component {
   };
 
   getApiAndAccount(current, env) {
-    const arr = current.split('_');
+    const arr = current.split("_");
     const menu = apis(this.props).menus[parseInt(arr[0], 10)];
-    const api = menu['apis'][parseInt(arr[1], 10)];
+    const api = menu["apis"][parseInt(arr[1], 10)];
 
     const account = apis(this.props).account[env];
 
@@ -196,7 +196,7 @@ class App extends Component {
   }
 
   onClick = () => {
-    window.location.href = 'https://doc.latipay.net/v2';
+    window.location.href = "https://doc.latipay.net/v2";
   };
 
   render() {
@@ -205,7 +205,7 @@ class App extends Component {
 
     const { message, signature, curl, allValues } = this.state;
 
-    const title = menuTitle + ' - ' + api.title;
+    const title = menuTitle + " - " + api.title;
 
     return (
       <div>
