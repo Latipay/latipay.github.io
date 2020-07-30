@@ -13,7 +13,7 @@ Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 Make payment order with this api in your web server.
 
 ```
-POST api
+POST https://api.latipay.net/v2/minialipay
 Content-Type: application/json;charset=UTF-8
 ```
 
@@ -149,3 +149,15 @@ Result Code refer to https://opendocs.alipay.com/mini/api/openapi-pay
 |6002|网络连接出错。|检查网络连接后重试。|
 |6004|处理结果未知（有可能已经成功）。|请通过 alipay.trade.query 接口查询订单的支付状态。
 |99|iOS 客户端用户点击忘记密码导致快捷界面退出。|-|
+
+### 3 - Payment Result Asynchronous Notification
+[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#3-Payment-Result-Asynchronous-Notification)
+
+### 4 - Payment Result Interface
+[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#4-Payment-Result-Interface)
+
+### 5 - Refund
+[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#5-Refund)
+
+### 6 - Cancel Transaction
+[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#6-Cancel-Transaction)
