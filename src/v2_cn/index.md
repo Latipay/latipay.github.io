@@ -46,6 +46,7 @@ order: 1
 
 ![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
 
+---
 
 ## 接口列表
 
