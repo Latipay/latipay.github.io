@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head><meta name="generator" content="Hexo 3.9.0">
     <title>Introduction</title>
     <meta charset="utf-8">
     <meta name="description" content="Latipay">
@@ -21,7 +21,7 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet" type="text/css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -32,7 +32,7 @@
 
   </head>
   <body class="docs">
-    <div id="mobile-bar" >
+    <div id="mobile-bar">
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
@@ -77,10 +77,6 @@
     </li>
   
     <li>
-      <a href="/v2/merchant-hosted-offline.html" class="sidebar-link">Merchant Hosted Offline/Hardware</a>
-    </li>
-  
-    <li>
       <a href="/v2/latipay-barcode.html" class="sidebar-link">Barcode Payment</a>
     </li>
   
@@ -94,10 +90,6 @@
   
     <li>
       <a href="/v2/invoice.html" class="sidebar-link">Latipay Invoice</a>
-    </li>
-  
-    <li>
-      <a href="/v2/gift-card.html" class="sidebar-link">Gift Card (Beta)</a>
     </li>
   
     <li>
@@ -127,7 +119,7 @@
 <p>AliCloud ensures Latipay’s security and privacy of data through their comprehensive security capabilities. Rigorous physical security measures safeguard their datacenters, and advanced logical security technologies prevent unauthorised access to their networks.</p>
 <p>AliCloud empowers Latipay to deploy globally on a trusted and high-performance cloud network. AliCloud’s BGP multi-line network and distributed cloud operating system provides highly available infrastructure.</p>
 <p>Based on the services provided by AliCloud, Latipay utilise ECS, RDS, Server Load Balancer, Redis and Mongo DB to ensure our system can perform to its best possible performance in terms of latency and security. The largest volume of transactions via Latipay server is 1000/s.</p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>The Latipay 2.0 interface is an independent Hosted Payments Page solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay and 16 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted API provides merchants with a secure and versatile solution for <code>online</code> and <code>offline</code> payments.</p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>The Latipay 2.0 interface is an independent Hosted Payments Page solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay securely without exposing the merchant to sensitive financial data. The Latipay Hosted API provides merchants with a secure and versatile solution for <code>online</code> and <code>offline</code> payments.</p>
 <p>For example, after redirecting users to a Latipay/Merchant Hosted Payment Page to complete the payment. A real-time confirmation redirection of payment from Latipay will be displayed on the merchant’s website or offline device. At the same time, a notification will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than <code>30s</code>. Merchants also can track payment status through the Latipay payment query Interface.</p>
 <h3 id="Domain"><a href="#Domain" class="headerlink" title="Domain"></a>Domain</h3><h4 id="Production-Environment"><a href="#Production-Environment" class="headerlink" title="Production Environment"></a>Production Environment</h4><p><a href="https://merchant.latipay.net" target="_blank" rel="noopener">https://merchant.latipay.net</a></p>
 <h4 id="Request-And-Parameters"><a href="#Request-And-Parameters" class="headerlink" title="Request And Parameters"></a>Request And Parameters</h4><p>Request for payment Interface is using <code>POST</code> method. Request for Query Interface is using <code>GET</code> method. All requests including Request Entity are in JSON format. Accept in the request header shall be set to <code>application/json</code>.</p>

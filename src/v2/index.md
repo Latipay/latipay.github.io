@@ -22,7 +22,7 @@ Based on the services provided by AliCloud, Latipay utilise ECS, RDS, Server Loa
 
 ### Summary
 
-The Latipay 2.0 interface is an independent Hosted Payments Page solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay and 16 main Chinese banks information securely without exposing the merchant to sensitive financial data. The Latipay Hosted API provides merchants with a secure and versatile solution for `online` and `offline` payments.
+The Latipay 2.0 interface is an independent Hosted Payments Page solution provided by Latipay. The HPP provides a solution for capturing WeChat/ Alipay securely without exposing the merchant to sensitive financial data. The Latipay Hosted API provides merchants with a secure and versatile solution for `online` and `offline` payments.
 
 For example, after redirecting users to a Latipay/Merchant Hosted Payment Page to complete the payment. A real-time confirmation redirection of payment from Latipay will be displayed on the merchant’s website or offline device. At the same time, a notification will be implemented to the merchant to ensure that confirmation of payments have been sent to an allocated callback_url in less than `30s`. Merchants also can track payment status through the Latipay payment query Interface.
 
