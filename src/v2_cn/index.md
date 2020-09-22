@@ -30,23 +30,14 @@ order: 1
 
 ## 支付场景
 
+#### 电商网站
+![](../images/PC brower - checkout_show.png)
+
 #### 支付宝
-
-![](http://latipay.net/wp-content/uploads/images/Alipay-latipayhosted.png)
-
----
+![](../images/Alipay_LatipayHosted.png)
 
 #### 微信
-
-![](http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png)
-
----
-
-#### 电商网站
-
-![](http://latipay.net/wp-content/uploads/images/checkout_show.png)
-
----
+![](../images/Wechat_LatipayHosted - web.png)
 
 ## 接口列表
 
