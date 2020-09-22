@@ -15,7 +15,6 @@ order: 1
 
 * 支付宝
 * 微信支付
-* 人民币银行（16家）
 
 ## 支付流程图
 
@@ -27,9 +26,6 @@ order: 1
 微信
 ![](../images/latipay_hosted_online.jpg)
 
----
-人民币银行卡
-![](../images/Merchant Hosted Online Bank.jpeg)
 ---
 
 ## 支付场景
@@ -43,12 +39,6 @@ order: 1
 #### 微信
 
 ![](http://latipay.net/wp-content/uploads/images/Wechat-latipayhosted.png)
-
----
-
-#### 在线银行
-
-![](http://latipay.net/wp-content/uploads/images/Onlinebank-latipayhosted.png)
 
 ---
 
@@ -83,7 +73,7 @@ https://api.latipay.net/v2/transaction
 |------------- |---------------| -------------| -------------|
 | user_id | String | 商户账号用户 id | No |
 |wallet_id | String | 商户账号wallet id | No
-|payment_method | String | 支付方式 `wechat`, `alipay`, `onlineBank`, or `unionpay` | No
+|payment_method | String | 支付方式 `wechat`, `alipay`, `onlineBank`, or `polipay` | No
 |amount | String | 支付金额 | No
 |return_url | String | 支付完成后浏览器继续加载的地址 | No
 |callback_url | String | 支付完成后异步通知地址 | No
