@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head><meta name="generator" content="Hexo 3.9.0">
+  <head>
     <title>Latipay Hosted</title>
     <meta charset="utf-8">
     <meta name="description" content="Latipay">
@@ -21,7 +21,7 @@
     <meta name="msapplication-config" content="browserconfig.xml">
     <link rel="manifest" href="/manifest.json">
 
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -32,7 +32,7 @@
 
   </head>
   <body class="docs">
-    <div id="mobile-bar">
+    <div id="mobile-bar" >
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
@@ -89,20 +89,20 @@
     <h1>Latipay Hosted</h1>
   
   <p><a href="http://doc.latipay.net/api-console/online.html" target="_blank" rel="noopener">在线测试API</a></p>
-<p class="tip">1. 集成Latipay API需要提前准备好Wallet ID, User ID 和 API key。 <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> &gt; Account &gt; Show hidden values；<br>2. 对应的Wallet ID需要事先开通alipay，wechat或者onlineBank权限；<br>3. 请勿泄漏api_key；<br>4. 测试时可以支付最小金额$0.01。</p>
+<p class="tip">1. 集成Latipay API需要提前准备好Wallet ID, User ID 和 API key。 <a href="https://merchant.latipay.net/setting" target="__blank">Latipay Merchant Portal</a> &gt; Account &gt; Show hidden values；<br>2. 对应的Wallet ID需要事先开通alipay，wechat或者onlineBank权限；<br>3. 请勿泄漏api_key；<br>4. 测试时可以支付最小金额$0.01。</p>
 
 <h2 id="支持的支付方式"><a href="#支持的支付方式" class="headerlink" title="支持的支付方式"></a>支持的支付方式</h2><ul>
 <li>支付宝</li>
 <li>微信支付</li>
 </ul>
 <h2 id="支付流程图"><a href="#支付流程图" class="headerlink" title="支付流程图"></a>支付流程图</h2><p>支付宝</p>
-<p><img src="../images/Merchant Hosted Online Alipay.jpeg" alt></p>
+<p><img src="../images/Merchant Hosted Online Alipay.jpeg" alt=""></p>
 <hr>
-<p>微信<br><img src="../images/latipay_hosted_online.jpg" alt></p>
+<p>微信<br><img src="../images/latipay_hosted_online.jpg" alt=""></p>
 <hr>
-<h2 id="支付场景"><a href="#支付场景" class="headerlink" title="支付场景"></a>支付场景</h2><h4 id="电商网站"><a href="#电商网站" class="headerlink" title="电商网站"></a>电商网站</h4><p><img src="../images/PC brower - checkout_show.png" alt></p>
-<h4 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h4><p><img src="../images/Alipay_LatipayHosted.png" alt></p>
-<h4 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h4><p><img src="../images/Wechat_LatipayHosted - web.png" alt></p>
+<h2 id="支付场景"><a href="#支付场景" class="headerlink" title="支付场景"></a>支付场景</h2><h4 id="电商网站"><a href="#电商网站" class="headerlink" title="电商网站"></a>电商网站</h4><p><img src="../images/PC brower - checkout_show.png" alt=""></p>
+<h4 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h4><p><img src="../images/Alipay_LatipayHosted.png" alt=""></p>
+<h4 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h4><p><img src="../images/Wechat_LatipayHosted - web.png" alt=""></p>
 <h2 id="接口列表"><a href="#接口列表" class="headerlink" title="接口列表"></a>接口列表</h2><h3 id="1-下单"><a href="#1-下单" class="headerlink" title="1. 下单"></a>1. 下单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/transaction</span><br><span class="line">Content-Type: application/json;charset=UTF-8</span><br></pre></td></tr></table></figure>
 <p><a href="http://doc.latipay.net/api-console/online.html?api=/v2/transaction" target="_blank" rel="noopener">在线测试API</a></p>
 <p>Demo</p>

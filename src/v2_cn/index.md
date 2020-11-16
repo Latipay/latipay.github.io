@@ -6,7 +6,7 @@ order: 1
 
 [在线测试API](http://doc.latipay.net/api-console/online.html)
 
-<p class="tip">1. 集成Latipay API需要提前准备好Wallet ID, User ID 和 API key。 <a href="https://merchant.latipay.net/account" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values；
+<p class="tip">1. 集成Latipay API需要提前准备好Wallet ID, User ID 和 API key。 <a href="https://merchant.latipay.net/setting" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values；
 2. 对应的Wallet ID需要事先开通alipay，wechat或者onlineBank权限；
 3. 请勿泄漏api_key；
 4. 测试时可以支付最小金额$0.01。</p>
