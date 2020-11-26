@@ -18,4 +18,5 @@ order: 9
 | 304 | Wallet does not support this payment method
 | 305 | No margin plan for the merchant
 | 450 | Wallet not assign to user
+| 559 | insufficient amount in your wallet
 | 1 | FAIL
