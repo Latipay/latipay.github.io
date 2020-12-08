@@ -261,3 +261,12 @@ server.createPostAPI('/create_order_and_pay', function(req, res){
     })
 })
 ```
+
+### 5 - Payment Result Asynchronous Notification
+[Please refer to this api.](https://doc.latipay.net/v2/latipay-hosted-online.html#3-Asynchronous-Notification)
+
+### 6 - Payment Result Interface
+[Please refer to this api.](https://doc.latipay.net/v2/latipay-hosted-online.html#5-Payment-Result-Interface)
+
+### 7 - Refund
+[Please refer to this api.](https://doc.latipay.net/v2/latipay-hosted-online.html#6-Refund)

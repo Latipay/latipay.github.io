@@ -151,13 +151,10 @@ Result Code refer to https://opendocs.alipay.com/mini/api/openapi-pay
 |99|iOS 客户端用户点击忘记密码导致快捷界面退出。|-|
 
 ### 3 - Payment Result Asynchronous Notification
-[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#3-Payment-Result-Asynchronous-Notification)
+[Please refer to this api.](https://doc.latipay.net/v2/latipay-hosted-online.html#3-Asynchronous-Notification)
 
 ### 4 - Payment Result Interface
-[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#4-Payment-Result-Interface)
+[Please refer to this api.](https://doc.latipay.net/v2/latipay-hosted-online.html#5-Payment-Result-Interface)
 
 ### 5 - Refund
-[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#5-Refund)
-
-### 6 - Cancel Transaction
-[Please refer to this api.](http://doc.latipay.net/v2/merchant-hosted-offline.html#6-Cancel-Transaction)
+[Please refer to this api.](https://doc.latipay.net/v2/latipay-hosted-online.html#6-Refund)
