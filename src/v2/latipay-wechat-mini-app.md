@@ -5,7 +5,7 @@ order: 5
 ---
 [API Playground](http://doc.latipay.net/api-console/miniapp.html)
 
-<p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` via <a href="https://merchant.latipay.net/setting" target="__blank">Latipay Merchant Portal</a> > Account > Show hidden values
+<p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` via <a href="https://merchant.latipay.net" target="__blank">Latipay Merchant Portal</a> > WALLETS > ACTION(on the right side of the corresponding wallet) > Settings > Integration parameters
 Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 TLTR

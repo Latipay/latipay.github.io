@@ -4,7 +4,7 @@ type: v2
 order: 6
 ---
 
-<p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` from Latipay's account manager.
+<p class="tip">Tips: Get your `Wallet ID`, `User ID` and `API key` via <a href="https://merchant.latipay.net" target="__blank">Latipay Merchant Portal</a> > WALLETS > ACTION(on the right side of the corresponding wallet) > Settings > Integration parameters
 Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 ## API Details
