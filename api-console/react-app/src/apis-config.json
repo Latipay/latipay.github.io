@@ -131,6 +131,9 @@
                 },
                 {
                   "name": "polipay"
+                },
+                {
+                  "name": "azupay"
                 }
               ]
             },
@@ -166,12 +169,6 @@
               "default": "0",
               "condition": {
                 "payment_method": "wechat"
-              }
-            },
-            {
-              "name": "present_qr",
-              "condition": {
-                "payment_method": "alipay"
               }
             },
             {

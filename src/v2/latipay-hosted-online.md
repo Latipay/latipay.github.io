@@ -16,6 +16,8 @@ The Online / E-Commerce API is an independent Hosted Payments Page solution prov
 
 * Alipay (Alipay website payment page)
 * WeChat Pay (Latipay hosted payment page)
+* NZ Banks
+* PayID (Australia only)
 
 ** Relevant Products **
 
@@ -30,6 +32,14 @@ Alipay
 ---
 Wechat
 ![](../images/latipay_hosted_online.jpg)
+
+---
+NZ Banks
+![](../images/nzbanks.png)
+
+---
+PayID
+![](../images/payid.png)
 
 ---
 
@@ -81,7 +91,7 @@ Content-Type: application/json;charset=UTF-8
 |------------- |---------------| -------------| -------------|
 |user_id | String | The Latipay user account which is using for processing the transactions. | NO |
 |wallet_id | String | The wallet ID that using for online transactions.  | NO
-|payment_method | String | The payment methods can be `wechat`, `alipay`, `moneymore` or 'polipay'. | NO
+|payment_method | String | The payment methods can be `wechat`, `alipay`, `moneymore`, `polipay` or `azupay`. | NO
 |amount | String | A decimal amount. | NO
 |return_url | String | The URL of the landing page where the customer will be directed to after payment when successful or failed. | NO
 |callback_url | String | Merchant web server's URL that the payment result will send to. | NO

@@ -4,3 +4,5 @@ db.json
 public
 !api-console/react-app/public
 yarn.lock
+images/nzbanks.drawio
+images/payid.drawio
