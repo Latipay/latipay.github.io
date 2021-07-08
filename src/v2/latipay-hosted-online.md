@@ -56,12 +56,21 @@ Alipay
 WeChat Pay
 ![](../images/Wechat_LatipayHosted - web.png)
 
+NZ banks
+![](../images/nzbanks_pc.jpg)
+
 ---
 * <strong>The payment scenario is basing on the customer using Latipay payment services by `Mobile browser`</strong>, Such as Safari in iPhone.
 
 Alipay
 The mobile browser Safari will try to launch Alipay app to make the payment. But Wechat App does not support launch from mobile browsers.
 ![](../images/Alipay_LatipayHosted - mobile browser.png)
+
+PayID
+![](../images/payid_mobile.jpg)
+
+NZ banks
+![](../images/nzbanks_mobile.jpg)
 
 
 ---
