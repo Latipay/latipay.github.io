@@ -134,6 +134,9 @@
                 },
                 {
                   "name": "azupay"
+                },
+                {
+                  "name": "upi_upop"
                 }
               ]
             },
