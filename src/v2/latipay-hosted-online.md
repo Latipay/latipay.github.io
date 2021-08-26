@@ -18,6 +18,7 @@ The Online / E-Commerce API is an independent Hosted Payments Page solution prov
 * WeChat Pay (Latipay hosted payment page)
 * NZ Banks
 * PayID (Australia only)
+* Unionpay Upop
 
 ** Relevant Products **
 
