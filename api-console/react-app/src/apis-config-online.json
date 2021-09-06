@@ -103,6 +103,9 @@
                 },
                 {
                   "name": "upi_upop"
+                },
+                {
+                  "name": "coin_payments"
                 }
               ]
             },
