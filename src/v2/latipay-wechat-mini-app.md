@@ -18,7 +18,7 @@ TLTR
 ## API Details
 
 ### 1 - Login in Mini App
-https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html#wxloginobject
+https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html
 
 Use wx js api to login and get code in mini app.
 
@@ -150,7 +150,7 @@ signature: 5c732083dbae8b6402bb329a0d1862de2f2337e4bc5b1ee721218fc2c3271db9
 
 ### 4 - Wechat mini app payment
 
-This is the payment api in wechat document: https://developers.weixin.qq.com/miniprogram/dev/api/api-pay.html
+This is the payment api in wechat document: https://developers.weixin.qq.com/miniprogram/dev/api/payment/wx.requestPayment.html
 
 ```js
 wx.requestPayment({
