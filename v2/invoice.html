@@ -109,7 +109,7 @@
 <p class="tip">Tips: Get your <code>Wallet ID</code>, <code>User ID</code> and <code>API key</code> via <a href="https://merchant.latipay.net" target="__blank">Latipay Merchant Portal</a> &gt; WALLETS &gt; ACTION(on the right side of the corresponding wallet) &gt; Settings &gt; Integration parameters<br>Tips: Create a minimum amount product (e.g. $ 0.01 NZD/AUD) for testing.</p>
 
 
-<h2 id="API-Details"><a href="#API-Details" class="headerlink" title="API Details"></a>API Details</h2><h3 id="1-Create-Invoice"><a href="#1-Create-Invoice" class="headerlink" title="1 - Create Invoice"></a>1 - Create Invoice</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https:&#x2F;&#x2F;api.latipay.net&#x2F;v2&#x2F;invoice</span><br><span class="line">Content-Type: application&#x2F;json;charset&#x3D;UTF-8</span><br></pre></td></tr></table></figure>
+<h2 id="API-Details"><a href="#API-Details" class="headerlink" title="API Details"></a>API Details</h2><h3 id="1-Create-Invoice"><a href="#1-Create-Invoice" class="headerlink" title="1 - Create Invoice"></a>1 - Create Invoice</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/invoice</span><br><span class="line">Content-Type: application/json;charset=UTF-8</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&amp;method=POST">API Playground</a></p>
 <ul>
 <li><strong>Parameters</strong></li>
@@ -199,15 +199,15 @@
 </tbody>
 </table>
 <p>Example</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;user_id&quot;</span>: <span class="string">&quot;U000000013&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;wallet_id&quot;</span>: <span class="string">&quot;W000000023&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;amount&quot;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">&quot;product_name&quot;</span>: <span class="string">&quot;ticket&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;notify_url&quot;</span>: <span class="string">&quot;https://yourwebsite.com/latipay/notify&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;signature&quot;</span>: <span class="string">&quot;9361c9e5ac5fc269296cc946377b3b4dea03685aa623482981a82101047672d9&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;user_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;U000000013&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;wallet_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;W000000023&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;amount&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;product_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ticket&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;notify_url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://yourwebsite.com/latipay/notify&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;signature&quot;</span><span class="punctuation">:</span> <span class="string">&quot;9361c9e5ac5fc269296cc946377b3b4dea03685aa623482981a82101047672d9&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>SHA-256 HMAC Signature</strong> <a target="_blank" rel="noopener" href="https://jsfiddle.net/tonnyLTP/wj36tey4/45/">Try your signature online</a></li>
 </ul>
 <p>Rearrange all parameters alphabetically (except parameters with value of <code>null</code> or <code>empty</code> string) and join them with <code>&amp;</code>, and concat the value of <code>api_key</code> in the end.</p>
 <p>JS code example:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(data)</span><br><span class="line">  .filter(<span class="function"><span class="params">item</span> =&gt;</span> data[item] != <span class="literal">null</span> &amp;&amp; data[item] != <span class="literal">undefined</span> &amp;&amp; data[item] !== <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  .sort()</span><br><span class="line">  .map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;item&#125;</span>=<span class="subst">$&#123;data[item]&#125;</span>`</span>)</span><br><span class="line">  .join(<span class="string">&#x27;&amp;&#x27;</span>)</span><br><span class="line">  .concat(api_key)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(data)</span><br><span class="line">  .<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> data[item] != <span class="literal">null</span> &amp;&amp; data[item] != <span class="literal">undefined</span> &amp;&amp; data[item] !== <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">  .<span class="title function_">sort</span>()</span><br><span class="line">  .<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;item&#125;</span>=<span class="subst">$&#123;data[item]&#125;</span>`</span>)</span><br><span class="line">  .<span class="title function_">join</span>(<span class="string">&#x27;&amp;&#x27;</span>)</span><br><span class="line">  .<span class="title function_">concat</span>(api_key)</span><br></pre></td></tr></table></figure>
 <p>Example</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Message: amount&#x3D;1&amp;notify_url&#x3D;https:&#x2F;&#x2F;yourwebsite.com&#x2F;latipay&#x2F;notify&amp;product_name&#x3D;ticket&amp;user_id&#x3D;U000000013&amp;wallet_id&#x3D;W000000023111222333</span><br><span class="line">SecretKey: 111222333</span><br><span class="line"></span><br><span class="line">Signature: 9361c9e5ac5fc269296cc946377b3b4dea03685aa623482981a82101047672d9</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Message: amount=1&amp;notify_url=https://yourwebsite.com/latipay/notify&amp;product_name=ticket&amp;user_id=U000000013&amp;wallet_id=W000000023111222333</span><br><span class="line">SecretKey: 111222333</span><br><span class="line"></span><br><span class="line">Signature: 9361c9e5ac5fc269296cc946377b3b4dea03685aa623482981a82101047672d9</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>Response</strong></li>
 </ul>
@@ -252,7 +252,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="2-Query-an-Invoice"><a href="#2-Query-an-Invoice" class="headerlink" title="2 - Query an Invoice"></a>2 - Query an Invoice</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.latipay.net&#x2F;v2&#x2F;invoice</span><br></pre></td></tr></table></figure>
+<h3 id="2-Query-an-Invoice"><a href="#2-Query-an-Invoice" class="headerlink" title="2 - Query an Invoice"></a>2 - Query an Invoice</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https://api.latipay.net/v2/invoice</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&amp;method=GET">API Playground</a></p>
 <ul>
 <li><strong>Parameters</strong></li>
@@ -294,7 +294,7 @@
 </tbody>
 </table>
 <p>*invoice_id and customer_order_id are alternative</p>
-<h3 id="3-Query-Invoices"><a href="#3-Query-Invoices" class="headerlink" title="3 - Query Invoices"></a>3 - Query Invoices</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;api.latipay.net&#x2F;v2&#x2F;invoices</span><br></pre></td></tr></table></figure>
+<h3 id="3-Query-Invoices"><a href="#3-Query-Invoices" class="headerlink" title="3 - Query Invoices"></a>3 - Query Invoices</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET https://api.latipay.net/v2/invoices</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://doc.latipay.net/api-console/invoice.html?api=/v2/invoices">API Playground</a></p>
 <ul>
 <li><strong>Parameters</strong></li>
@@ -480,7 +480,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="4-Refund-Invoice"><a href="#4-Refund-Invoice" class="headerlink" title="4 - Refund Invoice"></a>4 - Refund Invoice</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https:&#x2F;&#x2F;api.latipay.net&#x2F;v2&#x2F;invoice&#x2F;refund</span><br></pre></td></tr></table></figure>
+<h3 id="4-Refund-Invoice"><a href="#4-Refund-Invoice" class="headerlink" title="4 - Refund Invoice"></a>4 - Refund Invoice</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST https://api.latipay.net/v2/invoice/refund</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice/refund">API Playground</a></p>
 <ul>
 <li><strong>Parameters</strong></li>
@@ -552,7 +552,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="5-Delete-Invoice"><a href="#5-Delete-Invoice" class="headerlink" title="5 - Delete Invoice"></a>5 - Delete Invoice</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE https:&#x2F;&#x2F;api.latipay.net&#x2F;v2&#x2F;invoice</span><br></pre></td></tr></table></figure>
+<h3 id="5-Delete-Invoice"><a href="#5-Delete-Invoice" class="headerlink" title="5 - Delete Invoice"></a>5 - Delete Invoice</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE https://api.latipay.net/v2/invoice</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&amp;method=DELETE">API Playground</a></p>
 <ul>
 <li><strong>Parameters</strong></li>
@@ -618,7 +618,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="6-Update-Invoice"><a href="#6-Update-Invoice" class="headerlink" title="6 - Update Invoice"></a>6 - Update Invoice</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT https:&#x2F;&#x2F;api.latipay.net&#x2F;v2&#x2F;invoice</span><br></pre></td></tr></table></figure>
+<h3 id="6-Update-Invoice"><a href="#6-Update-Invoice" class="headerlink" title="6 - Update Invoice"></a>6 - Update Invoice</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT https://api.latipay.net/v2/invoice</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://doc.latipay.net/api-console/invoice.html?api=/v2/invoice&amp;method=PUT">API Playground</a></p>
 <ul>
 <li><strong>Parameters</strong></li>
