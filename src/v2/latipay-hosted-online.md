@@ -389,6 +389,8 @@ secret(your api_key): 111222333
 signature: 840151e0dc39496e22b410b83058b4ddd633b786936c505ae978fae029a1e0f1
 
 ```
+#### Additional Note
+In the context of NPP (PayID), the system establishes an Expiry Date for each PayID. Upon expiration, the system automatically updates the status of pending transactions to `failed` and disables the PayID. For customized Expiry Date requests, please contact your Latipay's representative.
 
 ### 6 - Refund
 
