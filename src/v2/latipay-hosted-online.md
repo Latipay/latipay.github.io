@@ -236,7 +236,6 @@ Extra attribute for payid：
 | message        | String | If the status is `rejected`, it will display the reason. |
 | msgId          |	String| 	Related Pay ID.                                         |
 
-
 Example
 
 ```
