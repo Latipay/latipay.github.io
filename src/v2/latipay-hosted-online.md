@@ -231,10 +231,10 @@ Attributes
 
 Extra attribute for payid：
 
-| Name    | Type  | Description                                              |
-|---------|---------------|----------------------------------------------------------|
+| Name    | Type  | Description                                             |
+|---------|---------------|---------------------------------------------------------|
 | message | String | If the status is `rejected`, it will display the reason. |
-| payId   |	String| 	Related Pay ID.                                         |
+| payId   |	String| 	Related PayID.                                         |
 
 Example
 
