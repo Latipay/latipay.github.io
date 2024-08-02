@@ -19,7 +19,7 @@ The Online / E-Commerce API is an independent Hosted Payments Page solution prov
 * NZ Banks
 * PayID (Australia only)
 * Unionpay Upop
-* coinpayments
+
 
 ** Relevant Products **
 
