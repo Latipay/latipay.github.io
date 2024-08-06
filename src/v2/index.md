@@ -4,7 +4,7 @@ type: v2
 order: 1
 ---
 
-Welcome! It looks like you’re ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.
+Welcome! It looks like you are ready to connect with Latipay. This reference documentation explains how it can be done using Latipay’s API. Once setup, you’ll be tapping into millions of Chinese consumers who prefer local payment methods.
 
 We’re constantly updating our payment methods but would love to hear your suggestions on how we could improve our platform.
 
